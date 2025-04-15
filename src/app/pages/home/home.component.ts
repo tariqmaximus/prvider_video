@@ -7,7 +7,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { DashboardComponent } from '../../sections/dashboard/dashboard.component';
+
 import { HeaderComponent } from '../../components/header/header.component';
 import { SideBarComponent } from '../../components/sidebar/sidebar.component';
 import { ThemeService } from '../../theme.service';
@@ -22,7 +22,6 @@ import { NotificationsComponent } from '../../sections/notifications/notificatio
   selector: 'app-home',
   standalone: true,
   imports: [
-    DashboardComponent,
     HeaderComponent,
     SideBarComponent,
     LabSummaryComponent,

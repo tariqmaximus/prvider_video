@@ -1,103 +1,79 @@
 {
-  "hash": "3ac302da",
-  "configHash": "0a34f2a2",
+  "hash": "07c1de66",
+  "configHash": "8ee7a0b7",
   "lockfileHash": "0bae274a",
-  "browserHash": "924b9661",
+  "browserHash": "c5154fe1",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "1050587b",
+      "fileHash": "081e2417",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "af58a406",
+      "fileHash": "5eb86675",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "0226d80a",
+      "fileHash": "940b15a8",
       "needsInterop": false
     },
     "@angular/material/core": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/core.mjs",
       "file": "@angular_material_core.js",
-      "fileHash": "ebf33216",
+      "fileHash": "1aa2766b",
       "needsInterop": false
     },
     "@angular/material/datepicker": {
       "src": "../../../../../../node_modules/@angular/material/fesm2022/datepicker.mjs",
       "file": "@angular_material_datepicker.js",
-      "fileHash": "70d88a51",
-      "needsInterop": false
-    },
-    "@angular/material/form-field": {
-      "src": "../../../../../../node_modules/@angular/material/fesm2022/form-field.mjs",
-      "file": "@angular_material_form-field.js",
-      "fileHash": "87c420cb",
-      "needsInterop": false
-    },
-    "@angular/material/input": {
-      "src": "../../../../../../node_modules/@angular/material/fesm2022/input.mjs",
-      "file": "@angular_material_input.js",
-      "fileHash": "d585b483",
+      "fileHash": "9b6b8bf9",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "ea25ee5a",
+      "fileHash": "6bbb49da",
       "needsInterop": false
     },
     "@angular/platform-browser/animations/async": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
       "file": "@angular_platform-browser_animations_async.js",
-      "fileHash": "290b36e8",
+      "fileHash": "4aaa5ff1",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "5a2080fe",
-      "needsInterop": false
-    },
-    "@canvasjs/angular-charts": {
-      "src": "../../../../../../node_modules/@canvasjs/angular-charts/fesm2015/canvasjs-angular-charts.js",
-      "file": "@canvasjs_angular-charts.js",
-      "fileHash": "890f3e3f",
+      "fileHash": "5f6f2914",
       "needsInterop": false
     }
   },
   "chunks": {
-    "browser-44HS7NPZ": {
-      "file": "browser-44HS7NPZ.js"
+    "browser-3GL7N2SN": {
+      "file": "browser-3GL7N2SN.js"
     },
-    "chunk-6G653MVL": {
-      "file": "chunk-6G653MVL.js"
+    "chunk-5FXO56RX": {
+      "file": "chunk-5FXO56RX.js"
     },
-    "chunk-ORPUXQWR": {
-      "file": "chunk-ORPUXQWR.js"
+    "chunk-KP525BSH": {
+      "file": "chunk-KP525BSH.js"
     },
-    "chunk-6MRAU3LM": {
-      "file": "chunk-6MRAU3LM.js"
+    "chunk-V2VYHFCP": {
+      "file": "chunk-V2VYHFCP.js"
     },
-    "chunk-FQ44MM76": {
-      "file": "chunk-FQ44MM76.js"
+    "chunk-GEPVJPZB": {
+      "file": "chunk-GEPVJPZB.js"
     },
-    "chunk-DSHV2EAO": {
-      "file": "chunk-DSHV2EAO.js"
+    "chunk-6BJNALU4": {
+      "file": "chunk-6BJNALU4.js"
     },
-    "chunk-OZH4JNJE": {
-      "file": "chunk-OZH4JNJE.js"
-    },
-    "chunk-XHO5ULT3": {
-      "file": "chunk-XHO5ULT3.js"
-    },
-    "chunk-7OP35DZS": {
-      "file": "chunk-7OP35DZS.js"
+    "chunk-D5DKCTNG": {
+      "file": "chunk-D5DKCTNG.js"
     }
   }
 }

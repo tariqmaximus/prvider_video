@@ -2139,7 +2139,6 @@ p span {
   min-height: inherit !important;
   box-sizing: border-box;
   padding: 20px;
-  border-radius: 0 !important;
 }
 .sidebar * {
   transition: none !important;
@@ -2278,11 +2277,9 @@ p span {
   align-items: center;
   padding: 8px 20px !important;
   width: 100%;
-  height: 120px;
+  height: 65px;
   position: absolute;
   min-height: inherit !important;
-  border-radius: 0 !important;
-  border-left: 0 !important;
   font-size: 14px;
 }
 @media (max-width: 768px) {

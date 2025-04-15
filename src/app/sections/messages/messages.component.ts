@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { InboxComponent } from "../../components/inbox/inbox.component";
-import { ChatComponent } from "../../models/chat/chat.component";
+
 
 @Component({
   selector: 'app-messages',
