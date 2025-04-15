@@ -3,7 +3,10 @@ import {
   AfterViewInit,
   OnDestroy,
   ElementRef,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { DashboardComponent } from '../../sections/dashboard/dashboard.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SideBarComponent } from '../../components/sidebar/sidebar.component';
@@ -37,7 +40,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   headerTitle: string = '';
   private observer: MutationObserver | null = null;
 
-  // Only these IDs are valid for tab activation
   private validTabIds = [
     'home',
     'hospitalvisits',
@@ -48,12 +50,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     'notifications',
   ];
 
-  constructor(private themeService: ThemeService, private elRef: ElementRef) {}
+  constructor(
+    private themeService: ThemeService,
+    private elRef: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   toggleMenu() {
-    const mainMenu = document.getElementById('main-menu');
-    if (mainMenu) {
-      mainMenu.classList.toggle('close-menu');
+    if (isPlatformBrowser(this.platformId)) {
+      const mainMenu = document.getElementById('main-menu');
+      if (mainMenu) {
+        mainMenu.classList.toggle('close-menu');
+      }
     }
   }
 
@@ -62,38 +70,37 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    // Setup external tab link handling
-    if (typeof window !== 'undefined') {
+    if (isPlatformBrowser(this.platformId)) {
       document.addEventListener('click', this.handleTabLinkClick.bind(this));
-    }
 
-    // Optional MutationObserver placeholder
-    if (typeof MutationObserver !== 'undefined') {
-      const observer = new MutationObserver(() => {
-        // Placeholder for mutation handling
-      });
+      if (typeof MutationObserver !== 'undefined') {
+        const observer = new MutationObserver(() => {
+          // Placeholder for mutation handling
+        });
 
-      const target = document.querySelector('.some-element');
-      if (target) {
-        observer.observe(target, { childList: true, subtree: true });
+        const target = document.querySelector('.some-element');
+        if (target) {
+          observer.observe(target, { childList: true, subtree: true });
+        }
+
+        this.observer = observer;
       }
     }
   }
 
-  handleTabLinkClick(event: Event) {
+  handleTabLinkClick = (event: Event) => {
     const target = event.target as HTMLElement;
     const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement;
 
     if (anchor) {
       const tabId = anchor.getAttribute('href')?.substring(1); // remove '#'
 
-      // Only allow valid tab ID activation
       if (tabId && this.validTabIds.includes(tabId)) {
         this.activateTab(tabId);
         event.preventDefault();
       }
     }
-  }
+  };
 
   activateTab(tabId: string) {
     const tabPanels = this.elRef.nativeElement.querySelectorAll('.tab-panel');
@@ -112,7 +119,9 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
       this.observer = null;
     }
 
-    document.removeEventListener('click', this.handleTabLinkClick as any);
+    if (isPlatformBrowser(this.platformId)) {
+      document.removeEventListener('click', this.handleTabLinkClick);
+    }
   }
 
   onTitleChange(newTitle: string) {

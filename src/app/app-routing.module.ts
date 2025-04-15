@@ -6,8 +6,8 @@ import { ChangePasswordComponent } from './pages/change-password/change-password
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-{ path: '', redirectTo: 'login', pathMatch: 'full' },
-{ path: 'reset-password', component: ResetPasswordComponent },
-{ path: 'change-password', component: ChangePasswordComponent }
+//   { path: 'login', component: LoginComponent },
+// { path: '', redirectTo: 'login', pathMatch: 'full' },
+// { path: 'reset-password', component: ResetPasswordComponent },
+// { path: 'change-password', component: ChangePasswordComponent }
 ];
