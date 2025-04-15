@@ -1,0 +1,37 @@
+<app-card 
+  title="Problems" 
+  icon="icon-warning"
+  [headerButtons]="headerButtons"
+>
+
+  <div *ngIf="activeTab === 'active'">
+    <ul class="list-lg p-0">
+      <li class=" d-flex justify-content-start gap-1" *ngFor="let med of activeProblems; let i = index">
+          <div class="Problems {{med.type}}">
+            {{ med.code }}
+          </div>
+          <p>
+            {{ med.details }}
+            <br />
+            <span>{{ med.date }}</span>
+          </p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="activeTab === 'Resolved'">
+    <ul class="list-lg p-0">
+      <li class="d-flex justify-content-start gap-1" *ngFor="let med of resolvedProblems; let i = index">
+          <div class="Problems">
+            {{ med.code }}
+          </div>
+          <p>
+            {{ med.details }}
+            <br />
+            <span>{{ med.date }}</span>
+          </p>
+      </li>
+    </ul>
+  </div>
+
+</app-card>

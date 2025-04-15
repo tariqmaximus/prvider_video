@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div id="main-menu" class="content-panel ">
+    <sidebar (titleChange)="onTitleChange($event)"></sidebar>
+    <main>
+      <app-header [pageTitle]="headerTitle" (menuToggle)="toggleMenu()"></app-header>
+
+      <div class="tab-content main-container" id="mxgolbalRout">
+        <!-- Dynamically added pages component -->
+        <div class="tab-panel fade active" id="home" data-title="home" tite="['home']" role="tabpanel" aria-labelledby="home-tab">
+          <app-dashboard></app-dashboard>
+        </div>
+        <div class="tab-panel fade " id="hospitalvisits" data-title="Hospital Visits" role="tabpanel" aria-labelledby="visits-tab">
+          <app-visits></app-visits>
+        </div>
+        <div class="tab-panel fade " id="lab-summary"  data-title="Lab Summary" role="tabpanel" aria-labelledby="lab-summary">
+          <app-lab-summary></app-lab-summary>
+        </div>
+        <div class="tab-panel fade  " id="messages"  data-title="Messages" role="tabpanel" aria-labelledby="messages-tab">
+          <app-messages></app-messages>
+        </div>
+        <div class="tab-panel fade " id="profile"  data-title="Profile" role="tabpanel" aria-labelledby="profile-tab">
+          <app-profile></app-profile>
+        </div>
+        <div class="tab-panel fade " id="log"  data-title="Logs" role="tabpanel" aria-labelledby="log-tab">
+          <app-log></app-log>
+        </div>
+        <div class="tab-panel fade " id="notifications"  data-title="Logs" role="tabpanel" aria-labelledby="notifications-tab">
+          <app-notifications></app-notifications>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

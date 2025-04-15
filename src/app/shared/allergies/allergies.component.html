@@ -1,0 +1,23 @@
+<app-card title="Allergies" icon="icon-allergy" [headerButtons]="headerButtons">
+  <div *ngIf="activeTab === 'active'">
+    <ul class="list-lg p-0">
+      <li class=" d-flex justify-content-start" *ngFor="let allergy of activeAllergies; let i = index">
+          <p>
+            <span>{{ allergy.name }}</span><br />
+            <span class="tag" [ngClass]="getSeverityClass(allergy.severity)">{{ allergy.severity }}</span>
+          </p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="activeTab === 'Resolved'">
+    <ul class="list-lg p-0">
+      <li class="d-flex justify-content-start" *ngFor="let allergy of ResolvedAllergies; let i = index">
+          <p>
+            <span>{{ allergy.name }}</span><br />
+            <span class="tag" [ngClass]="getSeverityClass(allergy.severity)">{{ allergy.severity }}</span>
+          </p>
+      </li>
+    </ul>
+  </div>
+</app-card>

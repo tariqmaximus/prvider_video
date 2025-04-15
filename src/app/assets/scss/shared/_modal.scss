@@ -1,0 +1,29 @@
+.modal {
+    display: none;
+    .modal-dialog {
+      max-width: $bs-modal-width; 
+    }
+    .modal-content {
+        background-color: var(--card-color);
+        border-radius: $round-md;
+        @include box-style;
+        .modal-header {
+            border-bottom:var(--bs-border-width) var( --bs-border-color) !important;
+            .close-btn {
+              border: none;
+              background: none;
+              i {
+                color: var(--icon-color);
+              }
+            }
+          
+        }
+        .modal-footer {
+          border-top:var(--bs-border-width) var( --bs-border-color) !important;
+        
+      }
+       
+    }
+   
+  }
+

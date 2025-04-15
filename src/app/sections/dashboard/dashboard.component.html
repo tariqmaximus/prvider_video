@@ -1,0 +1,66 @@
+
+  <div class="row g-3"> <!-- Added g-3 for consistent spacing -->
+
+    <!-- Profile Section -->
+    <div class="col-md-3 col-sm-12">
+      <div >
+        <!-- Profile Card -->
+        <app-profile-card 
+          class="profile-card w-100" 
+          [name]="pat_name" 
+          [pid]="pat_id" 
+          [phone]="pat_contact"
+          [age]="pat_age" 
+          [gender]="pat_gender" 
+          [dob]="pat_dob" 
+          [address]="patient_address"
+          [primary_ins]="primary_ins"
+          [secondary_ins]="secondary_ins">
+        </app-profile-card>
+      </div>
+        <!-- Date Picker Card -->
+        <div class="mt-3">
+          <app-card 
+          class="profile-card"
+            [collapsible]="true" 
+            [showHeader]="false" 
+            [showFooter]="false" 
+            [title]="'Select Date'">
+            <app-date-picker></app-date-picker>
+          </app-card>
+        </div>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-sm-12">
+      <div class="row g-3">
+
+        <!-- Vitals Section -->
+        <div class="col-lg-7 col-md-12">
+          <app-vitals></app-vitals>
+
+        </div>
+
+        <!-- Allergies Section -->
+        <div class="col-lg-5 col-md-12">
+          <app-allergies></app-allergies>
+        </div>
+
+        <!-- Problems Section -->
+        <div class="col-md-6">
+          <app-problems></app-problems>
+        </div>
+
+        <!-- Medication Section -->
+        <div class="col-md-6">
+          <app-medication></app-medication>
+        </div>
+        <div class="col-md-12">
+          <app-appointments></app-appointments>
+        </div>
+      </div>
+    </div>
+
+  </div>

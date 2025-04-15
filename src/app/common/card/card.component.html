@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header" *ngIf="showHeader">
+    <h5 class="title">
+      <i *ngIf="icon" [class]="icon"></i>
+      {{ title }}
+      
+    </h5>
+
+    <div class="buttons">
+      <!-- Other Action Buttons -->
+      <button *ngFor="let button of headerButtons"
+              type="button"
+              class="btn btn-icon"
+              [id]="button.targetId"
+              (click)="executeAction(button)">
+        <i *ngIf="button.icon" [class]="button.icon"></i>
+        <span *ngIf="button.label">{{ button.label }}</span>
+      </button>
+
+      <!-- Expand/Collapse Button (Visible only if collapsible is true) -->
+      <button *ngIf="collapsible" class="btn btn-icon "
+              type="button"
+              (click)="toggleCard()">
+        <i [class]="isCollapsed ? 'icon-angle-right' : 'icon-angle-down'"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body" *ngIf="!isCollapsed">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="card-footer" *ngIf="showFooter && !isCollapsed">
+    <ng-content select=".footer"></ng-content>
+  </div>
+</div>

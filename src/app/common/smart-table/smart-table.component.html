@@ -1,0 +1,68 @@
+<table class="responsive-table">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">{{ column.label }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of data; let i = index" [ngClass]="{ 'dynamic-row': activeRowIndex === i }">
+      <td *ngFor="let column of columns">
+        
+        <span class="key">{{ column.label }}</span>
+  
+      <!-- Profile Tile for Any Type -->
+<ng-container *ngIf="column.key === 'profilePicture'; else defaultCell">
+  <div class="profile-tile">
+    <div class="avatar avatar-md">
+      <img 
+        class="img-fluid" 
+        [src]="row.profilePicture || 'assets/dummy.jpg'" 
+        alt="Profile Picture" 
+        (error)="handleImageError($event)">
+    </div>
+    <div class="profile-details">
+      <h5>{{ row.name || row.title || row.fullName || 'Unknown' }}</h5>
+      <p>{{ row.special || row.department || row.role || row.designation || 'No Information' }}</p>
+    </div>
+  </div>
+</ng-container>
+
+  
+        <!-- Default value rendering -->
+        <ng-template #defaultCell>
+          <ng-container *ngIf="column.key !== 'action'; else actionButtonsTemplate">
+            <!-- Status column with dynamic class -->
+            <span *ngIf="column.key === 'status'; else normalCell" 
+                  [ngClass]="getStatusClass(row.status)">
+              {{ getValue(row, column.key) }}
+            </span>
+  
+            <!-- Normal cell rendering -->
+            <ng-template #normalCell>
+              <span class="value">{{ getValue(row, column.key) }}</span>
+            </ng-template>
+          </ng-container>
+        </ng-template>
+  
+        <!-- Action buttons -->
+        <ng-template #actionButtonsTemplate let-row>
+          <div class="buttons action">
+            <button *ngFor="let btn of actionButtons"
+                    class="btn {{ btn.className || '' }}"
+                    [attr.tooltip]="btn.tooltip"
+                    (click)="handleButtonClick(btn, row)">
+              {{ btn.label }}
+            </button>
+          </div>
+        </ng-template>
+        
+      </td>
+      <!-- Mobile button for expanding row -->
+      <td class="mobile-btn">
+        <button class="btn" (click)="toggleRowClass(i)">
+          <i [ngClass]="{'icon-angle-down': activeRowIndex === i, 'icon-angle-right': activeRowIndex !== i}"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

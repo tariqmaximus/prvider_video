@@ -1,0 +1,26 @@
+<div class="date-range-picker-container">
+  <h6 class="text-center">Selected Time: {{ chosenTime || 'No time selected' }}</h6>
+
+  <div class="row">
+    <!-- Date Picker -->
+    <div class="calendar-container col-md-6">
+      <mat-calendar [(selected)]="selectedDate" (selectedChange)="onDateChange($event)"></mat-calendar>
+    </div>
+
+    <!-- selected Time Slots -->
+    <div class="calendar-container col-md-6 pt-4">
+      <h6>Time Slots:</h6>
+      <div class="buttons time-slot">
+        <button 
+          *ngFor="let slot of allTimeSlots" 
+          (click)="onTimeChange(slot)" 
+          class="btn m-1"
+          [class.selected]="selectedTimeSlots.includes(slot)"
+          [class.unselected]="!selectedTimeSlots.includes(slot)"
+          [disabled]="!selectedTimeSlots.includes(slot)">
+          {{ slot }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

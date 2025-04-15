@@ -1,0 +1,162 @@
+
+.vital-tabs {
+    max-width: 200px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+ 
+    height: 100%;
+    @include mobile-view {
+      flex-direction: row;
+      max-width: inherit;
+      flex-wrap: nowrap;
+    }
+    .nav-item {
+      width: 100%;
+      height: auto;
+      @include mobile-view {
+        width: inherit ;
+        
+       }
+
+    }
+    .nav-link {
+      border: none;
+      text-align: left;
+      border-left: 3px solid;
+  
+      height: 100%;
+    
+     background-color: var(--card-color);
+      color: var(--subtext-color);
+      
+      border-radius: $round-md;
+      display: flex;
+      flex-direction: column;
+    align-items:start;
+      font-size: 10px;
+      text-align: left;
+      justify-content: center;
+      @include mobile-view {
+        border-left: none;
+        border-bottom: 2px solid;
+      }
+      h5 {
+        margin: 0;
+        font-size: $font-size-small;
+        font-weight: bold;
+        @include mobile-view {
+          display: none;
+        }
+      }
+      
+      
+    }
+    .nav-link.active {
+color: var(--text-color);
+      background: var(--bg-color);
+ 
+      
+    }
+    .danger {
+        background-color: var(--danger-color);
+      }
+      
+      .normal {
+        background-color: var(--normal-color);
+      }
+      
+      .low {
+        background-color: var(--low-color);
+      }
+  }
+  .vital-list {
+    .vital-tabs {
+    @include mobile-view {
+      flex-wrap: wrap;
+    }
+    }
+  }
+  .stand-alone-chart {
+    margin-left: 0 !important;
+    .vital-list {
+      display: flex;
+      min-width: 400px;
+padding: 0;
+@include mobile-view {
+  min-width: inherit;
+  }
+
+      .vital-tabs {
+        
+        max-width: inherit;
+        flex-direction: row;
+        justify-content: end;
+        width: 100%;
+@include mobile-view {
+flex-wrap: wrap;
+}
+        .nav-item {
+          width: auto;
+
+          .nav-link {
+            border: none;
+            color: white;
+            border-radius: $round-md;
+            padding: $spacing-sm $spacing-md;
+            
+            h5 {
+              color: white;
+              font-size: 1.4em;
+            }
+          }
+          .nav-link.low {
+           background-color: var(--weight-color);
+           
+          }
+          .nav-link.normal {
+            background-color: var(--bmi-color);
+          
+           }
+           @keyframes blowingShadow {
+            0% {
+              box-shadow: 0px 0px 3px 1px var(--bp-color);
+            }
+            50% {
+              box-shadow: 0px 0px 10px 4px var(--bp-color);
+            }
+            100% {
+              box-shadow: 0px 0px 3px 1px var(--bp-color);
+            }
+          }
+          
+          .nav-link.danger {
+            background-color: var(--bp-color);
+            animation: blowingShadow 1.5s infinite ease-in-out;
+          }
+           
+        }
+      }
+    }
+
+    .vital-graph {
+      display: none;
+    }
+  }
+  
+  .chart-container {
+    height:  $chart-height !important;  /* Remove any fixed height */
+    width: 100% !important;   /* Ensure full width */
+    float: left;
+  }
+  
+  /* Alternatively, target by ID pattern if there's no common class */
+  [id^="canvasjs-angular-chart-container"] {
+    height: $chart-height !important;  /* Remove any fixed height */
+    width: 100% !important;   /* Ensure full width */
+  }
+  [id^="canvasjs-angular-chart-container"] canvas {
+    height:  $chart-height !important;
+    width: 100% !important;
+  }

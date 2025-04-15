@@ -1,0 +1,28 @@
+<div class="dropdown nav">
+  <button [ngClass]="buttonClasses" class="dropdown-toggle" type="button" 
+          id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    
+    <!-- Show icon if available -->
+    <i *ngIf="icon" class="{{ icon }}"></i>
+
+    <!-- Show profile section only if profileImage exists -->
+    <div *ngIf="profileImage" class="avatar avatar-sm">
+      <img class="img-fluid" [src]="profileImage" alt="Profile Picture" 
+           (error)="handleImageError($event)">
+    </div>
+
+    <!-- Show user info only if profileImage exists -->
+    <h5 *ngIf="profileImage">
+      {{ userName }}
+      <p>{{ userRole }}</p>
+    </h5>
+
+    <!-- Show dynamic badge if badgeCount exists and is greater than 0 -->
+    <span *ngIf="badgeCount && badgeCount > 0" class="badge">{{ badgeCount }}</span>
+
+  </button>
+
+  <ul class=" dropdown-menu " aria-labelledby="dropdownMenuButton">
+    <ng-content></ng-content>
+  </ul>
+</div>

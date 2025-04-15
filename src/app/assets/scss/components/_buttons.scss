@@ -1,0 +1,160 @@
+// Button Container
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--text-color);
+}
+
+// Buttons
+.btn {
+    border: var(--bs-border-width) var(--bs-border-color);
+    font-size: 14px;
+    padding: $spacing-sm;
+    border-left: 0;
+    border-radius: 0;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    gap: $spacing-sm;
+    outline: none;
+
+    span {
+        font-weight: 500;
+        color: var(--subtext-color);
+        text-transform: capitalize;
+        font-size: $font-size-xs;
+        @include mobile-view {
+            display: none;
+        }
+    }
+
+ 
+    &:first-child {
+        border-radius: $round-sm 0 0 $round-sm;
+        border-left: var(--bs-border-width) var(--bs-border-color);
+    }
+
+    &:last-child {
+        border-radius: 0 $round-sm $round-sm 0 !important;
+    }
+    &:only-child {
+        border-radius: $round-sm !important;
+        border: var(--bs-border-width) var(--bs-border-color) !important;
+    }
+
+
+    &:hover,
+    &:focus {
+        background-color: var(--prim-color);
+        border-color: var(--bs-border-color);
+        box-shadow: none;
+        color: var(--subtext-color);
+        span {
+            color: white;
+        }
+        i {
+            color: white;
+        }
+    }
+
+    &:active {
+        border-color: var(--bs-border-color) !important;
+        border: none;
+    }
+   
+    &.btn-secondary {
+        background: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    &.btn-primary {
+        background-color: var(--prim-color);
+        color: white;
+    }
+
+    &.no-border {
+        color: var(--second-color);
+        border: none;
+        font-size: $font-size-small;
+
+        &:hover {
+            background: none;
+            color: var(--text-color);
+        }
+    }
+}
+.back-btn {
+    position: absolute;
+    z-index: 99;
+    top: $spacing-sm;
+    left: $spacing-sm;
+    border-radius: $round-md;
+}
+.no-bg {
+    background: none;
+}
+// Tags
+.tag {
+    width: auto;
+    height: 40px;
+    position: relative;
+    color: white;
+    padding: 3px 5px;
+    border-radius: $round-sm 0 $round-sm 0;
+    text-transform: capitalize;
+    margin-top: $spacing-sm;
+    margin-right: $spacing-sm;
+    font-size: 12px;
+    width: 71px;
+    height: auto;
+
+    &::before {
+        content: "";
+        position: absolute;
+        right: -7px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+    }
+
+    @each $tag, $color in (
+        success: var(--success-color),
+        pending: var(--warning-color),
+        info: var(--info-color),
+        danger: var(--error-color),
+        warning: var(--warning-color),
+        primary: var(--prim-color),
+        muted: var(--subtext-color),
+        secondary: var(--second-color),
+        dark: var(--text-color),
+        light: var(--bg-color),
+        default: var(--bg-color),
+        archived: var(--archived-color, var(--subtext-color)),
+        processing: var(--processing-color, var(--info-color)),
+        failed: var(--error-color),
+        queued: var(--info-color),
+        on-hold: var(--secondary-color),
+        suspended: var(--dark-color),
+        expired: var(--light-color),
+        rejected: var(--error-color),
+        approved: var(--success-color),
+        draft: var(--text-color, var(--subtext-color))
+    ) {
+        &.#{$tag} {
+            background: $color;
+            color: if(
+              $tag == light or $tag == default,
+              var(--subtext-color),
+              if($tag == dark, var(--bg-color), white)
+            );
+            font-size: $font-size-xs;
+            
+    
+            &::before {
+                border-left: 9px solid $color;
+            }
+        }
+    }
+}    

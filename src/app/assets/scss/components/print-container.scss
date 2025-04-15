@@ -1,0 +1,31 @@
+.print-container {
+    background-color: white;
+    
+
+}
+.section-header {
+    background-color: var(--bmi-color);
+    padding: $spacing-sm;
+    color: white;
+}
+.mini-header {
+    background-color: var(--low-color);
+    padding: $spacing-sm;
+    color: var(--text-color);
+}
+table {
+    background-color: white;
+    width: 100%;
+    span {
+        color: var(--text-color);
+    }
+    th {
+        color: var(--text-color);
+        font-weight: 500;
+    }
+}
+@media print {
+    .buttons {
+        display: none !important;
+    }
+  }  

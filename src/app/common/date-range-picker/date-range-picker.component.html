@@ -1,0 +1,19 @@
+<div class="date-range-picker-container">
+  <div class="row">
+    <div class="calendar-container col-md-6">
+
+      <mat-calendar [(selected)]="startDate"></mat-calendar>
+    </div>
+  
+    <div class="calendar-container col-md-6">
+  
+      <mat-calendar [(selected)]="endDate"></mat-calendar>
+    </div>
+  </div>
+  </div>
+  
+  <p *ngIf="startDate && endDate">
+    Selected Range: <strong>{{ startDate | date:'mediumDate' }}</strong> - 
+    <strong>{{ endDate | date:'mediumDate' }}</strong>
+  </p>
+  

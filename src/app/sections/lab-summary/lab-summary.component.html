@@ -1,0 +1,18 @@
+
+
+  <div class="row">
+    
+    <app-card  class="col-md-8" title="Test List" icon="icon-calendar">
+      <smart-table 
+        type="appointments" 
+        [data]="orders"
+        [actionButtons]="actionButtons"
+       >
+      </smart-table>
+    </app-card>
+   
+ 
+     <app-attachments class="col-md-4" [attData]="lstPHRLabAttachments"></app-attachments>
+   
+  </div>
+    

@@ -1,0 +1,28 @@
+<app-card 
+  title="Medication" 
+  icon="icon-medical"
+  [headerButtons]="headerButtons"
+>
+  <div *ngIf="activeTab === 'Ongoing'">
+    <ul class="list-lg p-0">
+      <li class="d-flex justify-content-between" *ngFor="let med of OngoingMedications; let i = index">
+          <p>
+            <span>{{ med.info }}</span><br />
+            <span class="">{{ med.date }}</span> <br>
+            <span>{{med.sig_text}}</span>
+          </p>
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="activeTab === 'Paused'">
+    <ul class="list-lg p-0">
+      <li class="d-flex justify-content-start" *ngFor="let med of PausedMedications; let i = index">
+          <p>
+            <span>{{ med.name }}</span><br />
+            <span class="">{{ med.condition }}</span>
+          </p>
+      </li>
+    </ul>
+  </div>
+</app-card>

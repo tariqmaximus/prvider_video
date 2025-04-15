@@ -1,0 +1,45 @@
+<nav class="sidebar card">
+  <div class="logo mb-3">
+   
+    </div>
+  <ul class="nav " >
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="activeTab === 'home'" (click)="setActiveTab('home')" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+        <i class="icon-monitor"></i>
+        <span>Home</span>
+        </a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="activeTab === 'visits'" (click)="setActiveTab('visits')" id="visits-tab" data-bs-toggle="tab" href="#hospitalvisits" role="tab" aria-controls="visits" aria-selected="false">
+        <i class="icon-calendar"></i>
+        <span>Visits</span>
+   
+      </a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="activeTab === 'lab-summary'" (click)="setActiveTab('lab-summary')" id="lab-summary-tab" data-bs-toggle="tab" href="#lab-summary" role="tab" aria-controls="lab-summary" aria-selected="false">
+        <i class="icon-lab"></i>
+       <span>Lab Summary</span>
+      </a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="activeTab === 'messages'" (click)="setActiveTab('messages')" id="messages-tab" data-bs-toggle="tab" href="#messages" role="tab" aria-controls="messages" aria-selected="false">
+        <i class="icon-chat"></i>
+       <span> Messages</span>
+      </a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="activeTab === 'profile'" (click)="setActiveTab('profile')" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+        <i class="icon-admin"></i>
+        <span>Profile</span>
+      </a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" [class.active]="activeTab === 'log'" (click)="setActiveTab('log')" id="log-tab" data-bs-toggle="tab" href="#log" role="tab" aria-controls="log" aria-selected="false">
+       <i class="icon-log"></i>
+       <span>Log</span>
+      </a>
+    </li>
+ 
+  </ul>
+</nav>
