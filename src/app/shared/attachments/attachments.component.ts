@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from "../../common/card/card.component";
 import { ModalService } from '../../common/modal/modal.service';
@@ -12,5 +12,14 @@ import { FmAttachmentComponent } from '../../forms/fm-attachment/fm-attachment.c
   styleUrls: ['./attachments.component.css'],
 })
 export class AttachmentsComponent {
-  @Input() attData: any[] = [];
+  attachments: { name: string; type: string }[] = [
+    { name: 'Hello.pdf', type: 'pdf' },
+    { name: 'Image.jpg', type: 'jpg' },
+    { name: 'Document.docx', type: 'doc' }
+  ];
+
+
+
+
+
 }

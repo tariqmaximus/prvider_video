@@ -6,7 +6,14 @@
 
   <div *ngIf="activeTab === 'active'">
     <ul class="list-lg p-0">
-      <li class=" d-flex justify-content-start gap-1" *ngFor="let med of activeProblems; let i = index">
+      <li class="checkbox-wrapper d-flex justify-content-between" *ngFor="let med of activeProblems; let i = index">
+        <input class="inp-cbx" disabled [id]="'med-cbx-active-' + i" type="checkbox" style="display: none;"/>
+        <label class="cbx d-flex" [for]="'med-cbx-active-' + i">
+          <p>
+            <svg width="12px" height="9px" viewBox="0 0 12 9">
+              <polyline points="1 5 4 8 11 1"></polyline>
+            </svg>
+          </p>
           <div class="Problems {{med.type}}">
             {{ med.code }}
           </div>
@@ -15,13 +22,21 @@
             <br />
             <span>{{ med.date }}</span>
           </p>
+        </label>
       </li>
     </ul>
   </div>
 
   <div *ngIf="activeTab === 'Resolved'">
     <ul class="list-lg p-0">
-      <li class="d-flex justify-content-start gap-1" *ngFor="let med of resolvedProblems; let i = index">
+      <li class="checkbox-wrapper d-flex justify-content-between" *ngFor="let med of resolvedProblems; let i = index">
+        <input class="inp-cbx" disabled checked [id]="'med-cbx-active-' + i" type="checkbox" style="display: none;"/>
+        <label class="cbx d-flex" [for]="'med-cbx-active-' + i">
+          <p>
+            <svg width="12px" height="9px" viewBox="0 0 12 9">
+              <polyline points="1 5 4 8 11 1"></polyline>
+            </svg>
+          </p>
           <div class="Problems">
             {{ med.code }}
           </div>
@@ -30,6 +45,7 @@
             <br />
             <span>{{ med.date }}</span>
           </p>
+        </label>
       </li>
     </ul>
   </div>

@@ -50,7 +50,7 @@
       <div class="col-md-6">
 
         <app-neon-card>
-          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="!showPatientSelection">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label>Email</label>
               <input type="email" formControlName="email" class="form-control"
@@ -70,25 +70,12 @@
               </div>
             </div>
             <div class="d-flex justify-content-end">
-              <a href="/reset-password">Forget Password?</a>
-            </div>
+            <a href="/reset-password">Forget Password?</a>
+          </div>
 
-            <div class="text-danger mb-3" [ngClass]="{'text-info': loginStatus.trim() === loginStatusMessage, 'text-danger': loginStatus.trim() !== loginStatusMessage}" *ngIf="loginStatus">{{ loginStatus }}</div>
+            <div class="text-danger mb-3" *ngIf="loginError">{{ loginError }}</div>
 
-            <button type="submit" class="submit-btn" [disabled]="storingInfo">Login</button>
-          </form>
-
-          <form [formGroup]="phrPatientSelectionForm" (ngSubmit)="onPatientSelection(phrPatientSelectionForm.value)" class="phrPatient_Selection" *ngIf="showPatientSelection">
-            <label>Select Patient</label>
-            <div class="input-group flex-nowrap mt-1 mb-3">
-              <select aria-label="Select Patient" class="form-control" id="ddPatient"
-                formControlName="ddPatient">
-                <option *ngFor="let patient of lstUserPatient" [value]="patient.patient_id">
-                  {{patient.patient_name}}
-                </option>
-              </select>
-            </div>
-            <button type="submit" class="submit-btn">Ok</button>
+            <button type="submit" class="submit-btn">Login</button>
           </form>
         </app-neon-card>
       </div>

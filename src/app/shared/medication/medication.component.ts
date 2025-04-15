@@ -1,7 +1,6 @@
-import { Component, DoCheck, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardComponent } from "../../common/card/card.component";
 import { CommonModule } from '@angular/common';
-import { LookupList, LOOKUP_LIST } from '../../app.config';
 
 @Component({
   selector: 'app-medication',
@@ -10,37 +9,18 @@ import { LookupList, LOOKUP_LIST } from '../../app.config';
   styleUrls: ['./medication.component.css'],
   imports: [CommonModule, CardComponent]
 })
-export class MedicationComponent implements OnInit {
+export class MedicationComponent {
   activeTab: 'Ongoing' | 'Paused' = 'Ongoing';
-  ptMedications: any;
-  OngoingMedications: any;
-  medicationsLoaded: boolean = false;
+  OngoingMedications = [
 
-  constructor(@Inject(LOOKUP_LIST) public lookupList: LookupList) { }
-
-  ngOnInit(): void {
-    const interval = setInterval(() => {
-      if (this.lookupList?.patientMedication) {
-        clearInterval(interval);
-        this.getPatientMedication();
-      }
-    }, 100);
-  }
-
-
-
-  getPatientMedication() {
-    this.ptMedications = this.lookupList.patientMedication;
-    this.OngoingMedications = this.ptMedications.map((medication: any) => {
-      return {
-        info: medication.drug_info,
-        date: medication.start_date,
-        sig_text: medication.sig_text
-      }
-    })
-  }
-
-
+    { name: "Paracetamol", condition: "Fever" },
+    { name: "Ibuprofen", condition: "Inflammation" },
+    { name: "Amoxicillin", condition: "Bacterial Infection" },
+    { name: "Paracetamol", condition: "Fever" },
+    { name: "Ibuprofen", condition: "Inflammation" },
+    { name: "Amoxicillin", condition: "Bacterial Infection" }
+  ];
+  
   PausedMedications = [
     { name: "Cetirizine", condition: "Allergies" },
     { name: "Metformin", condition: "Diabetes" },
@@ -49,7 +29,7 @@ export class MedicationComponent implements OnInit {
     { name: "Metformin", condition: "Diabetes" },
     { name: "Aspirin", condition: "Pain Relief" }
   ];
-
+  
   headerButtons = [
     {
       label: 'Ongoing',
@@ -63,7 +43,7 @@ export class MedicationComponent implements OnInit {
       targetId: 'Paused ',
       action: () => this.setActiveTab('Paused')
     }
-
+  
   ];
 
   setActiveTab(tab: 'Ongoing' | 'Paused') {

@@ -4,7 +4,7 @@ icon="icon-attachement"
 >
 <div class="attachments-container">
   <ul class="list-lg p-0">
-    <li *ngFor="let attachment of attData; let i = index" class="d-flex justify-content-between">
+    <li *ngFor="let attachment of attachments; let i = index" class="d-flex justify-content-between">
       <div class="d-flex justify-content-left align-items-center gap-2">
         <div class="type">
           <i [ngClass]="'icon-' + attachment.type">

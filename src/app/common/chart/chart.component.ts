@@ -70,7 +70,6 @@ export class ChartComponent implements OnInit {
 
   // Get the latest value of the dataset
   getLatestValue(tab: any): number {
-    return tab.data[0]?.y;
+    return tab.data[tab.data.length - 1]?.y;
   }
-  
 }

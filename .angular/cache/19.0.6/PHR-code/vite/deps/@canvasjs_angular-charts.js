@@ -2,13 +2,14 @@ import {
   CommonModule,
   NgIf,
   NgStyle
-} from "./chunk-KK4R5F22.js";
+} from "./chunk-XHO5ULT3.js";
 import {
   Component,
   EventEmitter,
   Input,
   NgModule,
   Output,
+  __commonJS,
   setClassMetadata,
   ɵɵNgOnChangesFeature,
   ɵɵdefineComponent,
@@ -19,13 +20,7 @@ import {
   ɵɵproperty,
   ɵɵpropertyInterpolate,
   ɵɵtemplate
-} from "./chunk-27PQTXB7.js";
-import "./chunk-4N4GOYJH.js";
-import "./chunk-5OPE3T2R.js";
-import "./chunk-FHTVLBLO.js";
-import {
-  __commonJS
-} from "./chunk-EIB7IA3J.js";
+} from "./chunk-7OP35DZS.js";
 
 // node_modules/@canvasjs/charts/canvasjs.min.js
 var require_canvasjs_min = __commonJS({

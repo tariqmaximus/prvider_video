@@ -1,7 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CardComponent } from '../../common/card/card.component';
 import { CommonModule } from '@angular/common';
-import { LookupList, LOOKUP_LIST } from '../../app.config';
 
 @Component({
   selector: 'app-allergies',
@@ -10,35 +9,15 @@ import { LookupList, LOOKUP_LIST } from '../../app.config';
   templateUrl: './allergies.component.html',
   styleUrls: ['./allergies.component.css']
 })
-export class AllergiesComponent implements OnInit {
+export class AllergiesComponent {
   activeTab: 'active' | 'Resolved' = 'active';
-  ptAllergies: any;
-  activeAllergies: any;
-  allergiesLoaded: boolean = false;
 
-  constructor(@Inject(LOOKUP_LIST) public lookupList: LookupList) { }
-
-  ngOnInit(): void {
-    const interval = setInterval(() => {
-      if (this.lookupList?.patientAllergies) {
-        clearInterval(interval);
-        this.getPatientAllergies();
-      }
-    }, 100);
-  }
-
-
-
-  getPatientAllergies() {
-    this.ptAllergies = this.lookupList.patientAllergies;
-    this.activeAllergies = this.ptAllergies.map((allergy: any) => {
-      return {
-        name: allergy.description,
-        severity: allergy.severity.toLowerCase()
-      }
-    })
-  }
-
+  activeAllergies = [
+    { name: "Bee Stings", severity: "fatal" },
+    { name: "Eggs", severity: "unknown" },
+    { name: "Milk", severity: "mild" },
+    { name: "Milk", severity: "moderate" },
+  ];
 
   ResolvedAllergies = [
     { name: "Bee Stings", severity: "fatal" },
@@ -80,5 +59,4 @@ export class AllergiesComponent implements OnInit {
         return '';
     }
   }
-
 }

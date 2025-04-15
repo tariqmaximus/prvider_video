@@ -27,16 +27,14 @@ export class SmartTableComponent implements OnInit {
         { key: 'date', label: 'Date' },
         { key: 'weight', label: 'Weight' },
         { key: 'height', label: 'Height' },
-        { key: 'bmi', label: 'BMI' },
-        { key: 'bp', label: 'Blood Pressure' },
+        { key: 'BMI', label: 'BMI' },
+        { key: 'BP', label: 'Blood Pressure' },
         { key: 'temperature', label: 'Temperature' },
       ],
       appointments: [
         { key: 'date', label: 'Date' },
-        // { key: 'profilePicture', label: 'Profile' },
-        { key: 'provider', label: 'Provider' },
-        { key: 'location', label: 'Location' },
-        { key: 'lab', label: 'Lab'},
+        { key: 'profilePicture', label: 'Profile' },
+        { key: 'department', label: 'Department' },
         { key: 'status', label: 'Status' },
       ],
       doctors: [
@@ -45,11 +43,12 @@ export class SmartTableComponent implements OnInit {
         { key: 'status', label: 'Status' },
       ],
        encounters: [
-        { key: 'visit_date', label: 'Visit Date' },
-        { key: 'provider_name', label: 'Provider' },
-        { key: 'location_name', label: 'Location' },
-        { key: 'reason_detail', label: 'visit Reason' },
-        { key: 'primary_diag', label: 'Diagnosis' },
+        { key: 'date', label: 'Date' },
+        { key: 'profilePicture', label: 'Provider' },
+        { key: 'department', label: 'Department' },
+        { key: 'location', label: 'Location' },
+        { key: 'visitReason', label: 'visit Reason' },
+        { key: 'diagnosis', label: 'Diagnosis' },
         
       ],
       encounterdetails: [

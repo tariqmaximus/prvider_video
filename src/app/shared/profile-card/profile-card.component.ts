@@ -1,4 +1,4 @@
-import { Component, input, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IconComponent } from "../../common/users/icon.component";
 import { CommonModule } from '@angular/common';
 import { CardComponent } from "../../common/card/card.component";
@@ -15,13 +15,11 @@ export class ProfileCardComponent {
   handleImageError() {
     this.isImageAvailable = false;
   }
-  @Input() name: string = '';
-  @Input() pid: string = '';
-  @Input() phone: string = '';
-  @Input() age: string = '';
-  @Input() gender: string = '';
-  @Input() dob: string = '';
-  @Input() address: string = '';
-  @Input() primary_ins: string = '';
-  @Input() secondary_ins: string = '';
+  @Input() name: string = 'Inferno Bosco';
+  @Input() pid: string = '#4274';
+  @Input() phone: string = '123456987';
+  @Input() age: string = '84y 9m 5d';
+  @Input() gender: string = 'Male';
+  @Input() dob: string = 'Mar 29, 1940';
+  @Input() address: string = '1234 Test Avenue, Lowell MA, 01854';
 }

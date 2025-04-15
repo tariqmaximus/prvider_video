@@ -3,7 +3,7 @@
     <div class="d-flex align-items-center">
       <button class="web-btn" (click)="toggleMenu()"><i class="icon-alig-right"></i></button>
 
-      <h4 class="pagetitle">{{pageTitle}}</h4>
+     
     </div>
     <div class="header-right">
       <button class="full-screen" (click)="toggleFullScreen()"><i class="icon-maximize"></i></button>
@@ -50,7 +50,7 @@
       <!-- User Profile Dropdown (Includes Name, Role & Image) -->
       <app-dropdown 
   [profileImage]="'assets/dp1.jpg'"
-  [userName]='pat_name'
+  [userName]="'John Doe'"
   [userRole]="'Admin'"
 
   [buttonClasses]="['profile-tile', 'fill']"
@@ -68,5 +68,5 @@
 </app-dropdown>
 </div>
   </div>
-  <app-sub-header></app-sub-header>
+
 </header>

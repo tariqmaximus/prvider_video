@@ -1,7 +1,6 @@
 import {
   Title
-} from "./chunk-FD3XS7KJ.js";
-import "./chunk-45MCLIAF.js";
+} from "./chunk-OZH4JNJE.js";
 import {
   DOCUMENT,
   HashLocationStrategy,
@@ -10,20 +9,24 @@ import {
   LocationStrategy,
   PathLocationStrategy,
   ViewportScroller
-} from "./chunk-KK4R5F22.js";
+} from "./chunk-XHO5ULT3.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_INITIALIZER,
   ApplicationRef,
   Attribute,
+  BehaviorSubject,
   ChangeDetectorRef,
   Compiler,
   Component,
+  ConnectableObservable,
   Console,
   ContentChildren,
   Directive,
+  EMPTY,
   ENVIRONMENT_INITIALIZER,
   ElementRef,
+  EmptyError,
   EnvironmentInjector,
   EventEmitter,
   HostBinding,
@@ -43,22 +46,53 @@ import {
   Renderer2,
   RuntimeError,
   SkipSelf,
+  Subject,
+  Subscription,
   Version,
   ViewContainerRef,
+  __spreadProps,
+  __spreadValues,
   afterNextRender,
   booleanAttribute,
+  catchError,
+  combineLatest,
+  concat,
+  concatMap,
   createEnvironmentInjector,
+  defaultIfEmpty,
+  defer,
+  filter,
+  finalize,
+  first,
+  from,
   inject,
   input,
   isInjectable,
   isNgModule,
+  isObservable,
   isPromise,
   isStandalone,
+  last,
   makeEnvironmentProviders,
+  map,
+  mapTo,
+  mergeAll,
+  mergeMap,
+  of,
+  pipe,
   publishExternalGlobalUtil,
+  refCount,
   reflectComponentType,
   runInInjectionContext,
+  scan,
   setClassMetadata,
+  startWith,
+  switchMap,
+  take,
+  takeLast,
+  takeUntil,
+  tap,
+  throwError,
   ɵɵInputTransformsFeature,
   ɵɵNgOnChangesFeature,
   ɵɵattribute,
@@ -78,49 +112,7 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-27PQTXB7.js";
-import {
-  defer,
-  isObservable
-} from "./chunk-4N4GOYJH.js";
-import "./chunk-5OPE3T2R.js";
-import {
-  BehaviorSubject,
-  ConnectableObservable,
-  EMPTY,
-  EmptyError,
-  Subject,
-  Subscription,
-  catchError,
-  combineLatest,
-  concat,
-  concatMap,
-  defaultIfEmpty,
-  filter,
-  finalize,
-  first,
-  from,
-  last,
-  map,
-  mapTo,
-  mergeAll,
-  mergeMap,
-  of,
-  pipe,
-  refCount,
-  scan,
-  startWith,
-  switchMap,
-  take,
-  takeLast,
-  takeUntil,
-  tap,
-  throwError
-} from "./chunk-FHTVLBLO.js";
-import {
-  __spreadProps,
-  __spreadValues
-} from "./chunk-EIB7IA3J.js";
+} from "./chunk-7OP35DZS.js";
 
 // node_modules/@angular/router/fesm2022/router.mjs
 var PRIMARY_OUTLET = "primary";

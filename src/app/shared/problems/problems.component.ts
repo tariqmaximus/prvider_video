@@ -1,7 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from "../../common/card/card.component";
-import { LookupList, LOOKUP_LIST } from '../../app.config';
 
 @Component({
   selector: 'app-problems',
@@ -10,36 +9,18 @@ import { LookupList, LOOKUP_LIST } from '../../app.config';
   templateUrl: './problems.component.html',
   styleUrls: ['./problems.component.css']
 })
-export class ProblemsComponent implements OnInit {
+export class ProblemsComponent {
   activeTab: 'active' | 'Resolved' | 'all' = 'active';
-  ptProblems: any;
-  activeProblems: any;
-  problemsLoaded: boolean = false;
 
-  constructor(@Inject(LOOKUP_LIST) public lookupList: LookupList) { }
-
-  ngOnInit(): void {
-    const interval = setInterval(() => {
-      if (this.lookupList?.PatientProblems) {
-        clearInterval(interval);
-        this.getPatientProblems();
-      }
-    }, 100);
-  }
-
-
-  getPatientProblems() {
-    this.ptProblems = this.lookupList.PatientProblems;
-    this.activeProblems = this.ptProblems.map((problem: any) => {
-      return {
-        code: problem.prob_code,
-        details: problem.prob_description,
-        type: problem.prob_condition,
-        date: problem.prob_date
-      }
-    })
-  }
-
+  activeProblems = [
+    { code: "TF.09", details: "High fever with chills", type: "mild", date: "12/4/2024" },
+    { code: "AB.12", details: "Persistent dry cough", type: "moderate", date: "15/4/2024" },
+    { code: "XY.23", details: "Shortness of breath while walking", type: "fatal", date: "17/4/2024" },
+    { code: "MN.45", details: "Chest pain after exertion", type: "unknown", date: "18/4/2024" },
+    { code: "KL.67", details: "Frequent dizziness and lightheadedness",type: "normal", date: "20/4/2024" },
+    { code: "PQ.89", details: "Nausea after eating", type: "normal", date: "22/4/2024" }
+  ];
+  
   resolvedProblems = [
     { code: "TF.09", details: "Mild headache, relieved with rest", date: "11/4/2024" },
     { code: "AB.12", details: "Sore throat, improved after medication", date: "10/4/2024" },
@@ -50,7 +31,7 @@ export class ProblemsComponent implements OnInit {
   ];
 
   headerButtons = [
-
+ 
     {
       label: 'Active',
       icon: 'icon-warning',
