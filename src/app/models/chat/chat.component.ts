@@ -15,7 +15,7 @@ interface Message {
   standalone: true,
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
-  imports: [CommonModule, FormsModule, CardComponent, IconComponent],
+  imports: [CommonModule, FormsModule, IconComponent],
 })
 export class ChatComponent implements OnChanges {
   @Input() message: any;
