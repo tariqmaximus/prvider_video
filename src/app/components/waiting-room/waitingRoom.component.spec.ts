@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SubHeaderComponent } from './sub-header.component';
+import { waitingRoomComponent } from './waitingRoom.component';
 
-describe('SubHeaderComponent', () => {
-  let component: SubHeaderComponent;
-  let fixture: ComponentFixture<SubHeaderComponent>;
+describe('waitingRoomComponent', () => {
+  let component: waitingRoomComponent;
+  let fixture: ComponentFixture<waitingRoomComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SubHeaderComponent]
+      imports: [waitingRoomComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SubHeaderComponent);
+    fixture = TestBed.createComponent(waitingRoomComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

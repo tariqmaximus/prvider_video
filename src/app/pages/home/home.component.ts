@@ -9,10 +9,9 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 
 import { HeaderComponent } from '../../components/header/header.component';
-import { SideBarComponent } from '../../components/sidebar/sidebar.component';
 import { ThemeService } from '../../theme.service';
+import { VideoPortalComponent } from "../../sections/video-portal/videoPortal.component";
 
-import { MessagesComponent } from '../../sections/messages/messages.component';
 
 
 @Component({
@@ -20,10 +19,8 @@ import { MessagesComponent } from '../../sections/messages/messages.component';
   standalone: true,
   imports: [
     HeaderComponent,
-    SideBarComponent,
-    MessagesComponent,
-
-  ],
+    VideoPortalComponent
+],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -36,7 +33,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     'home',
     'hospitalvisits',
     'lab-summary',
-    'messages',
+    'videoPortal',
     'profile',
     'log',
     'notifications',

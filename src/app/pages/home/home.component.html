@@ -1,14 +1,12 @@
 <div class="container-fluid">
   <div id="main-menu" class="content-panel close-menu">
-    <sidebar (titleChange)="onTitleChange($event)"></sidebar>
+ 
     <main>
-     
-
       <div class="tab-content main-container" id="mxgolbalRout">
-        <app-header [pageTitle]="headerTitle" ></app-header>
+        <!-- <app-header [pageTitle]="headerTitle" ></app-header> -->
        
-        <div class="tab-panel fade  active" id="messages"  data-title="Messages" role="tabpanel" aria-labelledby="messages-tab">
-          <app-messages></app-messages>
+        <div class="tab-panel h-100 fade  active " id="messages"   data-title="Messages" role="tabpanel" aria-labelledby="messages-tab">
+        <app-video-portal></app-video-portal>
         </div>
        
       </div>

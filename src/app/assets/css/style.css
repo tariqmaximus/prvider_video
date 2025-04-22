@@ -13,7 +13,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --title-color: #bccce2;
   --second-color: #1ae9f8;
   --bg-color: #1b1f22;
-  --card-color: #161616;
+  --card-color: rgba(18,30,50, 0.7);
   --text-color: #f5f5f5;
   --subtext-color: #aaaaaa;
   --success-color: #28a745;
@@ -2467,6 +2467,48 @@ table th {
   background-color: var(--error-color);
 }
 
+.waiting-list {
+  height: 100%;
+}
+.waiting-list li {
+  border-bottom: var(--bs-border-width) var(--bs-border-color);
+  margin-bottom: 8px;
+  transition: 0.4s;
+  min-height: inherit;
+  box-sizing: border-box;
+  width: 100%;
+}
+.waiting-list li:last-child {
+  margin: 0;
+}
+.waiting-list li:hover {
+  background-color: var(--bg-color);
+}
+.waiting-list .Problems {
+  background: #1b4060;
+  width: 50px;
+  height: 50px;
+  font-size: 0.7em;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: white;
+}
+.waiting-list .Problems.mild {
+  background-color: var(--warning-color);
+}
+.waiting-list .Problems.moderate {
+  background-color: var(--success-color);
+}
+.waiting-list .Problems.fatal {
+  background-color: var(--info-color);
+}
+.waiting-list .Problems.unknown {
+  background-color: var(--error-color);
+}
+
 .messages-list {
   border: none;
   border-radius: 15px 0 0 15px;
@@ -3381,14 +3423,9 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   background-color: var(--card-color) !important;
-  width: 400px;
+  width: 100%;
   max-width: 100%;
   margin-bottom: 8px;
-}
-@media (max-width: 768px) {
-  .chat-window .messagebox {
-    max-width: 260px;
-  }
 }
 .chat-window .messagebox span {
   color: var(--text-color);
@@ -3400,6 +3437,9 @@ h3 {
   display: flex;
   width: 100%;
   max-width: 100%;
+}
+.chat-window .message .message-content {
+  width: 100%;
 }
 .chat-window .your-message {
   justify-content: flex-start;
@@ -3504,7 +3544,8 @@ h3 {
 .main-container {
   padding: 16px;
   box-sizing: border-box;
-  max-height: 86vh;
+  max-height: 100%;
+  height: 100%;
   overflow-y: auto;
 }
 @media (max-width: 768px) {
@@ -3539,7 +3580,8 @@ strong {
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
+  background-image: url(../images/main-bg.jpg);
+  background-size: cover;
 }
 
 html {

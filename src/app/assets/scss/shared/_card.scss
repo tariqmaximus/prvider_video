@@ -167,12 +167,10 @@ box-shadow: none !important;
 
         @include box-style;
         
-        width: 400px;
+        width: 100%;
         max-width: 100%;
         margin-bottom: $spacing-sm;
-        @include mobile-view {
-            max-width: 260px;
-        }
+       
         strong {}
 
         span {
@@ -188,7 +186,12 @@ box-shadow: none !important;
         display: flex;
         width: 100%;
         max-width: 100%;
+        .message-content {
+            width: 100%;
+
+        }
     }
+    
 
     .your-message {
         justify-content: flex-start;

@@ -56,7 +56,54 @@
 
 
 }
+.waiting-list {
+    height: 100%;
+    li {
+        border-bottom:  var( --bs-border-width) var( --bs-border-color);
+      
+        margin-bottom: $spacing-sm;
+        transition: 0.4s;
+        min-height: inherit;
+        box-sizing: border-box;
+        width: 100%;
+        &:last-child {
+            margin: 0;
+        }
+        &:hover {
+            background-color: var(--bg-color);
+        }
+    }
 
+ 
+   
+.Problems {
+    background: #1b4060;
+    width: 50px;
+    height: 50px;
+    font-size: 0.7em;
+    display: flex;
+    border-radius: $round-md;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: white;
+   
+}
+.Problems.mild {
+    background-color: var(--warning-color);
+}
+.Problems.moderate {
+    background-color: var(--success-color);
+}
+.Problems.fatal {
+    background-color: var(--info-color);
+}
+.Problems.unknown {
+    background-color: var(--error-color);
+}
+
+
+}
 .messages-list {
    
     border: none;
