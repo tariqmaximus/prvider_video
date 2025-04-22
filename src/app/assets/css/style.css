@@ -8,6 +8,33 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 :root {
+  /* Dark mode variables */
+  --prim-color: #243247;
+  --title-color: #bccce2;
+  --second-color: #1ae9f8;
+  --bg-color: #1b1f22;
+  --card-color: #161616;
+  --text-color: #f5f5f5;
+  --subtext-color: #aaaaaa;
+  --success-color: #28a745;
+  --warning-color: #ffc107;
+  --error-color: #dc3545;
+  --info-color: #17a2b8;
+  --bs-border-color: #2e2e2e;
+  --icon-color: #cccccc;
+  --bp-color: #ff6666; /* Red */
+  --weight-color: #66cc99; /* Blue */
+  --bmi-color: #27b5d1; /* Green */
+  --height-color: #1c75bc; /* Purple */
+  --temp-color: #8c94b7; /* Orange */
+  --danger-color: #65161d;
+  --normal-color: #253d2f;
+  --low-color: #364160;
+  --logo:url("../images/logo-light.png");
+  --login_bg:url(../images/login-bg.jpg);
+}
+
+[data-theme=dark] {
   /* Light mode variables */
   --prim-color: #1b4060; /* Blue */
   --title-color: var(--prim-color);
@@ -33,33 +60,6 @@ p, h1, h2, h3, h4, h5, h6 {
   --low-color: #e3faff;
   --logo:url("../images/logo.png");
   --bs-nav-link-hover-color:var(--second-color);
-}
-
-[data-theme=dark] {
-  /* Dark mode variables */
-  --prim-color: #243247;
-  --title-color: #bccce2;
-  --second-color: #1ae9f8;
-  --bg-color: #1b1f22;
-  --card-color: #161616;
-  --text-color: #f5f5f5;
-  --subtext-color: #aaaaaa;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
-  --error-color: #dc3545;
-  --info-color: #17a2b8;
-  --bs-border-color: #2e2e2e;
-  --icon-color: #cccccc;
-  --bp-color: #ff6666; /* Red */
-  --weight-color: #66cc99; /* Blue */
-  --bmi-color: #27b5d1; /* Green */
-  --height-color: #1c75bc; /* Purple */
-  --temp-color: #8c94b7; /* Orange */
-  --danger-color: #65161d;
-  --normal-color: #253d2f;
-  --low-color: #364160;
-  --logo:url("../images/logo-light.png");
-  --login_bg:url(../images/login-bg.jpg);
 }
 
 body {
@@ -2418,10 +2418,11 @@ table th {
 }
 .list-lg li {
   border-bottom: var(--bs-border-width) var(--bs-border-color);
-  padding: 8px;
   margin-bottom: 8px;
   transition: 0.4s;
   min-height: inherit;
+  box-sizing: border-box;
+  width: 100%;
 }
 .list-lg li:last-child {
   margin: 0;
@@ -3339,6 +3340,10 @@ h3 {
   overflow-y: inherit;
 }
 
+.card-footer {
+  padding: 0;
+}
+
 .chat-card {
   max-height: inherit !important;
 }
@@ -3360,13 +3365,8 @@ h3 {
 }
 
 .chat-window {
-  background-image: url(../images/chat-bg.png);
-  background-color: var(--bg-color);
   box-sizing: border-box;
-  padding: 16px;
-  max-height: 600px;
-  min-height: 600px;
-  overflow-y: scroll;
+  width: 100%;
 }
 .chat-window .user-dp {
   font-size: 50px;
@@ -3381,7 +3381,6 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   background-color: var(--card-color) !important;
-  padding: 16px;
   width: 400px;
   max-width: 100%;
   margin-bottom: 8px;

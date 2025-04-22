@@ -3,11 +3,12 @@
   <div class="col-md-3 p-0">
     <ul class="list-lg p-0 messages-list">
       <li
-        class="d-flex justify-content-between p-2"
+       
         *ngFor="let msg of messagesList"
         (click)="selectMessage(msg)"
         style="cursor: pointer"
       >
+      <div class="p-3">
         <div class="d-flex justify-content-left align-items-center gap-2">
           <user-icon class="user-dp" [type]="msg.iconType"></user-icon>
           <p [ngClass]="{ unread: msg.status === 'unread', read: msg.status === 'read' }">
@@ -16,6 +17,8 @@
             <span>{{ msg.date }}</span>
           </p>
         </div>
+        <app-chat></app-chat>
+      </div>
       </li>
     </ul>
   </div>
@@ -28,7 +31,7 @@
 
     <ng-template #noMessage>
       <div class="d-flex align-items-center justify-content-center h-100 text-muted">
-        Select a message to start chatting
+        
       </div>
     </ng-template>
   </div>

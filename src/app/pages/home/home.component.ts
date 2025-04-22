@@ -11,12 +11,9 @@ import { isPlatformBrowser } from '@angular/common';
 import { HeaderComponent } from '../../components/header/header.component';
 import { SideBarComponent } from '../../components/sidebar/sidebar.component';
 import { ThemeService } from '../../theme.service';
-import { LabSummaryComponent } from '../../sections/lab-summary/lab-summary.component';
+
 import { MessagesComponent } from '../../sections/messages/messages.component';
-import { ProfileComponent } from '../../sections/profile/profile.component';
-import { LogComponent } from '../../sections/log/log.component';
-import { VisitsComponent } from '../../sections/visits/visits.component';
-import { NotificationsComponent } from '../../sections/notifications/notifications.component';
+
 
 @Component({
   selector: 'app-home',
@@ -24,12 +21,8 @@ import { NotificationsComponent } from '../../sections/notifications/notificatio
   imports: [
     HeaderComponent,
     SideBarComponent,
-    LabSummaryComponent,
     MessagesComponent,
-    ProfileComponent,
-    LogComponent,
-    VisitsComponent,
-    NotificationsComponent,
+
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
@@ -55,14 +48,6 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
-  toggleMenu() {
-    if (isPlatformBrowser(this.platformId)) {
-      const mainMenu = document.getElementById('main-menu');
-      if (mainMenu) {
-        mainMenu.classList.toggle('close-menu');
-      }
-    }
-  }
 
   toggleTheme(): void {
     this.themeService.toggleTheme();

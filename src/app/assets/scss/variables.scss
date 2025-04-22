@@ -1,61 +1,63 @@
 // Colors
 :root {
-  /* Light mode variables */
-  --prim-color: #1b4060; /* Blue */
-  --title-color: var(--prim-color);
-  --second-color: #0066ff; /* Red */
-  --bg-color: #f5f5f5; /* Light gray */
-  --card-color: #ffffff; /* White */
-  --text-color: #333333; /* Dark gray */
-  --subtext-color: #9c9c9c; /* Lighter gray */
-  --success-color: #28a745; /* Green */
-  --warning-color: #ff6406; /* Yellow */
-  --error-color: #dc3545; /* Red */
-  --info-color: #17a2b8; /* Cyan */
-   --bs-border-color: #e0e0e0; /* Light gray */
-   --bs-border-width:  1px solid; /* Light gray */
-  --icon-color: #888888; /* Icon color */
+ /* Dark mode variables */
+ --prim-color: #243247;
+ --title-color: #bccce2;
+ --second-color: #1ae9f8;
+ --bg-color: #1b1f22;
+ --card-color: #161616;
+ --text-color: #f5f5f5;
+ --subtext-color: #aaaaaa;
+ --success-color: #28a745;
+ --warning-color: #ffc107;
+ --error-color: #dc3545;
+ --info-color: #17a2b8;
+  --bs-border-color: #2e2e2e;
+ --icon-color: #cccccc;
   // Vitals colors
   --bp-color: #ff6666; /* Red */
   --weight-color: #66cc99; /* Blue */
   --bmi-color: #27b5d1; /* Green */
   --height-color: #1c75bc; /* Purple */
   --temp-color: #8c94b7; /* Orange */
-  --danger-color: #ffecec;
-  --normal-color: #e6fff3;
-  --low-color: #e3faff;
-  --logo:url('../images/logo.png');
-  --bs-nav-link-hover-color:var(--second-color);
+  --danger-color: #65161d;
+  --normal-color: #253d2f;
+  --low-color: #364160;
+  --logo:url('../images/logo-light.png');
+  --login_bg:url(../images/login-bg.jpg);
   }
   
 
 
 [data-theme="dark"] {
-  /* Dark mode variables */
-  --prim-color: #243247;
-  --title-color: #bccce2;
-  --second-color: #1ae9f8;
-  --bg-color: #1b1f22;
-  --card-color: #161616;
-  --text-color: #f5f5f5;
-  --subtext-color: #aaaaaa;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
-  --error-color: #dc3545;
-  --info-color: #17a2b8;
-   --bs-border-color: #2e2e2e;
-  --icon-color: #cccccc;
-   // Vitals colors
-   --bp-color: #ff6666; /* Red */
-   --weight-color: #66cc99; /* Blue */
-   --bmi-color: #27b5d1; /* Green */
-   --height-color: #1c75bc; /* Purple */
-   --temp-color: #8c94b7; /* Orange */
-   --danger-color: #65161d;
-   --normal-color: #253d2f;
-   --low-color: #364160;
-   --logo:url('../images/logo-light.png');
-   --login_bg:url(../images/login-bg.jpg);
+    /* Light mode variables */
+    --prim-color: #1b4060; /* Blue */
+    --title-color: var(--prim-color);
+    --second-color: #0066ff; /* Red */
+    --bg-color: #f5f5f5; /* Light gray */
+    --card-color: #ffffff; /* White */
+    --text-color: #333333; /* Dark gray */
+    --subtext-color: #9c9c9c; /* Lighter gray */
+    --success-color: #28a745; /* Green */
+    --warning-color: #ff6406; /* Yellow */
+    --error-color: #dc3545; /* Red */
+    --info-color: #17a2b8; /* Cyan */
+     --bs-border-color: #e0e0e0; /* Light gray */
+     --bs-border-width:  1px solid; /* Light gray */
+    --icon-color: #888888; /* Icon color */
+    // Vitals colors
+    --bp-color: #ff6666; /* Red */
+    --weight-color: #66cc99; /* Blue */
+    --bmi-color: #27b5d1; /* Green */
+    --height-color: #1c75bc; /* Purple */
+    --temp-color: #8c94b7; /* Orange */
+    --danger-color: #ffecec;
+    --normal-color: #e6fff3;
+    --low-color: #e3faff;
+    --logo:url('../images/logo.png');
+    --bs-nav-link-hover-color:var(--second-color);
+
+ 
 
   }
 

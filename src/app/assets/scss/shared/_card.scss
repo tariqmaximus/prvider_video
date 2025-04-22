@@ -115,7 +115,9 @@ box-shadow: none !important;
         overflow-y: inherit;
     }
 }
-
+.card-footer {
+    padding: 0;
+}
 .chat-card {
     max-height: inherit !important;
 
@@ -147,13 +149,12 @@ box-shadow: none !important;
 }
 
 .chat-window {
-    background-image: url(../images/chat-bg.png);
-    background-color: var(--bg-color);
+ 
+  
     box-sizing: border-box;
-    padding: $spacing-md;
-    max-height: 600px;
-    min-height: 600px;
-    overflow-y: scroll;
+   
+
+   width: 100%;
 
     .user-dp {
         font-size: 50px;
@@ -165,7 +166,7 @@ box-shadow: none !important;
     .messagebox {
 
         @include box-style;
-        padding: $spacing-md;
+        
         width: 400px;
         max-width: 100%;
         margin-bottom: $spacing-sm;
