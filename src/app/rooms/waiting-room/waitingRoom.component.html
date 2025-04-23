@@ -1,0 +1,74 @@
+
+    <ul class="waiting-list card">
+      <li
+        *ngFor="let msg of waitingRoom; let i = index"
+        class="card mb-3"
+      >
+        <div 
+          class="d-flex justify-content-between align-items-center px-3 py-2"
+          (click)="toggleChat(i)"
+        >
+          <div class="d-flex align-items-center gap-3">
+            <div
+              class="avatar-circle"
+              [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }"
+            >
+              {{ getInitials(msg.name) }}
+            </div>
+            <div>
+              <div class="fw-bold text-white">{{ msg.name }}</div>
+              <div
+                class="waiting-text"
+                [ngStyle]="{ color: getStageTextColor(msg.stage) }"
+              >
+                {{ msg.time }}
+              </div>
+            </div>
+          </div>
+          <div class="text-white">
+            <div class="chevron" [class.rotate]="expandedIndex === i">&#9662;</div>
+          </div>
+        </div>
+    
+        <div 
+          class="accordion-collapse collapse"
+          [ngClass]="{ show: expandedIndex === i }"
+        >
+          <div class="accordion-body p-2">
+    
+        
+      
+          
+<div class="action-group">
+  <app-button
+  type="primary"
+  label="Save"
+  icon="fas fa-save"
+ 
+></app-button>
+
+<app-button
+  type="danger"
+  label="Delete"
+  icon="fas fa-trash"
+
+></app-button>
+
+<app-button
+  type="icon"
+  icon="icon-mic"
+ 
+></app-button>
+
+
+        </div>
+       
+           <app-chat></app-chat>
+          </div>
+        </div>
+      </li>
+    </ul>
+   
+ 
+
+

@@ -16,20 +16,12 @@ p, h1, h2, h3, h4, h5, h6 {
   --card-color: rgba(18,30,50, 0.7);
   --text-color: #f5f5f5;
   --subtext-color: #aaaaaa;
-  --success-color: #28a745;
+  --success-color: #66cc99;
   --warning-color: #ffc107;
   --error-color: #dc3545;
   --info-color: #17a2b8;
   --bs-border-color: #2e2e2e;
   --icon-color: #cccccc;
-  --bp-color: #ff6666; /* Red */
-  --weight-color: #66cc99; /* Blue */
-  --bmi-color: #27b5d1; /* Green */
-  --height-color: #1c75bc; /* Purple */
-  --temp-color: #8c94b7; /* Orange */
-  --danger-color: #65161d;
-  --normal-color: #253d2f;
-  --low-color: #364160;
   --logo:url("../images/logo-light.png");
   --login_bg:url(../images/login-bg.jpg);
 }
@@ -2521,283 +2513,112 @@ table th {
   margin-bottom: 0 !important;
 }
 
-.buttons {
+.action-group {
   display: flex;
-  justify-content: flex-end;
-  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-  border: var(--bs-border-width) var(--bs-border-color);
-  font-size: 14px;
-  padding: 8px;
-  border-left: 0;
-  border-radius: 0;
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
   align-items: center;
-  text-transform: capitalize;
+  justify-content: center;
   gap: 8px;
-  outline: none;
-}
-.btn span {
+  font-size: 12px;
   font-weight: 500;
-  color: var(--subtext-color);
-  text-transform: capitalize;
-  font-size: 12px;
-}
-@media (max-width: 768px) {
-  .btn span {
-    display: none;
-  }
-}
-.btn:first-child {
-  border-radius: 5px 0 0 5px;
-  border-left: var(--bs-border-width) var(--bs-border-color);
-}
-.btn:last-child {
-  border-radius: 0 5px 5px 0 !important;
-}
-.btn:only-child {
-  border-radius: 5px !important;
-  border: var(--bs-border-width) var(--bs-border-color) !important;
-}
-.btn:hover, .btn:focus {
-  background-color: var(--prim-color);
-  border-color: var(--bs-border-color);
-  box-shadow: none;
-  color: var(--subtext-color);
-}
-.btn:hover span, .btn:focus span {
-  color: white;
-}
-.btn:hover i, .btn:focus i {
-  color: white;
-}
-.btn:active {
-  border-color: var(--bs-border-color) !important;
+  width: 100%;
   border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.btn.btn-secondary {
-  background: var(--bg-color);
-  color: var(--text-color);
+.btn--primary {
+  background-color: #ffffff;
+  color: #434343;
 }
-.btn.btn-primary {
-  background-color: var(--prim-color);
-  color: white;
+.btn--primary:hover {
+  background-color: #0069d9;
+  color: #ffffff;
 }
-.btn.no-border {
-  color: var(--second-color);
-  border: none;
-  font-size: 14px;
+.btn--primary:active {
+  background-color: #005cbf;
 }
-.btn.no-border:hover {
+.btn--primary:disabled {
+  background-color: #a6c8ff;
+  color: #ffffff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn--secondary {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.btn--secondary:hover {
+  background-color: #e0e0e0;
+}
+.btn--secondary:active {
+  background-color: #cfcfcf;
+}
+.btn--secondary:disabled {
+  background-color: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn--danger {
+  background-color: #ff4d4f;
+  color: #fff;
+}
+.btn--danger:hover {
+  background-color: #ff7875;
+}
+.btn--danger:active {
+  background-color: #d9363e;
+}
+.btn--danger:disabled {
+  background-color: #ffc1c1;
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn--ghost {
+  background-color: transparent;
+  color: #434343;
+  border: 1px solid #434343;
+}
+.btn--ghost:hover {
+  background-color: #f9f9f9;
+}
+.btn--ghost:active {
+  background-color: #eeeeee;
+}
+.btn--ghost:disabled {
+  color: #999;
+  border-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.btn--icon {
   background: none;
-  color: var(--text-color);
+  color: #66cc99;
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  justify-content: center;
 }
-
-.back-btn {
-  position: absolute;
-  z-index: 99;
-  top: 8px;
-  left: 8px;
-  border-radius: 10px;
+.btn--icon:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
-
-.no-bg {
-  background: none;
+.btn--icon:active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
-
-.tag {
-  width: auto;
-  height: 40px;
-  position: relative;
-  color: white;
-  padding: 3px 5px;
-  border-radius: 5px 0 5px 0;
-  text-transform: capitalize;
-  margin-top: 8px;
-  margin-right: 8px;
-  font-size: 12px;
-  width: 71px;
-  height: auto;
-}
-.tag::before {
-  content: "";
-  position: absolute;
-  right: -7px;
-  bottom: 0;
-  width: 0;
-  height: 0;
-}
-.tag.success {
-  background: var(--success-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.success::before {
-  border-left: 9px solid var(--success-color);
-}
-.tag.pending {
-  background: var(--warning-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.pending::before {
-  border-left: 9px solid var(--warning-color);
-}
-.tag.info {
-  background: var(--info-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.info::before {
-  border-left: 9px solid var(--info-color);
-}
-.tag.danger {
-  background: var(--error-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.danger::before {
-  border-left: 9px solid var(--error-color);
-}
-.tag.warning {
-  background: var(--warning-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.warning::before {
-  border-left: 9px solid var(--warning-color);
-}
-.tag.primary {
-  background: var(--prim-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.primary::before {
-  border-left: 9px solid var(--prim-color);
-}
-.tag.muted {
-  background: var(--subtext-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.muted::before {
-  border-left: 9px solid var(--subtext-color);
-}
-.tag.secondary {
-  background: var(--second-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.secondary::before {
-  border-left: 9px solid var(--second-color);
-}
-.tag.dark {
-  background: var(--text-color);
-  color: var(--bg-color);
-  font-size: 12px;
-}
-.tag.dark::before {
-  border-left: 9px solid var(--text-color);
-}
-.tag.light {
-  background: var(--bg-color);
-  color: var(--subtext-color);
-  font-size: 12px;
-}
-.tag.light::before {
-  border-left: 9px solid var(--bg-color);
-}
-.tag.default {
-  background: var(--bg-color);
-  color: var(--subtext-color);
-  font-size: 12px;
-}
-.tag.default::before {
-  border-left: 9px solid var(--bg-color);
-}
-.tag.archived {
-  background: var(--archived-color, var(--subtext-color));
-  color: white;
-  font-size: 12px;
-}
-.tag.archived::before {
-  border-left: 9px solid var(--archived-color, var(--subtext-color));
-}
-.tag.processing {
-  background: var(--processing-color, var(--info-color));
-  color: white;
-  font-size: 12px;
-}
-.tag.processing::before {
-  border-left: 9px solid var(--processing-color, var(--info-color));
-}
-.tag.failed {
-  background: var(--error-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.failed::before {
-  border-left: 9px solid var(--error-color);
-}
-.tag.queued {
-  background: var(--info-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.queued::before {
-  border-left: 9px solid var(--info-color);
-}
-.tag.on-hold {
-  background: var(--secondary-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.on-hold::before {
-  border-left: 9px solid var(--secondary-color);
-}
-.tag.suspended {
-  background: var(--dark-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.suspended::before {
-  border-left: 9px solid var(--dark-color);
-}
-.tag.expired {
-  background: var(--light-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.expired::before {
-  border-left: 9px solid var(--light-color);
-}
-.tag.rejected {
-  background: var(--error-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.rejected::before {
-  border-left: 9px solid var(--error-color);
-}
-.tag.approved {
-  background: var(--success-color);
-  color: white;
-  font-size: 12px;
-}
-.tag.approved::before {
-  border-left: 9px solid var(--success-color);
-}
-.tag.draft {
-  background: var(--text-color, var(--subtext-color));
-  color: white;
-  font-size: 12px;
-}
-.tag.draft::before {
-  border-left: 9px solid var(--text-color, var(--subtext-color));
+.btn--icon:disabled {
+  color: #ccc;
+  background-color: transparent;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .form-control {

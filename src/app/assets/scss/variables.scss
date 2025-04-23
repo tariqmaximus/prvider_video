@@ -8,23 +8,18 @@
  --card-color: rgba(18,30,50, 0.7);
  --text-color: #f5f5f5;
  --subtext-color: #aaaaaa;
- --success-color: #28a745;
+ --success-color: #66cc99;
  --warning-color: #ffc107;
  --error-color: #dc3545;
  --info-color: #17a2b8;
   --bs-border-color: #2e2e2e;
  --icon-color: #cccccc;
   // Vitals colors
-  --bp-color: #ff6666; /* Red */
-  --weight-color: #66cc99; /* Blue */
-  --bmi-color: #27b5d1; /* Green */
-  --height-color: #1c75bc; /* Purple */
-  --temp-color: #8c94b7; /* Orange */
-  --danger-color: #65161d;
-  --normal-color: #253d2f;
-  --low-color: #364160;
+  
   --logo:url('../images/logo-light.png');
   --login_bg:url(../images/login-bg.jpg);
+ 
+
   }
   
 
@@ -57,7 +52,7 @@
     --logo:url('../images/logo.png');
     --bs-nav-link-hover-color:var(--second-color);
 
- 
+
 
   }
 
@@ -118,6 +113,24 @@ $avatar-md:40px;
 $avatar-sm:30px;
 $avatar-round:50%;
 $card-header-height:50px;
+
+// Color Palette
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$danger-color: #dc3545;
+$ghost-color: transparent;
+$white: #fff;
+$black: #000;
+$gray-light: #f8f9fa;
+$border-color: #dee2e6;
+
+// Padding & Border
+$btn-padding: 0.5rem 1.25rem;
+$btn-radius: 6px;
+
+// Font
+$btn-font-size: 1rem;
+$btn-font-weight: 500;
 //mixins
 @mixin box-style{
   border:  var( --bs-border-width) var( --bs-border-color);

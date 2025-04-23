@@ -1,160 +1,133 @@
-// Button Container
-.buttons {
-    display: flex;
-    justify-content: flex-end;
-    color: var(--text-color);
+.action-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-// Buttons
+// 🔘 Base Button Styles
 .btn {
-    border: var(--bs-border-width) var(--bs-border-color);
-    font-size: 14px;
-    padding: $spacing-sm;
-    border-left: 0;
-    border-radius: 0;
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: capitalize;
-    gap: $spacing-sm;
-    outline: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 
-    span {
-        font-weight: 500;
-        color: var(--subtext-color);
-        text-transform: capitalize;
-        font-size: $font-size-xs;
-        @include mobile-view {
-            display: none;
-        }
-    }
+  // ✅ PRIMARY
+  &--primary {
+    background-color: #ffffff;
+    color: #434343;
 
- 
-    &:first-child {
-        border-radius: $round-sm 0 0 $round-sm;
-        border-left: var(--bs-border-width) var(--bs-border-color);
-    }
-
-    &:last-child {
-        border-radius: 0 $round-sm $round-sm 0 !important;
-    }
-    &:only-child {
-        border-radius: $round-sm !important;
-        border: var(--bs-border-width) var(--bs-border-color) !important;
-    }
-
-
-    &:hover,
-    &:focus {
-        background-color: var(--prim-color);
-        border-color: var(--bs-border-color);
-        box-shadow: none;
-        color: var(--subtext-color);
-        span {
-            color: white;
-        }
-        i {
-            color: white;
-        }
+    &:hover {
+      background-color: #0069d9;
+      color: #ffffff;
     }
 
     &:active {
-        border-color: var(--bs-border-color) !important;
-        border: none;
-    }
-   
-    &.btn-secondary {
-        background: var(--bg-color);
-        color: var(--text-color);
+      background-color: #005cbf;
     }
 
-    &.btn-primary {
-        background-color: var(--prim-color);
-        color: white;
+    &:disabled {
+      background-color: #a6c8ff;
+      color: #ffffff;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  // ✅ SECONDARY
+  &--secondary {
+    background-color: #f0f0f0;
+    color: #333;
+
+    &:hover {
+      background-color: #e0e0e0;
     }
 
-    &.no-border {
-        color: var(--second-color);
-        border: none;
-        font-size: $font-size-small;
-
-        &:hover {
-            background: none;
-            color: var(--text-color);
-        }
+    &:active {
+      background-color: #cfcfcf;
     }
-}
-.back-btn {
-    position: absolute;
-    z-index: 99;
-    top: $spacing-sm;
-    left: $spacing-sm;
-    border-radius: $round-md;
-}
-.no-bg {
+
+    &:disabled {
+      background-color: #e0e0e0;
+      color: #999;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  // ✅ DANGER
+  &--danger {
+    background-color: #ff4d4f;
+    color: #fff;
+
+    &:hover {
+      background-color: #ff7875;
+    }
+
+    &:active {
+      background-color: #d9363e;
+    }
+
+    &:disabled {
+      background-color: #ffc1c1;
+      color: #fff;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  // ✅ GHOST (outline-style)
+  &--ghost {
+    background-color: transparent;
+    color: #434343;
+    border: 1px solid #434343;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+
+    &:active {
+      background-color: #eeeeee;
+    }
+
+    &:disabled {
+      color: #999;
+      border-color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  // ✅ ICON ONLY
+  &--icon {
     background: none;
+    color: #66cc99;
+    padding: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:disabled {
+      color: #ccc;
+      background-color: transparent;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
 }
-// Tags
-.tag {
-    width: auto;
-    height: 40px;
-    position: relative;
-    color: white;
-    padding: 3px 5px;
-    border-radius: $round-sm 0 $round-sm 0;
-    text-transform: capitalize;
-    margin-top: $spacing-sm;
-    margin-right: $spacing-sm;
-    font-size: 12px;
-    width: 71px;
-    height: auto;
-
-    &::before {
-        content: "";
-        position: absolute;
-        right: -7px;
-        bottom: 0;
-        width: 0;
-        height: 0;
-    }
-
-    @each $tag, $color in (
-        success: var(--success-color),
-        pending: var(--warning-color),
-        info: var(--info-color),
-        danger: var(--error-color),
-        warning: var(--warning-color),
-        primary: var(--prim-color),
-        muted: var(--subtext-color),
-        secondary: var(--second-color),
-        dark: var(--text-color),
-        light: var(--bg-color),
-        default: var(--bg-color),
-        archived: var(--archived-color, var(--subtext-color)),
-        processing: var(--processing-color, var(--info-color)),
-        failed: var(--error-color),
-        queued: var(--info-color),
-        on-hold: var(--secondary-color),
-        suspended: var(--dark-color),
-        expired: var(--light-color),
-        rejected: var(--error-color),
-        approved: var(--success-color),
-        draft: var(--text-color, var(--subtext-color))
-    ) {
-        &.#{$tag} {
-            background: $color;
-            color: if(
-              $tag == light or $tag == default,
-              var(--subtext-color),
-              if($tag == dark, var(--bg-color), white)
-            );
-            font-size: $font-size-xs;
-            
-    
-            &::before {
-                border-left: 9px solid $color;
-            }
-        }
-    }
-}    

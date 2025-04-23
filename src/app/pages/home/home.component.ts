@@ -8,9 +8,9 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-import { HeaderComponent } from '../../components/header/header.component';
+
 import { ThemeService } from '../../theme.service';
-import { VideoPortalComponent } from "../../sections/video-portal/videoPortal.component";
+import { VideoPortalComponent } from "../video-portal/videoPortal.component";
 
 
 
@@ -18,7 +18,7 @@ import { VideoPortalComponent } from "../../sections/video-portal/videoPortal.co
   selector: 'app-home',
   standalone: true,
   imports: [
-    HeaderComponent,
+
     VideoPortalComponent
 ],
   templateUrl: './home.component.html',
