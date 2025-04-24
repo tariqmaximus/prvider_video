@@ -1,19 +1,19 @@
 <ul class="waiting-list card">
   <li *ngFor="let msg of waitingRoom; let i = index" class="card mb-3">
     <div class="d-flex justify-content-between align-items-center px-3 py-2" (click)="toggleChat(i)">
-      <div class="d-flex align-items-center gap-3">
+      <div class="d-flex align-items-center gap-3 readed">
         <div class="avatar-circle" [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }">
           {{ getInitials(msg.name) }}
         </div>
         <div>
-          <div class="fw-bold text-white">{{ msg.name }}</div>
+          <h6 class="text-white">{{ msg.name }}</h6>
           <div class="waiting-text" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
             {{ msg.time }}
           </div>
         </div>
       </div>
       <div class="text-white">
-        <div class="chevron" [class.rotate]="expandedIndex === i">&#9662;</div>
+        <i class="icon-angle-right"></i>
       </div>
     </div>
 
@@ -23,10 +23,10 @@
 
 
 
-        <div class="d-flex justify-content-center">
-          <app-button type="secondary" label="Start Audio call" icon="icon-audio"></app-button>
+        <div class="buttons mb-3">
+          <button type="button" class="btn success"><i class="icon-audio"></i>start audio call</button>
 
-          <app-button type="secondary" label="Start Audio call" icon="icon-audio"></app-button>
+          <button type="button" class="btn danger"><i class="icon-video"></i>start video call</button>
         </div>
 
         <app-chat></app-chat>

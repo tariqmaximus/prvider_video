@@ -27,7 +27,8 @@ $variants: (
 // Button Container
 .buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  gap: $spacing-sm;
   color: var(--text-color);
 }
 
@@ -35,8 +36,8 @@ $variants: (
 .btn {
   position: relative;
   height: auto;
-  padding: $spacing-sm $spacing-sm;
-  border-radius: 0;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 100px;
   font-size: 14px;
   text-transform: capitalize;
   display: flex;
@@ -51,25 +52,6 @@ $variants: (
     // Base border to match background
     border: 1px solid var(--bs-border-color);
   
-    &:first-child {
-      border-right: 1px solid var(--bs-border-color); // hides right border
-      border-radius: $round-sm 0 0 $round-sm !important;
-    }
-  
-    &:last-child {
-      border-left: 1px solid var(--bs-border-color); // hides left border
-      border-radius: 0 $round-sm $round-sm 0;
-    }
-  
-    &:only-child {
-      border: 1px solid var(--bs-border-color); // normal border when it's solo
-      border-radius: $round-sm !important ;
-    }
-  
-    // Inner buttons: hide the right border
-    &:not(:last-child) {
-      border-right: 1px solid var(--bs-border-color);
-    }
  
   span {
     font-weight: 500;

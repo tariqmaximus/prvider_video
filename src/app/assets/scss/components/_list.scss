@@ -58,10 +58,13 @@
 }
 .waiting-list {
     height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    padding: 0;
     li {
         border-bottom:  var( --bs-border-width) var( --bs-border-color);
       
-        margin-bottom: $spacing-sm;
+        margin-bottom: 0 !important;
         transition: 0.4s;
         min-height: inherit;
         box-sizing: border-box;

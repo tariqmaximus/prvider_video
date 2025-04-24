@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatComponent } from "../../models/chat/chat.component";
-import { ButtonsComponent } from "../../common/buttons/buttons.component";
+
 
 
 
@@ -25,12 +25,72 @@ interface Message {
 @Component({
   selector: 'app-waitingRoom',
   standalone: true,
-  imports: [CommonModule, ChatComponent, ButtonsComponent],
+  imports: [CommonModule, ChatComponent],
   templateUrl: './waitingRoom.component.html',
   styleUrl: './waitingRoom.component.css',
 })
 export class waitingRoomComponent {
   waitingRoom: Message[] = [
+    {
+      name: 'Josaf Mareen',
+      time: 'Waiting for 36 mints',
+      iconType: 'admin-male',
+      stage: 'unread',
+    },
+    {
+      name: 'Muhmmed Umer',
+      time: 'Waiting for 25 mints',
+      iconType: 'admin-male',
+      stage: 'pending',
+    },
+    {
+      name: 'Hashim Sulman',
+      time: 'Waiting for 20 mints',
+      iconType: 'admin-male',
+      stage: 'active',
+    },
+    {
+      name: 'Abdull Muqeet',
+      time: 'Waiting for 15 mints',
+      iconType: 'admin-male',
+      stage: 'read',
+    },
+    {
+      name: 'Jason Dewerd',
+      time: 'Waiting for 5 mints',
+      iconType: 'admin-male',
+      stage: 'read',
+    },
+    {
+      name: 'Josaf Mareen',
+      time: 'Waiting for 36 mints',
+      iconType: 'admin-male',
+      stage: 'unread',
+    },
+    {
+      name: 'Muhmmed Umer',
+      time: 'Waiting for 25 mints',
+      iconType: 'admin-male',
+      stage: 'pending',
+    },
+    {
+      name: 'Hashim Sulman',
+      time: 'Waiting for 20 mints',
+      iconType: 'admin-male',
+      stage: 'active',
+    },
+    {
+      name: 'Abdull Muqeet',
+      time: 'Waiting for 15 mints',
+      iconType: 'admin-male',
+      stage: 'read',
+    },
+    {
+      name: 'Jason Dewerd',
+      time: 'Waiting for 5 mints',
+      iconType: 'admin-male',
+      stage: 'read',
+    },
     {
       name: 'Josaf Mareen',
       time: 'Waiting for 36 mints',
