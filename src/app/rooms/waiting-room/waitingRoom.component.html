@@ -1,4 +1,4 @@
-<ul class="waiting-list card">
+<ul class=" ">
   <li *ngFor="let msg of waitingRoom; let i = index" class="card mb-3">
     <div class="d-flex justify-content-between align-items-center px-3 py-2" (click)="toggleChat(i)">
       <div class="d-flex align-items-center gap-3 readed">
@@ -6,10 +6,10 @@
           {{ getInitials(msg.name) }}
         </div>
         <div>
-          <h6 class="text-white">{{ msg.name }}</h6>
-          <div class="waiting-text" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
+          <h6 class="name">{{ msg.name }}</h6>
+          <p class="waiting-time" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
             {{ msg.time }}
-          </div>
+          </p>
         </div>
       </div>
       <div class="text-white">
@@ -25,10 +25,15 @@
 
         <div class="buttons mb-3">
           <button type="button" class="btn success"><i class="icon-audio"></i>start audio call</button>
-
           <button type="button" class="btn danger"><i class="icon-video"></i>start video call</button>
         </div>
-
+        <div class="buttons mb-3">
+          <button type="button" class="btn "><i class="icon-chat"></i></button>
+          <button type="button" class="btn "><i class="icon-info"></i></button>
+          <button type="button" class="btn "><i class="icon-sort"></i></button>
+          <button type="button" class="btn "><i class="icon-delete"></i></button>
+          <button type="button" class="btn "><i class="icon-history"></i></button>
+        </div>
         <app-chat></app-chat>
       </div>
     </div>

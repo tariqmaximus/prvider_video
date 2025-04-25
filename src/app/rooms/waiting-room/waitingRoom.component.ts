@@ -97,30 +97,7 @@ export class waitingRoomComponent {
       iconType: 'admin-male',
       stage: 'unread',
     },
-    {
-      name: 'Muhmmed Umer',
-      time: 'Waiting for 25 mints',
-      iconType: 'admin-male',
-      stage: 'pending',
-    },
-    {
-      name: 'Hashim Sulman',
-      time: 'Waiting for 20 mints',
-      iconType: 'admin-male',
-      stage: 'active',
-    },
-    {
-      name: 'Abdull Muqeet',
-      time: 'Waiting for 15 mints',
-      iconType: 'admin-male',
-      stage: 'read',
-    },
-    {
-      name: 'Jason Dewerd',
-      time: 'Waiting for 5 mints',
-      iconType: 'admin-male',
-      stage: 'read',
-    },
+
   ];
 
   selectedRoom: Message | null = null;
@@ -149,32 +126,33 @@ export class waitingRoomComponent {
   getStageColor(stage: string): string {
     switch (stage) {
       case 'unread':
-        return '#f67280'; // red
+        return '#f9a1ab'; // lighter red
       case 'read':
-        return '#57cc99'; // green
+        return '#a4e5c2'; // lighter green
       case 'pending':
-        return '#ffd166'; // yellow
+        return '#ffe89e'; // lighter yellow
       case 'active':
-        return '#118ab2'; // blue
+        return '#7ec4de'; // lighter blue
       default:
-        return '#888'; // fallback
+        return '#ccc'; // fallback
     }
   }
-
+  
   getStageTextColor(stage: string): string {
     switch (stage) {
       case 'unread':
-        return '#f67280';
+        return '#f9a1ab';
       case 'read':
-        return '#57cc99';
+        return '#a4e5c2';
       case 'pending':
-        return '#ffd166';
+        return '#ffe89e';
       case 'active':
-        return '#118ab2';
+        return '#7ec4de';
       default:
         return '#ccc';
     }
   }
+  
   onSubmit() {
     console.log('Primary button clicked');
   }
