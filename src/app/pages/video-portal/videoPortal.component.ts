@@ -12,4 +12,5 @@ import { DoctorRoomComponent } from "../../rooms/docter-room/doctorRoom.componen
 })
 export class VideoPortalComponent {
   selectedRoom: any = null; // You can define your selectedRoom logic based on your needs
+  
 }

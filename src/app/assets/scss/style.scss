@@ -134,3 +134,106 @@ p span {
     }
    
 
+    .doctor-room-container {
+        background-color: #4a5568;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        padding: 40px;
+        border-radius: 12px;
+        max-width: 600px;
+        margin: auto;
+      
+        .video-box {
+          background: #2d3748;
+          border-radius: 10px;
+          padding: 30px;
+          position: relative;
+          margin-bottom: 20px;
+      
+          .icon-controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+      
+            .icon-button {
+              background-color: white;
+              border: none;
+              margin-right: 10px;
+              padding: 10px;
+              border-radius: 6px;
+              cursor: pointer;
+      
+              &.mic::before {
+                content: "🎤";
+              }
+              &.cam::before {
+                content: "📷";
+              }
+            }
+          }
+      
+          .avatar {
+            font-size: 60px;
+            background: #a0aec0;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      
+        .test-button {
+          background-color: #2b6cb0;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 8px;
+          border: none;
+          margin-bottom: 20px;
+        }
+      
+        h2 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      
+        .description {
+          color: #cbd5e0;
+          margin-bottom: 20px;
+        }
+      
+        .link-section {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: wrap;
+      
+          input {
+            background-color: #1a202c;
+            border: none;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 250px;
+          }
+      
+          .copy, .dropdown {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+          }
+      
+     
+        }
+        .form-control {
+            width: 200px;
+        }
+        .form-select {
+            width: 100px;
+          }
+      }
+      

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: "Poppins";
 }
@@ -4103,6 +4104,96 @@ html {
   align-items: center;
   grid-template-columns: 100%;
   justify-content: center;
+}
+
+.doctor-room-container {
+  background-color: #4a5568;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: auto;
+}
+.doctor-room-container .video-box {
+  background: #2d3748;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.doctor-room-container .video-box .icon-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.doctor-room-container .video-box .icon-controls .icon-button {
+  background-color: white;
+  border: none;
+  margin-right: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.doctor-room-container .video-box .icon-controls .icon-button.mic::before {
+  content: "🎤";
+}
+.doctor-room-container .video-box .icon-controls .icon-button.cam::before {
+  content: "📷";
+}
+.doctor-room-container .video-box .avatar {
+  font-size: 60px;
+  background: #a0aec0;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.doctor-room-container .test-button {
+  background-color: #2b6cb0;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+}
+.doctor-room-container h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.doctor-room-container .description {
+  color: #cbd5e0;
+  margin-bottom: 20px;
+}
+.doctor-room-container .link-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.doctor-room-container .link-section input {
+  background-color: #1a202c;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 250px;
+}
+.doctor-room-container .link-section .copy, .doctor-room-container .link-section .dropdown {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.doctor-room-container .form-control {
+  width: 200px;
+}
+.doctor-room-container .form-select {
+  width: 100px;
 }
 
 /*# sourceMappingURL=style.css.map */

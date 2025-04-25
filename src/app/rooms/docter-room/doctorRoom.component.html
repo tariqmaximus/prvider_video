@@ -1,4 +1,4 @@
-<div class="waiting-room-container">
+<div class="doctor-room-container">
   <div class="video-box">
     <div class="icon-controls">
       <button class="icon-button icon-audio"></button>
@@ -14,9 +14,14 @@
   <h2>Welcome Dr. dewerd</h2>
   <p class="description">Share this link to invite a participant to your waiting room</p>
 
-  <div class="link-section">
-    <input type="text" [value]="'http://maximus.com/2343sdfsd'" readonly />
-    <button class="copy">Copy Link</button>
-    <button class="dropdown">Via Link &#x25BC;</button>
+  <div class="input-group mt-3">
+    <input type="text" class="form-control" [value]="'http://maximus.com/2343sdfsd'" readonly />
+    <button class="btn primary" (click)="copyLink()"><i class="icon-copy"></i></button>
+    <select class="form-select" (change)="shareLink($event)">
+      <option selected disabled>Via Link</option>
+      <option value="whatsapp">WhatsApp</option>
+      <option value="email">Email</option>
+      <option value="copy">Just Copy</option>
+    </select>
   </div>
 </div>
