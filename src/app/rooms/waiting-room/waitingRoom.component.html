@@ -53,9 +53,11 @@
           <a class="btn dark" [class.active]="activeTab === 'delete'" (click)="setActiveTab('delete')">
             <i class="icon-delete"></i>
           </a>
-          <a class="btn dark" [class.active]="activeTab === 'history'" (click)="setActiveTab('history')">
-            <i class="icon-history"></i>
-          </a>
+          <button 
+  class="btn dark" 
+  (click)="increaseWaitingTime(i)">
+ <i class="icon-history"></i>
+</button>
         </ul>
 
         <!-- Tab Content -->
@@ -72,9 +74,7 @@
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'delete' }" id="delete">
             <p>Delete confirmation or related content.</p>
           </div>
-          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'history' }" id="history">
-            <p>History details go here.</p>
-          </div>
+          
         </div>
       </div>
     </div>

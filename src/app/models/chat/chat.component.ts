@@ -1,8 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CardComponent } from '../../common/card/card.component';
-import { IconComponent } from '../../common/users/icon.component';
 
 interface Message {
   sender: string;
@@ -15,7 +13,7 @@ interface Message {
   standalone: true,
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css'],
-  imports: [CommonModule, FormsModule, IconComponent],
+  imports: [CommonModule, FormsModule],
 })
 export class ChatComponent implements OnChanges {
   @Input() message: any;

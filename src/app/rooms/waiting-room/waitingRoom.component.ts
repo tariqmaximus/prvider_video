@@ -17,27 +17,21 @@ interface Message {
 })
 export class WaitingRoomComponent {
   waitingRoom: Message[] = [
-    { name: 'Josaf Mareen', time: 'Waiting for 36 mints', stage: 'unread' },
-    { name: 'Muhmmed Umer', time: 'Waiting for 25 mints', stage: 'pending' },
-    { name: 'Hashim Sulman', time: 'Waiting for 20 mints', stage: 'active' },
-    { name: 'Abdull Muqeet', time: 'Waiting for 15 mints', stage: 'read' },
-    { name: 'Jason Dewerd', time: 'Waiting for 5 mints', stage: 'read' },
-    
+    { name: 'Josaf Mareen', time: 'Waiting for 36 mins', stage: 'unread' },
+    { name: 'Muhmmed Umer', time: 'Waiting for 25 mins', stage: 'pending' },
+    { name: 'Hashim Sulman', time: 'Waiting for 20 mins', stage: 'active' },
+    { name: 'Abdull Muqeet', time: 'Waiting for 15 mins', stage: 'read' },
+    { name: 'Jason Dewerd', time: 'Waiting for 5 mins', stage: 'read' },
   ];
 
   selectedRoom: Message | null = null;
-
-  // Track which index is expanded
   expandedIndex: number | null = null;
-
-  // Tabs
   activeTab: string = 'chat';
   selectedTabTitle: string = 'Chat';
 
   @Output() titleChange = new EventEmitter<string>();
 
-  // Tab titles (expand this if more tabs needed)
-  titles: { [key: string]: string } = {
+  titles: Record<string, string> = {
     chat: 'Chat',
     info: 'Info',
     sort: 'Sort',
@@ -45,49 +39,52 @@ export class WaitingRoomComponent {
     history: 'History',
   };
 
-  /** Select a patient card */
-  selectRoom(message: Message) {
+  selectRoom(message: Message): void {
     this.selectedRoom = message;
   }
 
-  /** Toggle card expansion */
   toggleChat(index: number): void {
     this.expandedIndex = this.expandedIndex === index ? null : index;
   }
 
-  /** Get initials from name */
   getInitials(name: string): string {
     return name
       .split(' ')
-      .map((n) => n.charAt(0))
+      .map(n => n.charAt(0))
       .join('')
       .toUpperCase();
   }
 
-  /** Return background color based on stage */
   getStageColor(stage: string): string {
-    switch (stage) {
-      case 'unread': return '#f9a1ab';
-      case 'read': return '#a4e5c2';
-      case 'pending': return '#ffe89e';
-      case 'active': return '#7ec4de';
-      default: return '#ccc';
-    }
+    const colors: Record<string, string> = {
+      unread: '#f9a1ab',
+      read: '#a4e5c2',
+      pending: '#ffe89e',
+      active: '#7ec4de',
+    };
+    return colors[stage] || '#ccc';
   }
 
-  /** Same color for stage text (can separate if needed) */
   getStageTextColor(stage: string): string {
     return this.getStageColor(stage);
   }
 
-  /** Called when switching tabs */
   setActiveTab(tab: string): void {
     this.activeTab = tab;
     this.selectedTabTitle = this.titles[tab] || tab;
     this.titleChange.emit(this.selectedTabTitle);
   }
 
-  /** For example actions */
+  increaseWaitingTime(index: number): void {
+    const msg = this.waitingRoom[index];
+    const match = msg.time.match(/(\d+)\s*mins?/);
+
+    if (match) {
+      const currentMinutes = parseInt(match[1], 10);
+      msg.time = `Waiting for ${currentMinutes + 5} mins`;
+    }
+  }
+
   onSubmit(): void {
     console.log('Primary button clicked');
   }
@@ -96,7 +93,6 @@ export class WaitingRoomComponent {
     console.log('Icon button clicked');
   }
 
-  /** Optional: Collapse card manually */
   backToList(): void {
     this.selectedRoom = null;
     this.expandedIndex = null;
