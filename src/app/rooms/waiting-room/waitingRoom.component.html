@@ -1,41 +1,84 @@
-<ul class=" ">
-  <li *ngFor="let msg of waitingRoom; let i = index" class="card mb-3">
-    <div class="d-flex justify-content-between align-items-center px-3 py-2" (click)="toggleChat(i)">
-      <div class="d-flex align-items-center gap-3 readed">
-        <div class="avatar-circle" [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }">
-          {{ getInitials(msg.name) }}
+<ul class="accordion" id="waitingRoomAccordion">
+  <li *ngFor="let msg of waitingRoom; let i = index" class="mb-3">
+    <h2 class="accordion-header" [id]="'heading' + i">
+      <button 
+        class="accordion-button d-flex justify-content-between align-items-center px-3 py-2" 
+        [class.collapsed]="expandedIndex !== i"
+        [attr.aria-expanded]="expandedIndex === i"
+        [attr.aria-controls]="'collapse' + i"
+        (click)="toggleChat(i)">
+        
+        <div class="d-flex align-items-center gap-3 readed">
+          <div class="avatar-circle" [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }">
+            {{ getInitials(msg.name) }}
+          </div>
+          <div>
+            <h6 class="name mb-0">{{ msg.name }}</h6>
+            <p class="waiting-time mb-0" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
+              {{ msg.time }}
+            </p>
+          </div>
         </div>
-        <div>
-          <h6 class="name">{{ msg.name }}</h6>
-          <p class="waiting-time" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
-            {{ msg.time }}
-          </p>
-        </div>
-      </div>
-      <div class="text-white">
-        <i class="icon-angle-right"></i>
-      </div>
-    </div>
 
-    <div class="accordion-collapse collapse" [ngClass]="{ show: expandedIndex === i }">
+        
+      </button>
+    </h2>
+
+    <div 
+      [id]="'collapse' + i"
+      class="accordion-collapse collapse" 
+      [class.show]="expandedIndex === i"
+      [attr.aria-labelledby]="'heading' + i"
+      data-bs-parent="#waitingRoomAccordion">
       <div class="accordion-body p-2">
-
-
-
-
-        <div class="buttons mb-3">
-          <button type="button" class="btn success"><i class="icon-audio"></i>start audio call</button>
-          <button type="button" class="btn danger"><i class="icon-video"></i>start video call</button>
+        <div class="buttons mb-3 d-flex gap-2 flex-wrap">
+          <button type="button" class="btn icon-success">
+            <i class="icon-audio-fill me-1"></i> Start Audio Call
+          </button>
+          <button type="button" class="btn icon-danger">
+            <i class="icon-video-fill me-1"></i> Start Video Call
+          </button>
         </div>
-        <div class="buttons mb-3">
-          <button type="button" class="btn "><i class="icon-chat"></i></button>
-          <button type="button" class="btn "><i class="icon-info"></i></button>
-          <button type="button" class="btn "><i class="icon-sort"></i></button>
-          <button type="button" class="btn "><i class="icon-delete"></i></button>
-          <button type="button" class="btn "><i class="icon-history"></i></button>
+
+        <ul class="buttons d-flex gap-2 flex-wrap">
+          <a class="btn dark" [class.active]="activeTab === 'chat'" (click)="setActiveTab('chat')">
+            <i class="icon-chat"></i>
+          </a>
+          <a class="btn dark" [class.active]="activeTab === 'info'" (click)="setActiveTab('info')">
+            <i class="icon-info"></i>
+          </a>
+          <a class="btn dark" [class.active]="activeTab === 'sort'" (click)="setActiveTab('sort')">
+            <i class="icon-sort"></i>
+          </a>
+          <a class="btn dark" [class.active]="activeTab === 'delete'" (click)="setActiveTab('delete')">
+            <i class="icon-delete"></i>
+          </a>
+          <a class="btn dark" [class.active]="activeTab === 'history'" (click)="setActiveTab('history')">
+            <i class="icon-history"></i>
+          </a>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content main-container">
+          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'chat' }" id="chat">
+            <app-chat></app-chat>
+          </div>
+          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'info' }" id="info">
+            <p>Info content goes here.</p>
+          </div>
+          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'sort' }" id="sort">
+            <p>Sort options or content here.</p>
+          </div>
+          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'delete' }" id="delete">
+            <p>Delete confirmation or related content.</p>
+          </div>
+          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'history' }" id="history">
+            <p>History details go here.</p>
+          </div>
         </div>
-        <app-chat></app-chat>
       </div>
     </div>
   </li>
 </ul>
+
+

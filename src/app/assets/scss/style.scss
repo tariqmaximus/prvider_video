@@ -3,12 +3,12 @@
 @import 'variables';
 @import 'global';
 @import 'icons';
-@import 'sidebar';
 @import 'header';
 //components
 @import 'components/print-container';
 @import 'components/list';
 @import 'components/buttons';
+@import 'components/tag';
 @import'components/form';
 @import 'components/table';
 @import 'components/calendar.scss';
@@ -19,8 +19,6 @@
 @import 'shared/vitals';
 @import 'shared/card';
 @import 'shared/modal';
-
-
 @import '_main-stuctue';
 
 img {

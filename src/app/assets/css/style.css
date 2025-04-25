@@ -26,6 +26,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --name-color:#a9bbd8;
   --logo:url("../images/logo-light.png");
   --login_bg:url(../images/login-bg.jpg);
+  --arrow-img: url("../images/arrow.png") !important;
 }
 
 body {
@@ -1953,143 +1954,6 @@ p span {
   content: "\ea0e";
 }
 
-.sidebar {
-  width: 220px;
-  height: 100%;
-  min-height: inherit !important;
-  box-sizing: border-box;
-  padding: 20px;
-}
-.sidebar * {
-  transition: none !important;
-}
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-}
-.sidebar ul li {
-  width: 100%;
-}
-.sidebar ul li a {
-  text-decoration: none;
-  color: var(--text-color);
-  border-radius: 24px;
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 1em;
-  gap: 8px;
-  transition: 0.4s !important;
-}
-@media (max-width: 768px) {
-  .sidebar ul li a {
-    padding: 16px;
-    font-size: 1.4em;
-    border-radius: 5px;
-  }
-}
-.sidebar ul li a i {
-  color: var(--icon-color);
-}
-.sidebar ul li a:hover {
-  color: var(--second-color);
-}
-.sidebar ul li a.active {
-  background-color: var(--prim-color);
-  color: white;
-}
-.sidebar ul li a.active i {
-  color: white;
-}
-
-.pagetitle {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .pagetitle {
-    font-size: 1.2em;
-  }
-  .sidebar.card {
-    background: none !important;
-    border: none !important;
-    padding: 0;
-    justify-content: flex-end;
-  }
-  .sidebar {
-    position: fixed !important;
-    width: 100%;
-    height: 70px;
-    justify-content: center;
-    z-index: 9999;
-    bottom: 0px;
-    border-radius: 0 !important;
-    padding: 8px;
-    left: 0;
-    z-index: 2;
-    margin-bottom: 0 !important;
-  }
-  .sidebar ul {
-    align-items: center;
-    gap: 0px;
-  }
-  .sidebar ul li {
-    width: auto;
-    flex: 1;
-    margin: 0;
-    padding: 0;
-  }
-  .sidebar ul li span {
-    display: none;
-  }
-  .sidebar ul li a {
-    align-items: center;
-    justify-content: center;
-    background-color: var(--card-color);
-    border: 0 !important;
-    border-radius: 0;
-    padding: 8px;
-  }
-  .sidebar ul li a i {
-    color: var(--text-colorcolor);
-    border: 2px solid var(--prime-color);
-    padding: 8px;
-  }
-  .sidebar ul li a.active {
-    background-color: var(--card-color);
-  }
-  .sidebar ul li a.active i {
-    color: var(--second-color);
-    border-bottom: 2px solid var(--second-color);
-    padding: 8px;
-  }
-  main {
-    padding-left: 0 !important;
-    padding-bottom: 33px !important;
-  }
-}
-.close-menu .sidebar {
-  width: 80px;
-}
-.close-menu .sidebar .logo {
-  width: 50px;
-  height: 50px;
-  background-size: 50px;
-}
-.close-menu .sidebar ul li a {
-  justify-content: center;
-}
-.close-menu .sidebar ul li a i {
-  font-size: 24px;
-}
-.close-menu .sidebar ul li a span {
-  display: none;
-}
-
 .header {
   display: block;
   justify-content: space-between;
@@ -2293,6 +2157,16 @@ table th {
   overflow-y: scroll;
   padding: 16px;
 }
+.waiting-list .accordion-button {
+  background: none !important;
+  outline: none;
+}
+.waiting-list .accordion-button:focus {
+  box-shadow: none;
+}
+.waiting-list .accordion-button:after {
+  background-image: var(--arrow-img) !important;
+}
 .waiting-list .name {
   font-size: 14px;
   color: var(--name-color);
@@ -2304,6 +2178,8 @@ table th {
   padding: 0;
 }
 .waiting-list li {
+  background-color: var(--bg-color);
+  border-radius: 15px;
   margin-bottom: 8px !important;
   padding: 8px;
   transition: 0.4s;
@@ -2364,6 +2240,8 @@ table th {
 .btn {
   position: relative;
   height: auto;
+  background: white;
+  font-family: "DM Sans", sans-serif !important;
   padding: 8px 16px;
   border-radius: 100px;
   font-size: 14px;
@@ -2375,7 +2253,9 @@ table th {
   outline: none;
   border: 1px solid var(--bs-border-color);
   color: var(--text-color);
-  border: 1px solid var(--bs-border-color);
+}
+.btn:focus-visible {
+  border: inherit !important;
 }
 .btn span {
   font-weight: 500;
@@ -2509,12 +2389,12 @@ table th {
   color: var(--subtext-color);
 }
 .btn.dark {
-  background: var(--text-color);
+  background: var(--prim-color, var(--text-color));
   color: var(--bg-color);
   font-size: 12px;
 }
 .btn.dark::before {
-  border-left: 9px solid var(--text-color);
+  border-left: 9px solid var(--prim-color, var(--text-color));
 }
 .btn.dark i {
   color: white;
@@ -2704,6 +2584,402 @@ table th {
 .btn.draft span {
   color: var(--subtext-color);
 }
+.btn.icon-success {
+  border: none;
+  color: var(--success-color);
+}
+.btn.icon-success i,
+.btn.icon-success span {
+  color: var(--success-color);
+}
+.btn.icon-success:hover i,
+.btn.icon-success:hover span {
+  color: var(--success-color);
+}
+.btn.icon-pending {
+  border: none;
+  color: var(--warning-color);
+}
+.btn.icon-pending i,
+.btn.icon-pending span {
+  color: var(--warning-color);
+}
+.btn.icon-pending:hover i,
+.btn.icon-pending:hover span {
+  color: var(--warning-color);
+}
+.btn.icon-info {
+  border: none;
+  color: var(--info-color);
+}
+.btn.icon-info i,
+.btn.icon-info span {
+  color: var(--info-color);
+}
+.btn.icon-info:hover i,
+.btn.icon-info:hover span {
+  color: var(--info-color);
+}
+.btn.icon-danger {
+  border: none;
+  color: var(--error-color);
+}
+.btn.icon-danger i,
+.btn.icon-danger span {
+  color: var(--error-color);
+}
+.btn.icon-danger:hover i,
+.btn.icon-danger:hover span {
+  color: var(--error-color);
+}
+.btn.icon-warning {
+  border: none;
+  color: var(--warning-color);
+}
+.btn.icon-warning i,
+.btn.icon-warning span {
+  color: var(--warning-color);
+}
+.btn.icon-warning:hover i,
+.btn.icon-warning:hover span {
+  color: var(--warning-color);
+}
+.btn.icon-primary {
+  border: none;
+  color: var(--prim-color);
+}
+.btn.icon-primary i,
+.btn.icon-primary span {
+  color: var(--prim-color);
+}
+.btn.icon-primary:hover i,
+.btn.icon-primary:hover span {
+  color: var(--prim-color);
+}
+.btn.icon-muted {
+  border: none;
+  color: var(--subtext-color);
+}
+.btn.icon-muted i,
+.btn.icon-muted span {
+  color: var(--subtext-color);
+}
+.btn.icon-muted:hover i,
+.btn.icon-muted:hover span {
+  color: var(--subtext-color);
+}
+.btn.icon-secondary {
+  border: none;
+  color: var(--second-color);
+}
+.btn.icon-secondary i,
+.btn.icon-secondary span {
+  color: var(--second-color);
+}
+.btn.icon-secondary:hover i,
+.btn.icon-secondary:hover span {
+  color: var(--second-color);
+}
+.btn.icon-dark {
+  border: none;
+  color: var(--prim-color, var(--text-color));
+}
+.btn.icon-dark i,
+.btn.icon-dark span {
+  color: var(--prim-color, var(--text-color));
+}
+.btn.icon-dark:hover i,
+.btn.icon-dark:hover span {
+  color: var(--prim-color, var(--text-color));
+}
+.btn.icon-light {
+  border: none;
+  color: var(--bg-color);
+}
+.btn.icon-light i,
+.btn.icon-light span {
+  color: var(--bg-color);
+}
+.btn.icon-light:hover i,
+.btn.icon-light:hover span {
+  color: var(--bg-color);
+}
+.btn.icon-default {
+  border: none;
+  color: var(--bg-color);
+}
+.btn.icon-default i,
+.btn.icon-default span {
+  color: var(--bg-color);
+}
+.btn.icon-default:hover i,
+.btn.icon-default:hover span {
+  color: var(--bg-color);
+}
+.btn.icon-archived {
+  border: none;
+  color: var(--archived-color, var(--subtext-color));
+}
+.btn.icon-archived i,
+.btn.icon-archived span {
+  color: var(--archived-color, var(--subtext-color));
+}
+.btn.icon-archived:hover i,
+.btn.icon-archived:hover span {
+  color: var(--archived-color, var(--subtext-color));
+}
+.btn.icon-processing {
+  border: none;
+  color: var(--processing-color, var(--info-color));
+}
+.btn.icon-processing i,
+.btn.icon-processing span {
+  color: var(--processing-color, var(--info-color));
+}
+.btn.icon-processing:hover i,
+.btn.icon-processing:hover span {
+  color: var(--processing-color, var(--info-color));
+}
+.btn.icon-failed {
+  border: none;
+  color: var(--error-color);
+}
+.btn.icon-failed i,
+.btn.icon-failed span {
+  color: var(--error-color);
+}
+.btn.icon-failed:hover i,
+.btn.icon-failed:hover span {
+  color: var(--error-color);
+}
+.btn.icon-queued {
+  border: none;
+  color: var(--info-color);
+}
+.btn.icon-queued i,
+.btn.icon-queued span {
+  color: var(--info-color);
+}
+.btn.icon-queued:hover i,
+.btn.icon-queued:hover span {
+  color: var(--info-color);
+}
+.btn.icon-on-hold {
+  border: none;
+  color: var(--secondary-color);
+}
+.btn.icon-on-hold i,
+.btn.icon-on-hold span {
+  color: var(--secondary-color);
+}
+.btn.icon-on-hold:hover i,
+.btn.icon-on-hold:hover span {
+  color: var(--secondary-color);
+}
+.btn.icon-suspended {
+  border: none;
+  color: var(--dark-color);
+}
+.btn.icon-suspended i,
+.btn.icon-suspended span {
+  color: var(--dark-color);
+}
+.btn.icon-suspended:hover i,
+.btn.icon-suspended:hover span {
+  color: var(--dark-color);
+}
+.btn.icon-expired {
+  border: none;
+  color: var(--light-color);
+}
+.btn.icon-expired i,
+.btn.icon-expired span {
+  color: var(--light-color);
+}
+.btn.icon-expired:hover i,
+.btn.icon-expired:hover span {
+  color: var(--light-color);
+}
+.btn.icon-rejected {
+  border: none;
+  color: var(--error-color);
+}
+.btn.icon-rejected i,
+.btn.icon-rejected span {
+  color: var(--error-color);
+}
+.btn.icon-rejected:hover i,
+.btn.icon-rejected:hover span {
+  color: var(--error-color);
+}
+.btn.icon-approved {
+  border: none;
+  color: var(--success-color);
+}
+.btn.icon-approved i,
+.btn.icon-approved span {
+  color: var(--success-color);
+}
+.btn.icon-approved:hover i,
+.btn.icon-approved:hover span {
+  color: var(--success-color);
+}
+.btn.icon-active {
+  border: none;
+  color: var(--prim-color);
+}
+.btn.icon-active i,
+.btn.icon-active span {
+  color: var(--prim-color);
+}
+.btn.icon-active:hover i,
+.btn.icon-active:hover span {
+  color: var(--prim-color);
+}
+.btn.icon-draft {
+  border: none;
+  color: var(--text-color, var(--subtext-color));
+}
+.btn.icon-draft i,
+.btn.icon-draft span {
+  color: var(--text-color, var(--subtext-color));
+}
+.btn.icon-draft:hover i,
+.btn.icon-draft:hover span {
+  color: var(--text-color, var(--subtext-color));
+}
+.btn.success.active, .btn.icon-success.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.success.active i, .btn.icon-success.active i {
+  color: var(--success-color);
+}
+.btn.pending.active, .btn.icon-pending.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.pending.active i, .btn.icon-pending.active i {
+  color: var(--success-color);
+}
+.btn.info.active, .btn.icon-info.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.info.active i, .btn.icon-info.active i {
+  color: var(--success-color);
+}
+.btn.danger.active, .btn.icon-danger.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.danger.active i, .btn.icon-danger.active i {
+  color: var(--success-color);
+}
+.btn.warning.active, .btn.icon-warning.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.warning.active i, .btn.icon-warning.active i {
+  color: var(--success-color);
+}
+.btn.primary.active, .btn.icon-primary.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.primary.active i, .btn.icon-primary.active i {
+  color: var(--success-color);
+}
+.btn.muted.active, .btn.icon-muted.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.muted.active i, .btn.icon-muted.active i {
+  color: var(--success-color);
+}
+.btn.secondary.active, .btn.icon-secondary.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.secondary.active i, .btn.icon-secondary.active i {
+  color: var(--success-color);
+}
+.btn.dark.active, .btn.icon-dark.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.dark.active i, .btn.icon-dark.active i {
+  color: var(--success-color);
+}
+.btn.light.active, .btn.icon-light.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.light.active i, .btn.icon-light.active i {
+  color: var(--success-color);
+}
+.btn.default.active, .btn.icon-default.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.default.active i, .btn.icon-default.active i {
+  color: var(--success-color);
+}
+.btn.archived.active, .btn.icon-archived.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.archived.active i, .btn.icon-archived.active i {
+  color: var(--success-color);
+}
+.btn.processing.active, .btn.icon-processing.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.processing.active i, .btn.icon-processing.active i {
+  color: var(--success-color);
+}
+.btn.failed.active, .btn.icon-failed.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.failed.active i, .btn.icon-failed.active i {
+  color: var(--success-color);
+}
+.btn.queued.active, .btn.icon-queued.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.queued.active i, .btn.icon-queued.active i {
+  color: var(--success-color);
+}
+.btn.on-hold.active, .btn.icon-on-hold.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.on-hold.active i, .btn.icon-on-hold.active i {
+  color: var(--success-color);
+}
+.btn.suspended.active, .btn.icon-suspended.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.suspended.active i, .btn.icon-suspended.active i {
+  color: var(--success-color);
+}
+.btn.expired.active, .btn.icon-expired.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.expired.active i, .btn.icon-expired.active i {
+  color: var(--success-color);
+}
+.btn.rejected.active, .btn.icon-rejected.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.rejected.active i, .btn.icon-rejected.active i {
+  color: var(--success-color);
+}
+.btn.approved.active, .btn.icon-approved.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.approved.active i, .btn.icon-approved.active i {
+  color: var(--success-color);
+}
+.btn.active.active, .btn.icon-active.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.active.active i, .btn.icon-active.active i {
+  color: var(--success-color);
+}
+.btn.draft.active, .btn.icon-draft.active {
+  border: 1px solid var(--bs-border-color);
+}
+.btn.draft.active i, .btn.icon-draft.active i {
+  color: var(--success-color);
+}
 .btn.no-border {
   color: var(--second-color);
   background: none;
@@ -2811,12 +3087,12 @@ table th {
   border-left: 9px solid var(--second-color);
 }
 .tag.dark {
-  background: var(--text-color);
+  background: var(--prim-color, var(--text-color));
   color: var(--bg-color);
   font-size: 12px;
 }
 .tag.dark::before {
-  border-left: 9px solid var(--text-color);
+  border-left: 9px solid var(--prim-color, var(--text-color));
 }
 .tag.light {
   background: var(--bg-color);

@@ -1,4 +1,3 @@
-// Shared Variant Map
 $variants: (
   success: var(--success-color),
   pending: var(--warning-color),
@@ -8,7 +7,7 @@ $variants: (
   primary: var(--prim-color), 
   muted: var(--subtext-color),
   secondary: var(--second-color),
-  dark: var(--text-color),
+  dark: var(--prim-color, var(--text-color)),
   light: var(--bg-color),
   default: var(--bg-color),
   archived: var(--archived-color, var(--subtext-color)),
@@ -21,7 +20,8 @@ $variants: (
   rejected: var(--error-color),
   approved: var(--success-color),
   active: var(--prim-color),
-  draft: var(--text-color, var(--subtext-color))
+  draft: var(--text-color, var(--subtext-color)),
+  
 );
 
 // Button Container
@@ -36,6 +36,8 @@ $variants: (
 .btn {
   position: relative;
   height: auto;
+  background: white;
+  font-family: 'DM Sans', sans-serif !important;
   padding: $spacing-sm $spacing-md;
   border-radius: 100px;
   font-size: 14px;
@@ -47,12 +49,9 @@ $variants: (
   outline: none;
   border: 1px solid var(--bs-border-color);
   color: var(--text-color);
-
-
-    // Base border to match background
-    border: 1px solid var(--bs-border-color);
-  
- 
+  &:focus-visible {
+    border: inherit !important;
+  }
   span {
     font-weight: 500;
     text-transform: capitalize;
@@ -73,9 +72,7 @@ $variants: (
     height: 0;
   }
 
-
-
-  // Reused Variant Loop
+  // Filled Variants
   @each $name, $color in $variants {
     &.#{$name} {
       background: $color;
@@ -84,13 +81,13 @@ $variants: (
         var(--subtext-color),
         if($name == dark, var(--bg-color), white)
       );
-  
+
       font-size: $font-size-xs;
-  
+
       &::before {
         border-left: 9px solid $color;
       }
-  
+
       i {
         color: if(
           $name == light,
@@ -98,7 +95,7 @@ $variants: (
           if($name == dark, white, inherit)
         );
       }
-  
+
       span {
         color: if(
           $name == light,
@@ -108,8 +105,40 @@ $variants: (
       }
     }
   }
-  
 
+  // Icon Variants
+  @each $name, $color in $variants {
+    &.icon-#{$name} {
+      border: none;
+      color: $color;
+
+      i,
+      span {
+        color: $color;
+      }
+
+      &:hover {
+        i,
+        span {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  // Shared Active State (for all variants)
+  @each $name, $color in $variants {
+    &.#{$name}.active,
+    &.icon-#{$name}.active {
+      border: 1px solid var(--bs-border-color);
+
+      i {
+        color: var(--success-color);
+      }
+    }
+  }
+
+  // No Border Utility
   &.no-border {
     color: var(--second-color);
     background: none;
@@ -134,43 +163,4 @@ $variants: (
 // No Background Utility
 .no-bg {
   background: none;
-}
-
-// Tags
-.tag {
-  width: auto;
-  height: auto;
-  position: relative;
-  color: white;
-  padding: 3px 5px;
-  border-radius: $round-sm 0 $round-sm 0;
-  text-transform: capitalize;
-  margin-top: $spacing-sm;
-  margin-right: $spacing-sm;
-  font-size: 12px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    right: -7px;
-    bottom: 0;
-    width: 0;
-    height: 0;
-  }
-
-  @each $name, $color in $variants {
-    &.#{$name} {
-      background: $color;
-      color: if(
-        $name == light or $name == default,
-        var(--subtext-color),
-        if($name == dark, var(--bg-color), white)
-      );
-      font-size: $font-size-xs;
-
-      &::before {
-        border-left: 9px solid $color;
-      }
-    }
-  }
 }

@@ -19,7 +19,7 @@
   --name-color:#a9bbd8;
   --logo:url('../images/logo-light.png');
   --login_bg:url(../images/login-bg.jpg);
- 
+  --arrow-img: url('../images/arrow.png') !important;
 
   }
   
@@ -33,6 +33,7 @@
   }
 
 
+  
 
 // Typography
 $font-family-primary: 'Arial, sans-serif'; // Main font family
