@@ -1,18 +1,19 @@
 <div class="doctor-room-container">
-
-    <div class="video-box">
-      <div class="icon-controls">
-        <button class=" btn"><i class="icon-audio"></i></button>
-        <button class=" btn"><i class="icon-video"></i></button>
-      </div>
-      <div class="avatar">
-        <i class="icon icon-admin"></i>
-      </div>
+  <div class="video-box">
+    <div class="icon-controls">
+      <button class="btn" (click)="toggleAudio()">
+        <i class="icon" [ngClass]="isAudioOn ? 'icon-mute-fill' : 'icon-audio'"></i>
+      </button>
+      <button class="btn" (click)="toggleVideo()">
+        <i class="icon" [ngClass]="isVideoOn ? 'icon-video-off-fill' : 'icon-video'"></i>
+      </button>
     </div>
-  
-    <button class="btn secondary">Test Audio Video</button>
-  
-   
-  
-  
+    <div class="avatar">
+      <i class="icon icon-admin"></i>
+    </div>
   </div>
+
+  <button class="btn secondary" (click)="testAudioVideo()" [disabled]="testInProgress">
+    {{ testInProgress ? 'Testing...' : 'Test Audio Video' }}
+  </button>
+</div>

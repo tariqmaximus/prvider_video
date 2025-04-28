@@ -61,6 +61,12 @@
 .icon-video-fill:before {
   content: "\e905";
 }
+.icon-video-off:before {
+  content: "\e909";
+}
+.icon-video-off-fill:before {
+  content: "\e90e";
+}
 .icon-video:before {
   content: "\e90d";
 }
@@ -72,6 +78,9 @@
 }
 .icon-audio-fill:before {
   content: "\e910";
+}
+.icon-mute-fill:before {
+  content: "\e91c";
 }
 .icon-back:before {
   content: "\ea6d";

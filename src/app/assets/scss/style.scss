@@ -106,7 +106,12 @@ html {
             top: 10px;
             display: flex;
             left: 10px;
-      
+      i.icon-mute-fill {
+        color: var(--error-color);
+      }
+      i.icon-video-off-fill {
+        color: var(--error-color);
+      }
        
           }
       

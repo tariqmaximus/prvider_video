@@ -218,6 +218,14 @@ p span {
   content: "\e905";
 }
 
+.icon-video-off:before {
+  content: "\e909";
+}
+
+.icon-video-off-fill:before {
+  content: "\e90e";
+}
+
 .icon-video:before {
   content: "\e90d";
 }
@@ -232,6 +240,10 @@ p span {
 
 .icon-audio-fill:before {
   content: "\e910";
+}
+
+.icon-mute-fill:before {
+  content: "\e91c";
 }
 
 .icon-back:before {
@@ -3229,6 +3241,12 @@ html {
   top: 10px;
   display: flex;
   left: 10px;
+}
+.doctor-room-container .video-box .icon-controls i.icon-mute-fill {
+  color: var(--error-color);
+}
+.doctor-room-container .video-box .icon-controls i.icon-video-off-fill {
+  color: var(--error-color);
 }
 .doctor-room-container .video-box .avatar {
   font-size: 60px;
