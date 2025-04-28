@@ -19,21 +19,12 @@ export class WaitingRoomComponent {
   patients: any[] = []; // This would normally come from a service or API
   patientCount: number = 0;
 
-  ngOnInit(): void {
-    // Example: you might load patients from a service
-    this.patients = [
-      { name: 'John Doe' },
-      { name: 'Jane Smith' },
-      { name: 'Alice Johnson' }
-    ];
-
-    this.calculatePatientCount();
-  }
-
-  calculatePatientCount(): void {
-    this.patientCount = this.patients.length;
-  }
   waitingRoom: Message[] = [
+    { name: 'Josaf Mareen', time: 'Waiting for 36 mins', stage: 'unread' },
+    { name: 'Muhmmed Umer', time: 'Waiting for 25 mins', stage: 'pending' },
+    { name: 'Hashim Sulman', time: 'Waiting for 20 mins', stage: 'active' },
+    { name: 'Abdull Muqeet', time: 'Waiting for 15 mins', stage: 'read' },
+    { name: 'Jason Dewerd', time: 'Waiting for 5 mins', stage: 'read' },
     { name: 'Josaf Mareen', time: 'Waiting for 36 mins', stage: 'unread' },
     { name: 'Muhmmed Umer', time: 'Waiting for 25 mins', stage: 'pending' },
     { name: 'Hashim Sulman', time: 'Waiting for 20 mins', stage: 'active' },
@@ -55,6 +46,33 @@ export class WaitingRoomComponent {
     delete: 'Delete',
     history: 'History',
   };
+
+  ngOnInit(): void {
+    this.patients = [
+      { name: 'John Doe' },
+      { name: 'Jane Smith' },
+      { name: 'Alice Johnson' }
+    ];
+    this.calculatePatientCount();
+    this.sortWaitingRoom();
+  }
+
+  calculatePatientCount(): void {
+    this.patientCount = this.patients.length;
+  }
+
+  sortWaitingRoom(): void {
+    this.waitingRoom.sort((a, b) => {
+      const minutesA = this.extractMinutes(a.time);
+      const minutesB = this.extractMinutes(b.time);
+      return minutesB - minutesA;
+    });
+  }
+
+  extractMinutes(timeString: string): number {
+    const match = timeString.match(/(\d+)\s*mins?/);
+    return match ? parseInt(match[1], 10) : 0;
+  }
 
   selectRoom(message: Message): void {
     this.selectedRoom = message;
@@ -99,6 +117,7 @@ export class WaitingRoomComponent {
     if (match) {
       const currentMinutes = parseInt(match[1], 10);
       msg.time = `Waiting for ${currentMinutes + 5} mins`;
+      this.sortWaitingRoom();
     }
   }
 
