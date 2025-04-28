@@ -22,10 +22,17 @@ box-sizing: border-box;
     overflow-y: auto;
     @include mobile-view {
         max-height: inherit;
-        margin-top: $header-height-mobile;
+        
     }
   
     
+}
+.dr-room {
+    height: 100%;
+    @include mobile-view {
+       background: none !important;
+       
+    }
 }
 .content-panel {
     padding: 0 !important;

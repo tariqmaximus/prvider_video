@@ -1,12 +1,13 @@
+<app-header (toggleWaiting)="toggleWaitingList()"></app-header>
 <div class="row h-100">
   <!-- Waiting Room List -->
-  <div class="col-md-3 waiting-list card ">
+  <div *ngIf="waitingListVisible" class="col-md-3 waiting-list card ">
     <app-waiting-room></app-waiting-room>
   </div>
 
   <!-- Chat View -->
   <div class="col-md-9">
-    <div class="card h-100">
+    <div class="card  dr-room " id="dr-room">
       <ng-container *ngIf="selectedRoom; else noRoom">
         <!-- Room details/chat goes here when a room is selected -->
        

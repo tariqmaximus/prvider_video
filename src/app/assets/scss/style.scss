@@ -5,20 +5,15 @@
 @import 'icons';
 @import 'header';
 //components
-@import 'components/print-container';
+
 @import 'components/list';
 @import 'components/buttons';
-@import 'components/tag';
-@import'components/form';
-@import 'components/table';
-@import 'components/calendar.scss';
-@import 'components/dropdown.scss';
+
 
 // shares
-@import 'shared/profile';
-@import 'shared/vitals';
+
 @import 'shared/card';
-@import 'shared/modal';
+
 @import '_main-stuctue';
 
 img {

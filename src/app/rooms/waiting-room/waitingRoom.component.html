@@ -19,8 +19,6 @@
             </p>
           </div>
         </div>
-
-        
       </button>
     </h2>
 
@@ -41,22 +39,22 @@
         </div>
 
         <ul class="buttons d-flex gap-2 flex-wrap">
-          <a class="btn dark" [class.active]="activeTab === 'chat'" (click)="setActiveTab('chat')">
+          <button type="button" title="chat" class="btn dark"  [class.active]="activeTab === 'chat'" (click)="setActiveTab('chat')">
             <i class="icon-chat"></i>
-          </a>
-          <a class="btn dark" [class.active]="activeTab === 'info'" (click)="setActiveTab('info')">
+          </button>
+          <button  type="button" title="more info" class="btn dark" [class.active]="activeTab === 'info'" (click)="setActiveTab('info')">
             <i class="icon-info"></i>
-          </a>
-          <a class="btn dark" [class.active]="activeTab === 'sort'" (click)="setActiveTab('sort')">
+          </button>
+          <button  type="button" title="Transfer Patient" class="btn dark" [class.active]="activeTab === 'sort'" (click)="setActiveTab('sort')">
             <i class="icon-sort"></i>
-          </a>
-          <a class="btn dark" [class.active]="activeTab === 'delete'" (click)="setActiveTab('delete')">
+          </button>
+          <button  type="button" title="Delete" class="btn dark" [class.active]="activeTab === 'delete'" (click)="setActiveTab('delete')">
             <i class="icon-delete"></i>
-          </a>
+          </button>
           <button 
-  class="btn dark" 
+  class="btn dark"  title="add 10 minuts"
   (click)="increaseWaitingTime(i)">
- <i class="icon-history"></i>
+ <i class="icon-history"></i><span>5.0 mint</span>
 </button>
         </ul>
 

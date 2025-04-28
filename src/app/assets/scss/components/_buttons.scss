@@ -7,7 +7,7 @@ $variants: (
   primary: var(--prim-color), 
   muted: var(--subtext-color),
   secondary: var(--second-color),
-  dark: var(--prim-color, var(--text-color)),
+  dark: var(--prim-color),
   light: var(--bg-color),
   default: var(--bg-color),
   archived: var(--archived-color, var(--subtext-color)),
@@ -79,7 +79,7 @@ $variants: (
       color: if(
         $name == light or $name == default,
         var(--subtext-color),
-        if($name == dark, var(--bg-color), white)
+        if($name == dark, white, white)
       );
 
       font-size: $font-size-xs;
