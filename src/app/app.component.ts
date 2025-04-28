@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { providerPortalComponent } from "./pages/provider-portal/provider-portal.component";
-import { PatientPortalComponent } from "./pages/patient-portal/patient-portal.component";
+import { providerPortalComponent } from "./pages/portals/provider-portal/provider-portal.component";
+import { PatientPortalComponent } from "./pages/portals/patient-portal/patient-portal.component";
 
 
 
@@ -13,8 +13,8 @@ import { PatientPortalComponent } from "./pages/patient-portal/patient-portal.co
 })
 export class AppComponent {
   routes = {
-    providerPortal: { label: 'provider', link: '/' },
-    patient: { label: 'Login', link: '/login' },
+    providerPortalComponent: { label: 'provider', link: '/' },
+    PatientPortalComponent: { label: 'Login', link: '/patient' },
   
   };
 

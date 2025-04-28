@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
-import { providerPortalComponent } from './pages/provider-portal/provider-portal.component';
+import { providerPortalComponent } from './pages/portals/provider-portal/provider-portal.component';
+import { PatientPortalComponent } from './pages/portals/patient-portal/patient-portal.component';
 
 
 export const routes: Routes = [
   { path: '', component: providerPortalComponent },
-// { path: 'reset-password', component: ResetPasswordComponent },
-// { path: 'change-password', component: ChangePasswordComponent }
+{ path: 'pathent-portal', component: PatientPortalComponent },
+
 ];

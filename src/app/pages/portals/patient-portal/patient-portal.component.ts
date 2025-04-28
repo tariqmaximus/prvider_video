@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DoctorRoomComponent } from "../../rooms/docter-room/doctorRoom.component";
-import { PatientRoomComponent } from "../../rooms/patient-room/patient-room.component";
+import { DoctorRoomComponent } from "../../../rooms/docter-room/doctorRoom.component";
+import { PatientRoomComponent } from "../../../rooms/patient-room/patient-room.component";
 
 @Component({
   selector: 'app-patient-portal',
