@@ -78,6 +78,11 @@ html {
   width: 600px;
   max-width: 100%;
   margin-top: $spacing-lg;
+  .input-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
   .form-control,.form-select {
     border: 1px solid var(--second-color);
     box-shadow: 0 0 8px var(--second-color);
