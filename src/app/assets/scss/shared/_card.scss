@@ -221,11 +221,12 @@
         }
     }
 
+
 }
 
 .chat-footer {
     background-color: var(--prim-color);
-    border-radius:  0 0 $round-md $round-md;margin-top: 1px;
+    border-radius:  0 0 $round-md $round-md !important;margin-top: 1px;
     box-shadow: 
     0 0 5px rgba(21, 50, 85, 0.5); /* both inner and outer shadows */
     .btn {
@@ -261,10 +262,7 @@
 
     }
 
-    .form-control {
-        border: 1px solid var(--second-color);
-        box-shadow: 0 0 8px var(--second-color);
-    }
+ 
 }
 
 .neon-card.login-card {

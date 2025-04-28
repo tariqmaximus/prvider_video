@@ -2128,7 +2128,7 @@ p span {
   background: white;
   font-family: "DM Sans", sans-serif !important;
   padding: 8px 16px;
-  border-radius: 100px;
+  border-radius: 15px !important;
   font-size: 14px;
   text-transform: capitalize;
   display: flex;
@@ -3057,7 +3057,7 @@ p span {
 }
 .chat-footer {
   background-color: var(--prim-color);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px !important;
   margin-top: 1px;
   box-shadow: 0 0 5px rgba(21, 50, 85, 0.5); /* both inner and outer shadows */
 }
@@ -3085,10 +3085,6 @@ p span {
   background-color: var(--second-color);
   align-self: center;
   color: white;
-}
-.neon-card .form-control {
-  border: 1px solid var(--second-color);
-  box-shadow: 0 0 8px var(--second-color);
 }
 
 .neon-card.login-card a {
@@ -3216,6 +3212,11 @@ html {
   max-width: 100%;
   margin-top: 24px;
 }
+.video-footer .form-control, .video-footer .form-select {
+  border: 1px solid var(--second-color);
+  box-shadow: 0 0 8px var(--second-color);
+  border-radius: 15px !important;
+}
 
 .doctor-room-container {
   width: auto;
@@ -3241,6 +3242,10 @@ html {
   top: 10px;
   display: flex;
   left: 10px;
+}
+.doctor-room-container .video-box .icon-controls i {
+  font-size: 18px;
+  color: gray;
 }
 .doctor-room-container .video-box .icon-controls i.icon-mute-fill {
   color: var(--error-color);

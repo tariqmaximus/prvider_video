@@ -9,9 +9,9 @@
 <h2 class="text-center">Welcome Dr. dewerd</h2>
 <p class="description text-center">Share this link to invite a participant to your waiting room</p>
 
-<div class="input-group mt-3">
+<div class="input-group mt-3 gap-2">
   <input type="text" class="form-control" [value]="'http://maximus.com/2343sdfsd'" readonly />
-  <button class="btn secondary" (click)="copyLink()"><i class="icon-copy"></i></button>
+  <button class="btn secondary" (click)="copyLink()"><i class="icon-copy"></i>Copy</button>
   <select class="form-select" (change)="shareLink($event)">
     <option selected disabled>Via Link</option>
     <option value="whatsapp">WhatsApp</option>

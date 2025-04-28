@@ -78,6 +78,11 @@ html {
   width: 600px;
   max-width: 100%;
   margin-top: $spacing-lg;
+  .form-control,.form-select {
+    border: 1px solid var(--second-color);
+    box-shadow: 0 0 8px var(--second-color);
+    border-radius:$round-lg !important;
+}
 }
    
 
@@ -106,6 +111,10 @@ html {
             top: 10px;
             display: flex;
             left: 10px;
+            i {
+              font-size: 18px;
+              color: gray;
+            }
       i.icon-mute-fill {
         color: var(--error-color);
       }
