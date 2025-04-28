@@ -3279,7 +3279,8 @@ html {
   text-align: center;
   padding: 40px;
   border-radius: 12px;
-  max-width: 600px;
+  width: 400px;
+  max-width: 100%;
   margin: auto;
 }
 .doctor-room-container .video-box {
