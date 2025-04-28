@@ -5,6 +5,7 @@
     @include box-style;
     min-height: $card-header-height;
     padding-bottom: $spacing-sm;
+    border: 1px solid var(--bs-border-color);
     padding: $spacing-sm;
 
     @include mobile-view {
