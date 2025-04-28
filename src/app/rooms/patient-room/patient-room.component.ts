@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { VideoCallComponent } from "../../common/video-call/video-call.component";
 
 @Component({
   selector: 'app-patient-room',
   templateUrl: './patient-room.component.html',
-  styleUrls: ['./patient-room.component.css']
+  styleUrls: ['./patient-room.component.css'],
+  imports: [VideoCallComponent]
 })
 export class PatientRoomComponent {
 

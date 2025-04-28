@@ -14,7 +14,7 @@ import { PatientPortalComponent } from "./pages/portals/patient-portal/patient-p
 export class AppComponent {
   routes = {
     providerPortalComponent: { label: 'provider', link: '/' },
-    PatientPortalComponent: { label: 'Login', link: '/patient' },
+    PatientPortalComponent: { label: 'patient', link: '/patient' },
   
   };
 

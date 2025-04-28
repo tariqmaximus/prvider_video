@@ -5,6 +5,6 @@ import { PatientPortalComponent } from './pages/portals/patient-portal/patient-p
 
 export const routes: Routes = [
   { path: '', component: providerPortalComponent },
-{ path: 'pathent-portal', component: PatientPortalComponent },
+{ path: 'patient-portal', component: PatientPortalComponent },
 
 ];

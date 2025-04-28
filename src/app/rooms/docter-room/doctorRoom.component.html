@@ -1,27 +1,22 @@
-<div class="doctor-room-container">
-  <div class="video-box">
-    <div class="icon-controls">
-      <button class="icon-button icon-audio"></button>
-      <button class="icon-button icon-video"></button>
-    </div>
-    <div class="avatar">
-      <i class="icon icon-admin"></i>
-    </div>
-  </div>
 
-  <button class="test-button">Test Audio Video</button>
 
-  <h2>Welcome Dr. dewerd</h2>
-  <p class="description">Share this link to invite a participant to your waiting room</p>
+<app-video-call></app-video-call>
 
-  <div class="input-group mt-3">
-    <input type="text" class="form-control" [value]="'http://maximus.com/2343sdfsd'" readonly />
-    <button class="btn primary" (click)="copyLink()"><i class="icon-copy"></i></button>
-    <select class="form-select" (change)="shareLink($event)">
-      <option selected disabled>Via Link</option>
-      <option value="whatsapp">WhatsApp</option>
-      <option value="email">Email</option>
-      <option value="copy">Just Copy</option>
-    </select>
-  </div>
+
+
+ 
+<div class="video-footer">
+<h2 class="text-center">Welcome Dr. dewerd</h2>
+<p class="description text-center">Share this link to invite a participant to your waiting room</p>
+
+<div class="input-group mt-3">
+  <input type="text" class="form-control" [value]="'http://maximus.com/2343sdfsd'" readonly />
+  <button class="btn secondary" (click)="copyLink()"><i class="icon-copy"></i></button>
+  <select class="form-select" (change)="shareLink($event)">
+    <option selected disabled>Via Link</option>
+    <option value="whatsapp">WhatsApp</option>
+    <option value="email">Email</option>
+    <option value="copy">Just Copy</option>
+  </select>
+</div>
 </div>

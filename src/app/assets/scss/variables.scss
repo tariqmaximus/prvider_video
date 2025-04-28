@@ -4,7 +4,7 @@
  --prim-color: #243247;
  --title-color: #bccce2;
  --your-color: #1a2433;
- --second-color: #1ae9f8;
+ --second-color: #1c75bc;
  --bg-color: #1b1f22;
  --card-color: rgba(18,30,50, 0.7);
  --input-group-color: rgba(255, 255, 255, 0.2);
@@ -15,13 +15,16 @@
  --success-color: #66cc99;
  --warning-color: #ffc107;
  --error-color: #f67280;
- --info-color: #17a2b8;
+ --info-color: #1742b8;
   --bs-border-color: #1f3b68;
  --icon-color: #cccccc;
   // Vitals colors
   --name-color:#a9bbd8;
-  --logo:url('../images/logo-light.png');
-  --login_bg:url(../images/login-bg.jpg);
+  --logo:url('../images/logo.png');
+  --logo-icon:url('../images/logo-icon.png');
+  --logo-light:url('../images/logo-light.png');
+  --logo-icon-light:url('../images/logo-icon-light.png');
+  
   --arrow-img: url('../images/arrow.png') !important;
 
   }
@@ -111,12 +114,14 @@ $btn-radius: 6px;
 // Font
 $btn-font-size: 1rem;
 $btn-font-weight: 500;
+$video-box:320px;
 //mixins
 @mixin box-style{
   border:  var( --bs-border-width) var( --bs-border-color);
   box-shadow: $box-shadow-md;
   border-radius: $round-lg;
   background-color: var(--card-color) !important;
+  border: 1px solid var(--bs-border-color);
 }
 @mixin mobile-view {
   @media (max-width: 768px) {

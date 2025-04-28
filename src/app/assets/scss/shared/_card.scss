@@ -222,27 +222,7 @@
     }
 
 }
-.input-group {
-    background:var(--input-group-color) !important;
-    padding: $spacing-sm !important;
-    border-radius: $round-md;
-    border: 1px solid var(--input-group-border);
-    .form-control {
-        border: none;
-        background-color: var(--card-color);
-        color: var(--text-color);
-    }
-    .message-input {
-        font-size: 12px;
-          border: none;
-          background:none;
-          color: var(--text-color);
-          &::placeholder {
-              color: var(--text-color);
-          }
-       
-      }
-}
+
 .chat-footer {
     background-color: var(--prim-color);
     border-radius:  0 0 $round-md $round-md;margin-top: 1px;
