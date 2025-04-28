@@ -1,32 +1,11 @@
-.card-y {
-    .app-card {
-        .card {
-            border-radius: 0 0 $round-lg $round-lg ;
-            border-bottom: none;
 
-            .card-header {
-                border-radius: 0;
-            }
-        }
-
-        &:first-child {
-            .card {
-
-                .card-header {
-                    border-radius: $round-lg $round-lg 0 0;
-                }
-
-                border-radius: $round-lg $round-lg 0 0;
-            }
-        }
-    }
-}
 
 .card {
     position: relative;
     @include box-style;
     min-height: $card-header-height;
     padding-bottom: $spacing-sm;
+    padding: $spacing-sm;
 
     @include mobile-view {
 
@@ -161,7 +140,7 @@
     box-sizing: border-box;
     width: 100%;
     min-height: 200px;
-    background-color: var(--bs-border-color);
+    background-color: var(--chat-color);
     border-radius: $round-md $round-md 0 0;
     border: var(--bs-border-width) var(--bs-border-color);
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 
@@ -242,6 +221,27 @@
     }
 
 }
+.input-group {
+    background:var(--input-group-color) !important;
+    padding: $spacing-sm !important;
+    border-radius: $round-md;
+    border: 1px solid var(--input-group-border);
+    .form-control {
+        border: none;
+        background-color: var(--card-color);
+        color: var(--text-color);
+    }
+    .message-input {
+        font-size: 12px;
+          border: none;
+          background:none;
+          color: var(--text-color);
+          &::placeholder {
+              color: var(--text-color);
+          }
+       
+      }
+}
 .chat-footer {
     background-color: var(--prim-color);
     border-radius:  0 0 $round-md $round-md;margin-top: 1px;
@@ -251,11 +251,8 @@
         background: none;
         border: none;
     }
-    .message-input {
-      font-size: 12px;
-        border: none;
-        background:none;
-    }
+ 
+ 
 }
 
 .neon-card {

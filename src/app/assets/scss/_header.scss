@@ -1,14 +1,10 @@
 .header {
-  display: block;
-  justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
-  padding: 0 !important;
-  width: 100%;
- height: $header-height;
+top: $spacing-md;
+left: $spacing-lg;
+ position: absolute;
+ z-index: 99;
 
  min-height: inherit !important;
-display: none;
   font-size: 14px;
   @include mobile-view {
 display: flex;

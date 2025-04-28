@@ -29,10 +29,10 @@ box-sizing: border-box;
 }
 .dr-room {
     height: 100%;
-    @include mobile-view {
-       background: none !important;
-       
-    }
+    position: relative;
+    padding: $spacing-md;
+    box-sizing: border-box;
+  
 }
 .content-panel {
     padding: 0 !important;

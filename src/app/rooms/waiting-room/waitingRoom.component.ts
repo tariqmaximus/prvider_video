@@ -16,6 +16,23 @@ interface Message {
   styleUrls: ['./waitingRoom.component.css'],
 })
 export class WaitingRoomComponent {
+  patients: any[] = []; // This would normally come from a service or API
+  patientCount: number = 0;
+
+  ngOnInit(): void {
+    // Example: you might load patients from a service
+    this.patients = [
+      { name: 'John Doe' },
+      { name: 'Jane Smith' },
+      { name: 'Alice Johnson' }
+    ];
+
+    this.calculatePatientCount();
+  }
+
+  calculatePatientCount(): void {
+    this.patientCount = this.patients.length;
+  }
   waitingRoom: Message[] = [
     { name: 'Josaf Mareen', time: 'Waiting for 36 mins', stage: 'unread' },
     { name: 'Muhmmed Umer', time: 'Waiting for 25 mins', stage: 'pending' },
