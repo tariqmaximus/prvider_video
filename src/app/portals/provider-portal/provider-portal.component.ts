@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {  WaitingRoomComponent } from "../../../rooms/waiting-room/waitingRoom.component";
-import { DoctorRoomComponent } from "../../../rooms/docter-room/doctorRoom.component";
-import { HeaderComponent } from "../../../components/header/header.component";
+import {  WaitingRoomComponent } from "../../rooms/waiting-room/waitingRoom.component";
+import { DoctorRoomComponent } from "../../rooms/docter-room/doctorRoom.component";
+import { HeaderComponent } from "../../components/header/header.component";
 
 
 @Component({
