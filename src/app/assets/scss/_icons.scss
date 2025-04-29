@@ -25,6 +25,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-system-linux:before {
+  content: "\e91e";
+}
+.icon-browser-brave:before {
+  content: "\e91f";
+}
+.icon-browser-safari:before {
+  content: "\e920";
+}
+.icon-browser-samsung .path1:before {
+  content: "\e921";
+  color: rgb(0, 0, 0);
+}
+.icon-browser-samsung .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-browser-chrome:before {
+  content: "\e923";
+}
+.icon-browser-edge:before {
+  content: "\e924";
+}
+.icon-device-desktop:before {
+  content: "\e925";
+}
+.icon-browser-firefox:before {
+  content: "\e926";
+}
+.icon-device-tablet:before {
+  content: "\e927";
+}
+.icon-device-phone:before {
+  content: "\e928";
+}
+.icon-browser-opera:before {
+  content: "\e929";
+}
+.icon-system-mac:before {
+  content: "\e92a";
+}
+.icon-system-windows:before {
+  content: "\e92b";
+}
 .icon-transfer:before {
   content: "\e91d";
 }
@@ -1147,6 +1192,9 @@
 .icon-edit-fill:before {
   content: "\e930";
 }
+.icon-archive:before {
+  content: "\e931";
+}
 .icon-archive-fill:before {
   content: "\e932";
 }
@@ -1336,6 +1384,9 @@
 .icon-chat-fill:before {
   content: "\e9e0";
 }
+.icon-user:before {
+  content: "\e9e1";
+}
 .icon-user-fill:before {
   content: "\e9e2";
 }
@@ -1407,6 +1458,9 @@
 }
 .icon-checkin:before {
   content: "\e9f9";
+}
+.icon-checkout:before {
+  content: "\e9fa";
 }
 .icon-color:before {
   content: "\e9fb";
