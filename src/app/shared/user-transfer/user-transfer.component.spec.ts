@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileCardComponent } from './profile-card.component';
+import { UserTransferComponent } from './user-transfer.component';
 
-describe('ProfileCardComponent', () => {
-  let component: ProfileCardComponent;
-  let fixture: ComponentFixture<ProfileCardComponent>;
+describe('UserTransferComponent', () => {
+  let component: UserTransferComponent;
+  let fixture: ComponentFixture<UserTransferComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProfileCardComponent]
+      imports: [UserTransferComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProfileCardComponent);
+    fixture = TestBed.createComponent(UserTransferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

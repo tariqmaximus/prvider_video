@@ -61,7 +61,8 @@
     max-height: 100%;
     
     overflow-y: scroll;
-    padding: $spacing-md;
+    padding: $spacing-md !important;
+    box-sizing: border-box;
   
     .accordion-button {
         background: none !important;

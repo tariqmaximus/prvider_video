@@ -45,8 +45,8 @@
           <button  type="button" title="more info" class="btn dark" [class.active]="activeTab === 'info'" (click)="setActiveTab('info')">
             <i class="icon-info"></i>
           </button>
-          <button  type="button" title="Transfer Patient" class="btn dark" [class.active]="activeTab === 'sort'" (click)="setActiveTab('sort')">
-            <i class="icon-sort"></i>
+          <button  type="button" title="Transfer Patient" class="btn dark" [class.active]="activeTab === 'transfer'" (click)="setActiveTab('transfer')">
+            <i class="icon-transfer"></i>
           </button>
           <button  type="button" title="Delete" class="btn dark" [class.active]="activeTab === 'delete'" (click)="setActiveTab('delete')">
             <i class="icon-delete"></i>
@@ -66,7 +66,7 @@
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'info' }" id="info">
             <p>Info content goes here.</p>
           </div>
-          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'sort' }" id="sort">
+          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'transfer' }" id="transfer">
             <p>Sort options or content here.</p>
           </div>
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'delete' }" id="delete">

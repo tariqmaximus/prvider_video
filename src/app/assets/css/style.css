@@ -170,6 +170,10 @@ p span {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-transfer:before {
+  content: "\e91d";
+}
+
 .icon-file-audio:before {
   content: "\e906";
 }
@@ -1534,10 +1538,6 @@ p span {
   content: "\e930";
 }
 
-.icon-archive:before {
-  content: "\e931";
-}
-
 .icon-archive-fill:before {
   content: "\e932";
 }
@@ -1787,10 +1787,6 @@ p span {
   content: "\e9e0";
 }
 
-.icon-user:before {
-  content: "\e9e1";
-}
-
 .icon-user-fill:before {
   content: "\e9e2";
 }
@@ -1885,10 +1881,6 @@ p span {
 
 .icon-checkin:before {
   content: "\e9f9";
-}
-
-.icon-checkout:before {
-  content: "\e9fa";
 }
 
 .icon-color:before {
@@ -2040,7 +2032,8 @@ p span {
   height: 100%;
   max-height: 100%;
   overflow-y: scroll;
-  padding: 16px;
+  padding: 16px !important;
+  box-sizing: border-box;
 }
 .waiting-list .accordion-button {
   background: none !important;
@@ -2138,6 +2131,9 @@ p span {
   outline: none;
   border: 1px solid var(--bs-border-color);
   color: var(--text-color);
+}
+.btn i {
+  font-size: 16px;
 }
 .btn:focus-visible {
   border: inherit !important;
