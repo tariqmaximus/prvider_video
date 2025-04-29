@@ -184,13 +184,10 @@ p span {
 
 .icon-browser-samsung .path1:before {
   content: "\e921";
-  color: rgb(0, 0, 0);
 }
 
 .icon-browser-samsung .path2:before {
   content: "\e922";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
 }
 
 .icon-browser-chrome:before {
