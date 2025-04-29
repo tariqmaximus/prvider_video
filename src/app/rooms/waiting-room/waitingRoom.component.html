@@ -64,10 +64,10 @@
             <app-chat></app-chat>
           </div>
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'info' }" id="info">
-            <p>Info content goes here.</p>
+            <app-user-info></app-user-info>
           </div>
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'transfer' }" id="transfer">
-            <p>Sort options or content here.</p>
+           <app-user-transfer></app-user-transfer>
           </div>
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'delete' }" id="delete">
             <p>Delete confirmation or related content.</p>

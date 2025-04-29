@@ -1,6 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChatComponent } from '../../models/chat/chat.component';
+import { ChatComponent } from '../../shared/chat/chat.component';
+import { UserInfoComponent } from "../../shared/user-info/user-info.component";
+import { UserTransferComponent } from "../../shared/user-transfer/user-transfer.component";
 
 interface Message {
   name: string;
@@ -11,7 +13,7 @@ interface Message {
 @Component({
   selector: 'app-waiting-room',
   standalone: true,
-  imports: [CommonModule, ChatComponent],
+  imports: [CommonModule, ChatComponent, UserInfoComponent, UserTransferComponent],
   templateUrl: './waitingRoom.component.html',
   styleUrls: ['./waitingRoom.component.css'],
 })
