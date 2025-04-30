@@ -18,12 +18,12 @@ interface Message {
   styleUrls: ['./doctors-list.component.css'],
 })
 export class DoctorsListComponent {
-  patients: any[] = []; // This would normally come from a service or API
+  patients: any[] = [];
   patientCount: number = 0;
 
   waitingRoom: Message[] = [
-    { name: 'DR Jason', time: '5 Mint reminig', stage: 'unread' },
- 
+    { name: 'DR Jason', time: '5 mins remaining', stage: 'unread' },
+
   ];
 
   selectedRoom: Message | null = null;
@@ -56,16 +56,18 @@ export class DoctorsListComponent {
   }
 
   sortWaitingRoom(): void {
-    this.waitingRoom.sort((a, b) => {
-      const minutesA = this.extractMinutes(a.time);
-      const minutesB = this.extractMinutes(b.time);
-      return minutesB - minutesA;
-    });
+    this.waitingRoom = this.waitingRoom
+      .filter(msg => this.extractMinutes(msg.time) >= 0) // Filter out bad data
+      .sort((a, b) => {
+        const minutesA = this.extractMinutes(a.time);
+        const minutesB = this.extractMinutes(b.time);
+        return minutesB - minutesA;
+      });
   }
 
   extractMinutes(timeString: string): number {
-    const match = timeString.match(/(\d+)\s*mins?/);
-    return match ? parseInt(match[1], 10) : 0;
+    const match = timeString.match(/(\d+)\s*mins?/i);
+    return match ? parseInt(match[1], 10) : -1;
   }
 
   selectRoom(message: Message): void {
@@ -106,11 +108,11 @@ export class DoctorsListComponent {
 
   increaseWaitingTime(index: number): void {
     const msg = this.waitingRoom[index];
-    const match = msg.time.match(/(\d+)\s*mins?/);
+    const currentMinutes = this.extractMinutes(msg.time);
 
-    if (match) {
-      const currentMinutes = parseInt(match[1], 10);
-      msg.time = `Waiting for ${currentMinutes + 5} mins`;
+    if (currentMinutes >= 0) {
+      const updatedMinutes = currentMinutes + 5;
+      msg.time = `${updatedMinutes} mins remaining`;
       this.sortWaitingRoom();
     }
   }
