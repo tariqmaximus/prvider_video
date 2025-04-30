@@ -10,7 +10,7 @@ import { UserWaitingComponent } from './portals/user-portal/user-waiting/user-wa
 
 export const routes: Routes = [
   //provider room
-  { path: 'provider-room', component: ProviderPortalComponent },
+  { path: '', component: ProviderPortalComponent },
 
   //user room
 { path: 'user-checkin', component: UserCheckinComponent },
