@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { VideoCallComponent } from "../video-call/video-call.component";
+import {  VideoThumnailComponent } from "../video-thumnail/video-thumnail.component";
 
 @Component({
   selector: 'app-access',
   templateUrl: './access.component.html',
   styleUrls: ['./access.component.css'],
-  imports: [VideoCallComponent]
+  imports: [VideoThumnailComponent]
 })
 export class AccessComponent {
 

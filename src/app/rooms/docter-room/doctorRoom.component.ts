@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { VideoCallComponent } from "../../common/video-call/video-call.component";
+import { VideoThumnailComponent } from "../../common/video-thumnail/video-thumnail.component";
 
 @Component({
   selector: 'app-doctorRoom',
   templateUrl: './doctorRoom.component.html',
   styleUrls: ['./doctorRoom.component.css'],
-  imports: [VideoCallComponent]
+  imports: [VideoThumnailComponent]
 })
 export class DoctorRoomComponent {
 

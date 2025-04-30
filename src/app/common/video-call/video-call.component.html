@@ -1,17 +1,43 @@
-<div class="doctor-room-container">
-  <div class="video-box">
-    <div class="icon-controls">
-      <button class="btn" (click)="toggleAudio()">
-        <i class="icon" [ngClass]="isAudioOn ? 'icon-mute-fill' : 'icon-audio'"></i>
-      </button>
-      <button class="btn" (click)="toggleVideo()">
-        <i class="icon" [ngClass]="isVideoOn ? 'icon-video-off-fill' : 'icon-video'"></i>
-      </button>
-    </div>
-    <div class="avatar">
-      <i class="icon icon-admin"></i>
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
+
+      <!-- Waiting List Column -->
+      <div class="col-md-3 card waiting-list p-0 h-100">
+        <app-doctors-list></app-doctors-list>
+      </div>
+      <div class="col-md-9 d-flex flex-column justify-content-center align-items-center position-relative">
+        <app-video-thumnail class="position-absolute top-0 end-0"></app-video-thumnail>
+        <div class="call-container">
+        <div class="avatar">
+          <span class="name">AT</span>
+          <button _ngcontent-ng-c1258966675="" class=" badge icon-danger"><i class="icon-video-off-fill"></i></button>
+        </div>
+        <div class="card ">
+          <div class="buttons">
+            <button type="button" class="btn btn-lg icon-danger"><i class="icon-video-off-fill"></i></button>
+            <button type="button" class="btn btn-lg icon-danger"><i class="icon-mute-fill"></i></button>
+            <div class="btn-group dropup">
+              <button type="button" class="btn btn-lg no-bg " data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="icon-more"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><i class="icon-maximize"></i>Full screen</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="icon-setting"></i> Troubleshooting</a></li>
+                <li><a class="dropdown-item text-danger" href="#"><i class="icon-setting"></i>Settings</a></li>
+              </ul>
+              
+            </div>
+            
+            <button type="button" class="btn btn-lg danger"><i class="icon-call"></i></button>
+
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+
     </div>
   </div>
-
-
-</div>

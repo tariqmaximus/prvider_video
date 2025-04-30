@@ -21,7 +21,6 @@ $variants: (
   approved: var(--success-color),
   active: var(--prim-color),
   draft: var(--text-color, var(--subtext-color)),
-  
 );
 
 // Button Container
@@ -32,6 +31,75 @@ $variants: (
   color: var(--text-color);
 }
 
+// Badge Styles
+.badge {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--text-color);
+
+  i {
+    font-size: 20px;
+  }
+
+  @each $name, $color in $variants {
+    &.#{$name} {
+      background: $color;
+      color: if(
+        $name == light or $name == default,
+        var(--subtext-color),
+        if($name == dark, white, white)
+      );
+
+      i {
+        color: inherit;
+      }
+    }
+  }
+
+  &.outline {
+    background: transparent;
+    border: 1px solid currentColor;
+
+    @each $name, $color in $variants {
+      &.#{$name} {
+        color: $color;
+        border-color: $color;
+
+        i {
+          color: $color;
+        }
+      }
+    }
+  }
+
+  // Icon Variants for Badge
+  @each $name, $color in $variants {
+    &.icon-#{$name} {
+      
+      border: none;
+      color: $color;
+
+      i {
+        color: $color;
+      }
+
+      &:hover {
+        background: $color;
+        i {
+          color: var(--bg-color);
+        }
+      }
+    }
+  }
+}
+
 // Buttons
 .btn {
   position: relative;
@@ -39,7 +107,7 @@ $variants: (
   background: white;
   font-family: 'DM Sans', sans-serif !important;
   padding: $spacing-sm $spacing-md;
-border-radius: $round-md;
+  border-radius: $round-sm;
   font-size: 14px;
   text-transform: capitalize;
   display: flex;
@@ -49,13 +117,15 @@ border-radius: $round-md;
   outline: none;
   border: 1px solid var(--bs-border-color);
   color: var(--text-color);
- 
+
   i {
     font-size: 16px;
   }
+
   &:focus-visible {
     border: inherit !important;
   }
+
   span {
     font-weight: 500;
     text-transform: capitalize;
@@ -130,7 +200,7 @@ border-radius: $round-md;
     }
   }
 
-  // Shared Active State (for all variants)
+  // Shared Active State
   @each $name, $color in $variants {
     &.#{$name}.active,
     &.icon-#{$name}.active {
@@ -154,14 +224,17 @@ border-radius: $round-md;
     }
   }
 }
+
 .btn.btn-lg {
-font-size: 18px;
-i {
-  font-size: 22px;
-  span {
-    font-size: 18px;
+  font-size: 18px;
+
+  i {
+    font-size: 22px;
+
+    span {
+      font-size: 18px;
+    }
   }
-}
 }
 
 // Back Button

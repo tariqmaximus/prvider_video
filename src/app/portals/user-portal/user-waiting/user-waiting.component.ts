@@ -1,10 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { WaitingRoomComponent } from '../../../rooms/waiting-room/waitingRoom.component';
+
 import { DoctorsListComponent } from '../../../common/doctors-list/doctors-list.component';
 import { HeaderComponent } from '../../../components/header/header.component';
-import { DoctorRoomComponent } from "../../../rooms/docter-room/doctorRoom.component";
 import { UserRoomComponent } from "../../../rooms/user-room/user-room.component";
 
 interface Message {
@@ -20,7 +19,6 @@ interface Message {
     CommonModule,
     DoctorsListComponent,
     HeaderComponent,
-    DoctorRoomComponent,
     UserRoomComponent
 ],
   templateUrl: './user-waiting.component.html',

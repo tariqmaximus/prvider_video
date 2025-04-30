@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { VideoCallComponent } from "../video-call/video-call.component";
+import { VideoThumnailComponent } from "../video-thumnail/video-thumnail.component";
 
 @Component({
   selector: 'app-checkin',
   templateUrl: './checkin.component.html',
   styleUrls: ['./checkin.component.css'],
-  imports: [VideoCallComponent]
+  imports: [VideoThumnailComponent]
 })
 export class CheckinComponent {
 

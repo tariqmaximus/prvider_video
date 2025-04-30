@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { VideoCallComponent } from "../../common/video-call/video-call.component";
+import {VideoThumnailComponent } from "../../common/video-thumnail/video-thumnail.component";
 
 @Component({
   selector: 'app-user-room',
   templateUrl: './user-room.component.html',
   styleUrls: ['./user-room.component.css'],
-  imports: [VideoCallComponent]
+  imports: [VideoThumnailComponent]
 })
 export class UserRoomComponent {
 

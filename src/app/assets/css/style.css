@@ -115,7 +115,6 @@ p span {
 
 .avatar {
   border-radius: 50%;
-  overflow: hidden;
   position: relative;
   margin: 0;
 }
@@ -126,8 +125,8 @@ p span {
 }
 
 .avatar.avatar-lg {
-  width: 80px;
-  height: 80px;
+  width: 120px;
+  height: 120px;
 }
 
 .avatar.avatar-md {
@@ -143,7 +142,7 @@ p span {
 .alert-sign {
   position: absolute;
   right: 50%;
-  margin-right: -80px;
+  margin-right: -120px;
   z-index: 9;
 }
 .alert-sign .icon-warning {
@@ -2170,13 +2169,627 @@ strong {
   color: var(--text-color);
 }
 
+.badge {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: var(--text-color);
+}
+.badge i {
+  font-size: 20px;
+}
+.badge.success {
+  background: var(--success-color);
+  color: white;
+}
+.badge.success i {
+  color: inherit;
+}
+.badge.pending {
+  background: var(--warning-color);
+  color: white;
+}
+.badge.pending i {
+  color: inherit;
+}
+.badge.info {
+  background: var(--info-color);
+  color: white;
+}
+.badge.info i {
+  color: inherit;
+}
+.badge.danger {
+  background: var(--error-color);
+  color: white;
+}
+.badge.danger i {
+  color: inherit;
+}
+.badge.warning {
+  background: var(--warning-color);
+  color: white;
+}
+.badge.warning i {
+  color: inherit;
+}
+.badge.primary {
+  background: var(--prim-color);
+  color: white;
+}
+.badge.primary i {
+  color: inherit;
+}
+.badge.muted {
+  background: var(--subtext-color);
+  color: white;
+}
+.badge.muted i {
+  color: inherit;
+}
+.badge.secondary {
+  background: var(--second-color);
+  color: white;
+}
+.badge.secondary i {
+  color: inherit;
+}
+.badge.dark {
+  background: var(--prim-color);
+  color: white;
+}
+.badge.dark i {
+  color: inherit;
+}
+.badge.light {
+  background: var(--bg-color);
+  color: var(--subtext-color);
+}
+.badge.light i {
+  color: inherit;
+}
+.badge.default {
+  background: var(--bg-color);
+  color: var(--subtext-color);
+}
+.badge.default i {
+  color: inherit;
+}
+.badge.archived {
+  background: var(--archived-color, var(--subtext-color));
+  color: white;
+}
+.badge.archived i {
+  color: inherit;
+}
+.badge.processing {
+  background: var(--processing-color, var(--info-color));
+  color: white;
+}
+.badge.processing i {
+  color: inherit;
+}
+.badge.failed {
+  background: var(--error-color);
+  color: white;
+}
+.badge.failed i {
+  color: inherit;
+}
+.badge.queued {
+  background: var(--info-color);
+  color: white;
+}
+.badge.queued i {
+  color: inherit;
+}
+.badge.on-hold {
+  background: var(--secondary-color);
+  color: white;
+}
+.badge.on-hold i {
+  color: inherit;
+}
+.badge.suspended {
+  background: var(--dark-color);
+  color: white;
+}
+.badge.suspended i {
+  color: inherit;
+}
+.badge.expired {
+  background: var(--light-color);
+  color: white;
+}
+.badge.expired i {
+  color: inherit;
+}
+.badge.rejected {
+  background: var(--error-color);
+  color: white;
+}
+.badge.rejected i {
+  color: inherit;
+}
+.badge.approved {
+  background: var(--success-color);
+  color: white;
+}
+.badge.approved i {
+  color: inherit;
+}
+.badge.active {
+  background: var(--prim-color);
+  color: white;
+}
+.badge.active i {
+  color: inherit;
+}
+.badge.draft {
+  background: var(--text-color, var(--subtext-color));
+  color: white;
+}
+.badge.draft i {
+  color: inherit;
+}
+.badge.outline {
+  background: transparent;
+  border: 1px solid currentColor;
+}
+.badge.outline.success {
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+.badge.outline.success i {
+  color: var(--success-color);
+}
+.badge.outline.pending {
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+.badge.outline.pending i {
+  color: var(--warning-color);
+}
+.badge.outline.info {
+  color: var(--info-color);
+  border-color: var(--info-color);
+}
+.badge.outline.info i {
+  color: var(--info-color);
+}
+.badge.outline.danger {
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+.badge.outline.danger i {
+  color: var(--error-color);
+}
+.badge.outline.warning {
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+.badge.outline.warning i {
+  color: var(--warning-color);
+}
+.badge.outline.primary {
+  color: var(--prim-color);
+  border-color: var(--prim-color);
+}
+.badge.outline.primary i {
+  color: var(--prim-color);
+}
+.badge.outline.muted {
+  color: var(--subtext-color);
+  border-color: var(--subtext-color);
+}
+.badge.outline.muted i {
+  color: var(--subtext-color);
+}
+.badge.outline.secondary {
+  color: var(--second-color);
+  border-color: var(--second-color);
+}
+.badge.outline.secondary i {
+  color: var(--second-color);
+}
+.badge.outline.dark {
+  color: var(--prim-color);
+  border-color: var(--prim-color);
+}
+.badge.outline.dark i {
+  color: var(--prim-color);
+}
+.badge.outline.light {
+  color: var(--bg-color);
+  border-color: var(--bg-color);
+}
+.badge.outline.light i {
+  color: var(--bg-color);
+}
+.badge.outline.default {
+  color: var(--bg-color);
+  border-color: var(--bg-color);
+}
+.badge.outline.default i {
+  color: var(--bg-color);
+}
+.badge.outline.archived {
+  color: var(--archived-color, var(--subtext-color));
+  border-color: var(--archived-color, var(--subtext-color));
+}
+.badge.outline.archived i {
+  color: var(--archived-color, var(--subtext-color));
+}
+.badge.outline.processing {
+  color: var(--processing-color, var(--info-color));
+  border-color: var(--processing-color, var(--info-color));
+}
+.badge.outline.processing i {
+  color: var(--processing-color, var(--info-color));
+}
+.badge.outline.failed {
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+.badge.outline.failed i {
+  color: var(--error-color);
+}
+.badge.outline.queued {
+  color: var(--info-color);
+  border-color: var(--info-color);
+}
+.badge.outline.queued i {
+  color: var(--info-color);
+}
+.badge.outline.on-hold {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+.badge.outline.on-hold i {
+  color: var(--secondary-color);
+}
+.badge.outline.suspended {
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+.badge.outline.suspended i {
+  color: var(--dark-color);
+}
+.badge.outline.expired {
+  color: var(--light-color);
+  border-color: var(--light-color);
+}
+.badge.outline.expired i {
+  color: var(--light-color);
+}
+.badge.outline.rejected {
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+.badge.outline.rejected i {
+  color: var(--error-color);
+}
+.badge.outline.approved {
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+.badge.outline.approved i {
+  color: var(--success-color);
+}
+.badge.outline.active {
+  color: var(--prim-color);
+  border-color: var(--prim-color);
+}
+.badge.outline.active i {
+  color: var(--prim-color);
+}
+.badge.outline.draft {
+  color: var(--text-color, var(--subtext-color));
+  border-color: var(--text-color, var(--subtext-color));
+}
+.badge.outline.draft i {
+  color: var(--text-color, var(--subtext-color));
+}
+.badge.icon-success {
+  border: none;
+  color: var(--success-color);
+}
+.badge.icon-success i {
+  color: var(--success-color);
+}
+.badge.icon-success:hover {
+  background: var(--success-color);
+}
+.badge.icon-success:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-pending {
+  border: none;
+  color: var(--warning-color);
+}
+.badge.icon-pending i {
+  color: var(--warning-color);
+}
+.badge.icon-pending:hover {
+  background: var(--warning-color);
+}
+.badge.icon-pending:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-info {
+  border: none;
+  color: var(--info-color);
+}
+.badge.icon-info i {
+  color: var(--info-color);
+}
+.badge.icon-info:hover {
+  background: var(--info-color);
+}
+.badge.icon-info:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-danger {
+  border: none;
+  color: var(--error-color);
+}
+.badge.icon-danger i {
+  color: var(--error-color);
+}
+.badge.icon-danger:hover {
+  background: var(--error-color);
+}
+.badge.icon-danger:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-warning {
+  border: none;
+  color: var(--warning-color);
+}
+.badge.icon-warning i {
+  color: var(--warning-color);
+}
+.badge.icon-warning:hover {
+  background: var(--warning-color);
+}
+.badge.icon-warning:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-primary {
+  border: none;
+  color: var(--prim-color);
+}
+.badge.icon-primary i {
+  color: var(--prim-color);
+}
+.badge.icon-primary:hover {
+  background: var(--prim-color);
+}
+.badge.icon-primary:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-muted {
+  border: none;
+  color: var(--subtext-color);
+}
+.badge.icon-muted i {
+  color: var(--subtext-color);
+}
+.badge.icon-muted:hover {
+  background: var(--subtext-color);
+}
+.badge.icon-muted:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-secondary {
+  border: none;
+  color: var(--second-color);
+}
+.badge.icon-secondary i {
+  color: var(--second-color);
+}
+.badge.icon-secondary:hover {
+  background: var(--second-color);
+}
+.badge.icon-secondary:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-dark {
+  border: none;
+  color: var(--prim-color);
+}
+.badge.icon-dark i {
+  color: var(--prim-color);
+}
+.badge.icon-dark:hover {
+  background: var(--prim-color);
+}
+.badge.icon-dark:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-light {
+  border: none;
+  color: var(--bg-color);
+}
+.badge.icon-light i {
+  color: var(--bg-color);
+}
+.badge.icon-light:hover {
+  background: var(--bg-color);
+}
+.badge.icon-light:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-default {
+  border: none;
+  color: var(--bg-color);
+}
+.badge.icon-default i {
+  color: var(--bg-color);
+}
+.badge.icon-default:hover {
+  background: var(--bg-color);
+}
+.badge.icon-default:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-archived {
+  border: none;
+  color: var(--archived-color, var(--subtext-color));
+}
+.badge.icon-archived i {
+  color: var(--archived-color, var(--subtext-color));
+}
+.badge.icon-archived:hover {
+  background: var(--archived-color, var(--subtext-color));
+}
+.badge.icon-archived:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-processing {
+  border: none;
+  color: var(--processing-color, var(--info-color));
+}
+.badge.icon-processing i {
+  color: var(--processing-color, var(--info-color));
+}
+.badge.icon-processing:hover {
+  background: var(--processing-color, var(--info-color));
+}
+.badge.icon-processing:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-failed {
+  border: none;
+  color: var(--error-color);
+}
+.badge.icon-failed i {
+  color: var(--error-color);
+}
+.badge.icon-failed:hover {
+  background: var(--error-color);
+}
+.badge.icon-failed:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-queued {
+  border: none;
+  color: var(--info-color);
+}
+.badge.icon-queued i {
+  color: var(--info-color);
+}
+.badge.icon-queued:hover {
+  background: var(--info-color);
+}
+.badge.icon-queued:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-on-hold {
+  border: none;
+  color: var(--secondary-color);
+}
+.badge.icon-on-hold i {
+  color: var(--secondary-color);
+}
+.badge.icon-on-hold:hover {
+  background: var(--secondary-color);
+}
+.badge.icon-on-hold:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-suspended {
+  border: none;
+  color: var(--dark-color);
+}
+.badge.icon-suspended i {
+  color: var(--dark-color);
+}
+.badge.icon-suspended:hover {
+  background: var(--dark-color);
+}
+.badge.icon-suspended:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-expired {
+  border: none;
+  color: var(--light-color);
+}
+.badge.icon-expired i {
+  color: var(--light-color);
+}
+.badge.icon-expired:hover {
+  background: var(--light-color);
+}
+.badge.icon-expired:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-rejected {
+  border: none;
+  color: var(--error-color);
+}
+.badge.icon-rejected i {
+  color: var(--error-color);
+}
+.badge.icon-rejected:hover {
+  background: var(--error-color);
+}
+.badge.icon-rejected:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-approved {
+  border: none;
+  color: var(--success-color);
+}
+.badge.icon-approved i {
+  color: var(--success-color);
+}
+.badge.icon-approved:hover {
+  background: var(--success-color);
+}
+.badge.icon-approved:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-active {
+  border: none;
+  color: var(--prim-color);
+}
+.badge.icon-active i {
+  color: var(--prim-color);
+}
+.badge.icon-active:hover {
+  background: var(--prim-color);
+}
+.badge.icon-active:hover i {
+  color: var(--bg-color);
+}
+.badge.icon-draft {
+  border: none;
+  color: var(--text-color, var(--subtext-color));
+}
+.badge.icon-draft i {
+  color: var(--text-color, var(--subtext-color));
+}
+.badge.icon-draft:hover {
+  background: var(--text-color, var(--subtext-color));
+}
+.badge.icon-draft:hover i {
+  color: var(--bg-color);
+}
+
 .btn {
   position: relative;
   height: auto;
   background: white;
   font-family: "DM Sans", sans-serif !important;
   padding: 8px 16px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 14px;
   text-transform: capitalize;
   display: flex;
@@ -3208,6 +3821,50 @@ main {
   width: 100%;
 }
 
+.call-container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dropdown-menu li a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.avatar {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 120px;
+  height: 120px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar .icon {
+  font-size: 50px;
+}
+.avatar .name {
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.avatar .badge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 img {
   image-rendering: crisp-edges; /* Standard */
   image-rendering: -moz-crisp-edges; /* Firefox */
@@ -3323,17 +3980,6 @@ html {
 }
 .doctor-room-container .video-box .icon-controls i.icon-video-off-fill {
   color: var(--error-color);
-}
-.doctor-room-container .video-box .avatar {
-  font-size: 60px;
-  background-color: rgba(255, 255, 255, 0.6);
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .input-group {

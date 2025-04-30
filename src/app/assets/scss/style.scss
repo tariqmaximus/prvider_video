@@ -15,7 +15,53 @@
 @import 'shared/card';
 
 @import '_main-stuctue';
+.call-container {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.dropdown-menu {
+  li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $spacing-md;
+  }
+}
+.avatar {
+   
 
+
+   background-color: rgba(255, 255, 255, 0.3);
+    width: $avatar-lg;
+    height: $avatar-lg;
+position: relative;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .icon {
+      font-size: 50px;
+    }
+    .name {
+font-size: 40px;
+text-transform: uppercase;
+font-weight: bold;
+    }
+    .badge {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  
+}
 img {
     image-rendering: crisp-edges; /* Standard */
     image-rendering: -moz-crisp-edges; /* Firefox */
@@ -131,18 +177,7 @@ html {
       }
        
           }
-      
-          .avatar {
-            font-size: 60px;
-           background-color: rgba(255, 255, 255, 0.6);
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
+     
         }
       
   
