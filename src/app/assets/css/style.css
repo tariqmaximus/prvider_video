@@ -2151,7 +2151,7 @@ p span {
   background: white;
   font-family: "DM Sans", sans-serif !important;
   padding: 8px 16px;
-  border-radius: 15px !important;
+  border-radius: 10px;
   font-size: 14px;
   text-transform: capitalize;
   display: flex;
@@ -2899,6 +2899,16 @@ p span {
 .btn.no-border:hover {
   background: none;
   color: var(--text-color);
+}
+
+.btn.btn-lg {
+  font-size: 18px;
+}
+.btn.btn-lg i {
+  font-size: 22px;
+}
+.btn.btn-lg i span {
+  font-size: 18px;
 }
 
 .back-btn {

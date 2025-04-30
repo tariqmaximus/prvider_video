@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { VideoCallComponent } from "../../common/video-call/video-call.component";
+import { VideoCallComponent } from "../video-call/video-call.component";
 
 @Component({
-  selector: 'app-patient-room',
-  templateUrl: './patient-room.component.html',
-  styleUrls: ['./patient-room.component.css'],
+  selector: 'app-access',
+  templateUrl: './access.component.html',
+  styleUrls: ['./access.component.css'],
   imports: [VideoCallComponent]
 })
-export class PatientRoomComponent {
+export class AccessComponent {
 
   readonly link: string = 'http://maximus.com/2343sdfsd';
 

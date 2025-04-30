@@ -1,0 +1,42 @@
+<ul class="accordion" id="waitingRoomAccordion">
+  <li *ngFor="let msg of waitingRoom; let i = index" class="mb-3">
+    <h2 class="accordion-header" [id]="'heading' + i">
+      <button 
+        class="accordion-button d-flex justify-content-between align-items-center px-3 py-2" 
+        [class.collapsed]="expandedIndex !== i"
+        [attr.aria-expanded]="expandedIndex === i"
+        [attr.aria-controls]="'collapse' + i"
+        (click)="toggleChat(i)">
+        
+        <div class="d-flex align-items-center gap-3 readed">
+          <div class="avatar-circle" [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }">
+            {{ getInitials(msg.name) }}
+          </div>
+          <div>
+            <h6 class="name mb-0">{{ msg.name }}</h6>
+            <p class="waiting-time mb-0" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
+              {{ msg.time }}
+            </p>
+          </div>
+        </div>
+      </button>
+    </h2>
+
+    <div 
+      [id]="'collapse' + i"
+      class="accordion-collapse collapse" 
+      [class.show]="expandedIndex === i"
+      [attr.aria-labelledby]="'heading' + i"
+      data-bs-parent="#waitingRoomAccordion">
+      <div class="accordion-body p-2 mt-2">
+       
+
+        <app-chat></app-chat>
+
+
+      </div>
+    </div>
+  </li>
+</ul>
+
+

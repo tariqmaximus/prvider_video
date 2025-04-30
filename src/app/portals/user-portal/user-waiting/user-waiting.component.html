@@ -1,0 +1,34 @@
+<div class="container-fluid h-100">
+    <div class="row h-100">
+      <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
+  
+        <!-- Waiting List Column -->
+        <div *ngIf="waitingListVisible" class="col-md-3 card waiting-list p-0 h-100">
+          <app-doctors-list></app-doctors-list>
+        </div>
+  
+        <!-- Main Content Area -->
+        <div
+          [ngClass]="waitingListVisible ? 'col-md-9' : 'col-12'"
+          class="h-100 d-flex flex-column align-items-stretch p-3"
+        >
+          <!-- Header with toggle -->
+          <app-header (toggleWaiting)="toggleWaitingList()"></app-header>
+  
+          <!-- Conditional Room Display -->
+          <ng-container *ngIf="selectedRoom; else noRoom">
+         
+          </ng-container>
+  
+          <!-- No Room Selected Placeholder -->
+          <ng-template #noRoom>
+            <div class="flex-grow-1 d-flex justify-content-center align-items-center">
+              <app-doctorRoom></app-doctorRoom>
+            </div>
+          </ng-template>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  

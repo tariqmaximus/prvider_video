@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { PatientRoomComponent } from "../../../rooms/patient-room/patient-room.component";
+import { CheckinComponent } from "../../../common/checkin/checkin.component";
 
 @Component({
   selector: 'app-user-checkin',
-  imports: [ PatientRoomComponent],
+  imports: [CheckinComponent],
   templateUrl: './user-checkin.component.html',
   styleUrl: './user-checkin.component.css'
 })

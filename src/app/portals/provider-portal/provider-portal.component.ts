@@ -6,12 +6,12 @@ import { HeaderComponent } from "../../components/header/header.component";
 
 
 @Component({
-  selector: 'app-providerPortal',
+  selector: 'app-ProviderPortal',
   standalone: true,
   imports: [CommonModule, DoctorRoomComponent, WaitingRoomComponent, HeaderComponent],
   templateUrl: './provider-portal.component.html',
 })
-export class providerPortalComponent {
+export class ProviderPortalComponent {
   selectedRoom: any = null; // You can define your selectedRoom logic based on your needs
   waitingListVisible = false; // 👈 default hidden
 

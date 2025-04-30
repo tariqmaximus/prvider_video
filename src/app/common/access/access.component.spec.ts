@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FmFilePreviewComponent } from './fm-file-preview.component';
+import { AccessComponent } from './access.component';
 
-describe('FmFilePreviewComponent', () => {
-  let component: FmFilePreviewComponent;
-  let fixture: ComponentFixture<FmFilePreviewComponent>;
+describe('AccessComponent', () => {
+  let component: AccessComponent;
+  let fixture: ComponentFixture<AccessComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FmFilePreviewComponent]
+      imports: [AccessComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FmFilePreviewComponent);
+    fixture = TestBed.createComponent(AccessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
