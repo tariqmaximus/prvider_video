@@ -1,8 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChatComponent } from '../../shared/chat/chat.component';
-import { UserInfoComponent } from "../../shared/user-info/user-info.component";
-import { UserTransferComponent } from "../../shared/user-transfer/user-transfer.component";
+
 
 interface Message {
   name: string;
@@ -13,7 +12,7 @@ interface Message {
 @Component({
   selector: 'app-doctors-list',
   standalone: true,
-  imports: [CommonModule, ChatComponent, UserInfoComponent, UserTransferComponent],
+  imports: [CommonModule, ChatComponent,],
   templateUrl: './doctors-list.component.html',
   styleUrls: ['./doctors-list.component.css'],
 })

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { VideoCallComponent } from "../../common/video-call/video-call.component";
 
 @Component({
-  selector: 'app-doctorRoom',
-  templateUrl: './doctorRoom.component.html',
-  styleUrls: ['./doctorRoom.component.css'],
+  selector: 'app-user-room',
+  templateUrl: './user-room.component.html',
+  styleUrls: ['./user-room.component.css'],
   imports: [VideoCallComponent]
 })
-export class DoctorRoomComponent {
+export class UserRoomComponent {
 
   readonly link: string = 'http://localhost:4200/user-checkin';
 

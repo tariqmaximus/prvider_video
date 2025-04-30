@@ -2,6 +2,10 @@ body {
   font-family: "Poppins";
 }
 
+* {
+  color: var(--text-color);
+}
+
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   color: var(--text-color);
@@ -19,7 +23,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --input-group-border: rgba(255, 255, 255, 0.2);
   --text-color: #f5f5f5;
   --chat-color: #f5f5f5;
-  --subtext-color: #aaaaaa;
+  --subtext-color: #417aa8;
   --success-color: #66cc99;
   --warning-color: #ffc107;
   --error-color: #f67280;
@@ -2058,6 +2062,26 @@ p span {
   gap: 16px;
 }
 
+strong {
+  color: var(--text-color) !important;
+}
+
+.list.orderd-list {
+  padding: 0;
+}
+.list.orderd-list p {
+  font-size: 16px;
+}
+.list.orderd-list > li {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+.list.orderd-list > li li {
+  display: inherit;
+  font-size: 14px;
+}
+
 .waiting-list {
   height: 100%;
   max-height: 100%;
@@ -3257,6 +3281,11 @@ html {
   border: 1px solid var(--second-color);
   box-shadow: 0 0 8px var(--second-color);
   border-radius: 15px !important;
+}
+
+.caption {
+  color: var(--subtext-color);
+  text-transform: uppercase;
 }
 
 .doctor-room-container {

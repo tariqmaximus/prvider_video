@@ -89,7 +89,10 @@ html {
     border-radius:$round-lg !important;
 }
 }
-   
+ .caption {
+  color: var(--subtext-color);
+  text-transform: uppercase;
+ }  
 
     .doctor-room-container {
      
