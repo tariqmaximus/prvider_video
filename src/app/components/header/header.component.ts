@@ -7,11 +7,6 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  @Output() toggleWaiting = new EventEmitter<void>(); // 👈 create an event
-
-  onToggleWaitingList() {
-    this.toggleWaiting.emit(); // 👈 emit when button clicked
-  }
   patientCount: number = 0;
 
   constructor() {}

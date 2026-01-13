@@ -52,8 +52,4 @@ export class UserWaitingComponent {
   selectRoom(message: Message): void {
     this.selectedRoom = message;
   }
-
-  toggleWaitingList(): void {
-    this.waitingListVisible = !this.waitingListVisible;
-  }
 }

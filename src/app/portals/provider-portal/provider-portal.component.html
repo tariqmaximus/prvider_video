@@ -3,17 +3,17 @@
     <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
 
       <!-- Waiting List Column -->
-      <div *ngIf="waitingListVisible" class="col-md-3 card waiting-list p-0 h-100">
+      <div class="col-md-3 card waiting-list p-0 h-100">
       <app-waiting-room></app-waiting-room>
       </div>
 
       <!-- Main Content Area -->
       <div
-        [ngClass]="waitingListVisible ? 'col-md-9' : 'col-12'"
+        class="col-md-9"
         class="h-100 d-flex flex-column align-items-stretch p-3"
       >
         <!-- Header with toggle -->
-        <app-header (toggleWaiting)="toggleWaitingList()"></app-header>
+        <app-header></app-header>
 
         <!-- Conditional Room Display -->
         <ng-container *ngIf="selectedRoom; else noRoom">

@@ -1,0 +1,9 @@
+{
+  "routes": {
+    "/": {},
+    "/user-access": {},
+    "/user-checkin": {},
+    "/user-waiting": {},
+    "/video-call": {}
+  }
+}

@@ -13,9 +13,4 @@ import { HeaderComponent } from "../../components/header/header.component";
 })
 export class ProviderPortalComponent {
   selectedRoom: any = null; // You can define your selectedRoom logic based on your needs
-  waitingListVisible = false; // 👈 default hidden
-
-  toggleWaitingList() {
-    this.waitingListVisible = !this.waitingListVisible;
-  }
 }
