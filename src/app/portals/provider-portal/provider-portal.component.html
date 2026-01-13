@@ -8,16 +8,13 @@
       </div>
 
       <!-- Main Content Area -->
-      <div
-        class="col-md-9"
-        class="h-100 d-flex flex-column align-items-stretch p-3"
-      >
+      <div class="col-md-6 h-100 d-flex flex-column align-items-stretch p-3">
         <!-- Header with toggle -->
         <app-header></app-header>
 
         <!-- Conditional Room Display -->
         <ng-container *ngIf="selectedRoom; else noRoom">
-       
+
         </ng-container>
 
         <!-- No Room Selected Placeholder -->
@@ -26,6 +23,11 @@
             <app-doctorRoom></app-doctorRoom>
           </div>
         </ng-template>
+      </div>
+
+      <!-- Chat Column -->
+      <div class="col-md-3 card chat-panel p-0 h-100">
+        <app-chat></app-chat>
       </div>
 
     </div>

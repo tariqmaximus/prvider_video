@@ -18,6 +18,6 @@ export default `<!doctype html>
   <app-root>
 
   </app-root>
-<link rel="modulepreload" href="chunk-GZE4CWVN.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-FR7HA4WI.js" defer=""></script><script src="main-PZUQFN6E.js" type="module"></script></body>
+<link rel="modulepreload" href="chunk-GZE4CWVN.js"><script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-FR7HA4WI.js" defer=""></script><script src="main-IRUTQAMV.js" type="module"></script></body>
 </html>
 `;
