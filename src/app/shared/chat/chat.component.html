@@ -27,11 +27,11 @@
   <!-- Input Area -->
   <div class="chat-input">
     <div class="input-group">
-      <input [(ngModel)]="newMessage"
+      <textarea [(ngModel)]="newMessage"
              type="text"
              class="form-control message-input"
              placeholder="Type a message..."
-             (keydown.enter)="sendMessage()">
+             (keydown.enter)="sendMessage()"></textarea>
       <button (click)="sendMessage()" class="btn primary">
         <i class="icon-send"></i>
       </button>

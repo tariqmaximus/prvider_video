@@ -1,12 +1,27 @@
+/* Chat Component Variables */
+:root {
+  --bg-color: #ffffff;
+  --card-color: #f8f9fa;
+  --bs-border-color: #dee2e6;
+  --title-color: #212529;
+  --second-color: #1c75bc;
+  --text-color: #ffffff;
+  --prim-color: #e3f2fd;
+  --chat-color: #424242;
+  --subtext-color: #6c757d;
+  --input-group-border: #ced4da;
+}
+
 /* Chat Component Styles */
 
 .chat-container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: stretch;
   background-color: var(--bg-color);
- 
-  overflow: hidden;
+
+
 }
 
 /* Chat Header */
@@ -42,7 +57,10 @@
 .chat-messages {
   flex: 1;
   overflow-y: auto;
+ height: 100%;
+ 
   padding: 16px;
+  box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
@@ -107,12 +125,14 @@
 
 /* Input Area */
 .chat-input {
-  position: sticky;
+ 
   bottom: 0;
   background-color: var(--card-color);
   border-top: 1px solid var(--bs-border-color);
   padding: 16px;
+  width: 100%;
   flex-shrink: 0;
+  position: absolute;
 }
 
 .chat-input .input-group {
@@ -123,9 +143,9 @@
 
 .message-input {
   flex: 1;
-  background-color: var(--input-group-color);
+
   border: 1px solid var(--input-group-border);
-  border-radius: 25px;
+  
   padding: 12px 16px;
   color: var(--text-color);
   font-size: 14px;

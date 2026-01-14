@@ -189,10 +189,8 @@ html {
        
       }
       .input-group {
-        background:var(--input-group-color) !important;
-        padding: $spacing-sm !important;
-        border-radius: $round-md;
-        border: 1px solid var(--input-group-border);
+       
+       
         .form-control {
             border: none;
             background-color: var(--card-color);

@@ -23,7 +23,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --input-group-border: rgba(255, 255, 255, 0.2);
   --text-color: #f5f5f5;
   --chat-color: #f5f5f5;
-  --subtext-color: #417aa8;
+  --subtext-color: #dff1ff;
   --success-color: #66cc99;
   --warning-color: #ffc107;
   --error-color: #f67280;
@@ -2790,7 +2790,7 @@ strong {
 .btn {
   position: relative;
   height: auto;
-  background: var(--bg-color);
+  background: var(--prim-color);
   font-family: "DM Sans", sans-serif !important;
   padding: 8px;
   border-radius: 5px;
@@ -3960,12 +3960,6 @@ html {
   color: var(--error-color);
 }
 
-.input-group {
-  background: var(--input-group-color) !important;
-  padding: 8px !important;
-  border-radius: 10px;
-  border: 1px solid var(--input-group-border);
-}
 .input-group .form-control {
   border: none;
   background-color: var(--card-color);
