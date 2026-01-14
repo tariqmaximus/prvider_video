@@ -3975,4 +3975,37 @@ html {
   color: var(--text-color);
 }
 
+.invite-link {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.form-copy {
+  border: 1px solid var(--second-color);
+  box-shadow: 0 0 8px var(--second-color);
+  border-radius: 15px !important;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 100%;
+  align-items: center;
+}
+.form-copy input {
+  border: none;
+  background: none;
+  width: 100%;
+  color: var(--text-color);
+  padding: 10px;
+}
+.form-copy input:focus {
+  outline: none;
+}
+.form-copy .btn {
+  background: none;
+  border: none;
+  right: 0;
+}
+
 /*# sourceMappingURL=style.css.map */

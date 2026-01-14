@@ -28,10 +28,7 @@ export class WaitingRoomComponent {
     { name: 'Abdull Muqeet', time: 'Waiting for 15 mins', stage: 'read' },
     { name: 'Jason Dewerd', time: 'Waiting for 5 mins', stage: 'read' },
     { name: 'Josaf Mareen', time: 'Waiting for 36 mins', stage: 'unread' },
-    { name: 'Muhmmed Umer', time: 'Waiting for 25 mins', stage: 'pending' },
-    { name: 'Hashim Sulman', time: 'Waiting for 20 mins', stage: 'active' },
-    { name: 'Abdull Muqeet', time: 'Waiting for 15 mins', stage: 'read' },
-    { name: 'Jason Dewerd', time: 'Waiting for 5 mins', stage: 'read' },
+
   ];
 
   selectedRoom: Message | null = null;
