@@ -1,26 +1,40 @@
-<div class="p-0">
- 
-    <div class="chat-window">
-      <div *ngFor="let msg of messages" class="message"
-           [ngClass]="{'your-message': msg.sender === 'You', 'bot-message': msg.sender !== 'You'}">
-       
-       
-          
-          <div class="messagebox">
-          
-            <span>{{ msg.text }}</span>
-           
-          </div>
-          <small class="text-muted d-block">{{ msg.timestamp | date:'shortTime' }}</small>
+<div class="chat-container">
+  <!-- Profile Details -->
+  <div class="profile-tile" *ngIf="message">
+    <h5>{{ message.name }}</h5>
+    <p>Patient</p>
+  </div>
+
+  <!-- Chat Header -->
+  <div class="chat-header">
+    <h6 class="chat-title">Chat</h6>
+  </div>
+
+  <!-- Messages Area -->
+  <div class="chat-messages" #messagesContainer>
+    <div class="message-group" *ngFor="let group of groupedMessages; trackBy: trackByGroup">
+      <div class="message-wrapper"
+           *ngFor="let msg of group.messages; trackBy: trackByMessage"
+           [ngClass]="{'your-message': msg.sender === 'You', 'other-message': msg.sender !== 'You'}">
+        <div class="message-bubble">
+          <span class="message-text">{{ msg.text }}</span>
+        </div>
+        <small class="message-time">{{ msg.timestamp | date:'shortTime' }}</small>
       </div>
     </div>
+  </div>
 
-  
-      <div class="input-group chat-footer">
-        <input [(ngModel)]="newMessage" type="text" class="form-control message-input" placeholder="Type a message..."
-               (keydown.enter)="sendMessage()">
-        <button (click)="sendMessage()" class="btn primary"><i class="icon-send"></i></button>
-      </div>
-   
-
+  <!-- Input Area -->
+  <div class="chat-input">
+    <div class="input-group">
+      <input [(ngModel)]="newMessage"
+             type="text"
+             class="form-control message-input"
+             placeholder="Type a message..."
+             (keydown.enter)="sendMessage()">
+      <button (click)="sendMessage()" class="btn primary">
+        <i class="icon-send"></i>
+      </button>
+    </div>
+  </div>
 </div>

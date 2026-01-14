@@ -104,11 +104,12 @@ $variants: (
 .btn {
   position: relative;
   height: auto;
-  background: white;
+  background: var(--bg-color);
+
   font-family: 'DM Sans', sans-serif !important;
-  padding: $spacing-sm $spacing-md;
+  padding: $spacing-sm ;
   border-radius: $round-sm;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: capitalize;
   display: flex;
   align-items: center;
@@ -119,7 +120,7 @@ $variants: (
   color: var(--text-color);
 
   i {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   &:focus-visible {
@@ -183,7 +184,7 @@ $variants: (
   // Icon Variants
   @each $name, $color in $variants {
     &.icon-#{$name} {
-      border: none;
+  
       color: $color;
 
       i,

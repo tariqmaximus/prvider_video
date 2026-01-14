@@ -39,9 +39,7 @@
         </div>
 
         <ul class="buttons d-flex gap-2 flex-wrap">
-          <button type="button" title="chat" class="btn dark"  [class.active]="activeTab === 'chat'" (click)="setActiveTab('chat')">
-            <i class="icon-chat"></i>
-          </button>
+         
           <button  type="button" title="more info" class="btn dark" [class.active]="activeTab === 'info'" (click)="setActiveTab('info')">
             <i class="icon-info"></i>
           </button>
@@ -60,9 +58,7 @@
 
         <!-- Tab Content -->
         <div class="tab-content main-container">
-          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'chat' }" id="chat">
-            <app-chat></app-chat>
-          </div>
+        
           <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'info' }" id="info">
             <app-user-info></app-user-info>
           </div>

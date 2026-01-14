@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -6,6 +6,11 @@ interface Message {
   sender: string;
   text: string;
   timestamp: Date;
+}
+
+interface MessageGroup {
+  sender: string;
+  messages: Message[];
 }
 
 @Component({
@@ -17,9 +22,28 @@ interface Message {
 })
 export class ChatComponent implements OnChanges {
   @Input() message: any;
+  @ViewChild('messagesContainer', { static: false }) messagesContainer!: ElementRef;
 
   messages: Message[] = [];
   newMessage: string = '';
+
+  get groupedMessages(): MessageGroup[] {
+    const groups: MessageGroup[] = [];
+    let currentGroup: MessageGroup | null = null;
+
+    for (const msg of this.messages) {
+      if (!currentGroup || currentGroup.sender !== msg.sender) {
+        currentGroup = {
+          sender: msg.sender,
+          messages: []
+        };
+        groups.push(currentGroup);
+      }
+      currentGroup.messages.push(msg);
+    }
+
+    return groups;
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['message'] && this.message) {
@@ -83,10 +107,17 @@ export class ChatComponent implements OnChanges {
 
   scrollToBottom() {
     setTimeout(() => {
-      const chatWindow = document.querySelector('.chat-window');
-      if (chatWindow) {
-        chatWindow.scrollTop = chatWindow.scrollHeight;
+      if (this.messagesContainer) {
+        this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight;
       }
     }, 100);
+  }
+
+  trackByGroup(index: number, group: MessageGroup): string {
+    return group.sender + index;
+  }
+
+  trackByMessage(index: number, message: Message): string {
+    return message.timestamp.toISOString();
   }
 }

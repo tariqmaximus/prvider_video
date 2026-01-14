@@ -45,6 +45,10 @@ li {
         }
         &:after {
             background-image:var(--arrow-img) !important ;
+            background-size: 0.7rem;
+            background-repeat: no-repeat;
+            width: 0.7rem;
+            height: 0.7rem;
         }
     }
     .name {
