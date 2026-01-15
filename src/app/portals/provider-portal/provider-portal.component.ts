@@ -13,5 +13,6 @@ import { ChatComponent } from "../../shared/chat/chat.component";
   templateUrl: './provider-portal.component.html',
 })
 export class ProviderPortalComponent {
+  
   selectedRoom: any = null; // You can define your selectedRoom logic based on your needs
 }

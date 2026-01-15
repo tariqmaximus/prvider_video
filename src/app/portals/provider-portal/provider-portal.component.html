@@ -1,16 +1,11 @@
 <div class="container-fluid h-100">
   <div class="row h-100">
-    <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
-
-      <!-- Waiting List Column -->
-      
-      <app-waiting-room class="col-md-3  waiting-room p-0 h-100"></app-waiting-room>
+ 
+      <app-waiting-room [showWaitingRoom]="true" [showcallerTimer]="false" class="col-md-3  waiting-room p-0 h-100"></app-waiting-room>
  
     
       <!-- Main Content Area -->
       <div class="col-md-8 h-100 d-flex flex-column align-items-stretch p-0">
-   
-
         <!-- Conditional Room Display -->
         <ng-container *ngIf="selectedRoom; else noRoom">
 
@@ -26,6 +21,6 @@
 
    
 
-    </div>
+    
   </div>
 </div>

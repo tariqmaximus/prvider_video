@@ -1,7 +1,20 @@
   
-  <div class="waiting-room">  <div class="chat-header">
-    <h6 class="waiting-header">Waiting Room</h6>
+  <div class="waiting-room">  
+  
+    <h6 class="waiting-header" *ngIf="showWaitingRoom">Waiting Room <span class="badge">5</span></h6>
+
+  <div class="waiting-header " *ngIf="showcallerTimer">
+    <div class="call-ticker">
+      
+          <div class="d-flex justify-content-between w-100">
+            <h6 class="name mb-0">Jason Steeve</h6>
+            <p class="waiting-time sub-text d-flex gap-2 align-items-center " >
+             <i class="icon-history"></i>time: 5 mins 42 secs / Remining: 10 mins
+            </p>
+          </div>
+        </div>
   </div>
+
 <ul class="accordion list" id="waitingRoomAccordion">
   <li *ngFor="let msg of waitingRoom; let i = index">
     <h2 class="accordion-header" [id]="'heading' + i">
