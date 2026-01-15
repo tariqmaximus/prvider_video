@@ -116,13 +116,7 @@ $btn-font-size: 1rem;
 $btn-font-weight: 500;
 $video-box:320px;
 //mixins
-@mixin box-style{
-  border:  var( --bs-border-width) var( --bs-border-color);
-  box-shadow: $box-shadow-md;
-  border-radius: $round-lg;
-  background-color: var(--card-color) !important;
-  border: 1px solid var(--bs-border-color);
-}
+
 @mixin mobile-view {
   @media (max-width: 768px) {
     @content;

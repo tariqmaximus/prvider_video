@@ -1,5 +1,9 @@
-<ul class="accordion" id="waitingRoomAccordion">
-  <li *ngFor="let msg of waitingRoom; let i = index" class="mb-3">
+  
+  <div class="waiting-room">  <div class="chat-header">
+    <h6 class="waiting-header">Waiting Room</h6>
+  </div>
+<ul class="accordion list" id="waitingRoomAccordion">
+  <li *ngFor="let msg of waitingRoom; let i = index">
     <h2 class="accordion-header" [id]="'heading' + i">
       <button 
         class="accordion-button d-flex justify-content-between align-items-center px-3 py-2" 
@@ -74,5 +78,6 @@
     </div>
   </li>
 </ul>
+</div>
 
 

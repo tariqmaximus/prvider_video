@@ -3,17 +3,13 @@
     <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
 
       <!-- Waiting List Column -->
-      <div class="col-md-3 card waiting-list p-0 h-100">
-      <app-waiting-room></app-waiting-room>
-      </div>
-   <!-- Chat Column -->
-      <div class="col-md-3 card chat-panel p-0 h-100">
-        <app-chat class="h-100"></app-chat>
-      </div>
+      
+      <app-waiting-room class="col-md-3  waiting-room p-0 h-100"></app-waiting-room>
+ 
+    
       <!-- Main Content Area -->
-      <div class="col-md-6 h-100 d-flex flex-column align-items-stretch p-3">
-        <!-- Header with toggle -->
-        <app-header></app-header>
+      <div class="col-md-8 h-100 d-flex flex-column align-items-stretch p-0">
+   
 
         <!-- Conditional Room Display -->
         <ng-container *ngIf="selectedRoom; else noRoom">

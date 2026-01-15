@@ -2,11 +2,14 @@
   <div class="row h-100">
     <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
 
-      <!-- Waiting List Column -->
-      <div class="col-md-3 card waiting-list p-0 h-100">
-        <app-doctors-list></app-doctors-list>
-      </div>
-      <div class="col-md-9 d-flex flex-column justify-content-center align-items-center position-relative">
+   <!-- Waiting List Column -->
+      
+      <app-waiting-room class="col-md-3  waiting-room p-0 h-100"></app-waiting-room>
+      
+   <!-- Chat Column -->
+    
+        <app-chat class="col-md-3 card chat-panel p-0 h-100"></app-chat>
+      <div class="col-md-6 d-flex flex-column justify-content-center align-items-center position-relative">
         <app-video-thumnail class="position-absolute top-0 end-0"></app-video-thumnail>
         <div class="call-container">
         <div class="avatar">

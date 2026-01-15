@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PHR-code": {
+    "tele-health": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/phr-code",
+            "outputPath": "dist/tele-health",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "PHR-code:build:production"
+              "buildTarget": "tele-health:build:production"
             },
             "development": {
-              "buildTarget": "PHR-code:build:development"
+              "buildTarget": "tele-health:build:development"
             }
           },
           "defaultConfiguration": "development"
