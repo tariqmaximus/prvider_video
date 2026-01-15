@@ -7,12 +7,10 @@ import { VideoCallComponent } from './common/video-call/video-call.component';
 
 export const routes: Routes = [
   { path: '', component: ProviderPortalComponent },
-
-  { path: 'tele/video-call', component: VideoCallComponent },
-
-  { path: 'tele/user-checkin', component: UserCheckinComponent },
-  { path: 'tele/user-access', component: UserAccessComponent },
-  { path: 'tele/user-waiting', component: UserWaitingComponent },
+  { path: 'video-call', component: VideoCallComponent },
+  { path: 'user-checkin', component: UserCheckinComponent },
+  { path: 'user-access', component: UserAccessComponent },
+  { path: 'user-waiting', component: UserWaitingComponent },
 
   // fallback (Angular ke andar safety)
   { path: '**', redirectTo: '' }
