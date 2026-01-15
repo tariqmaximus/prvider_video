@@ -2108,6 +2108,11 @@ p span {
   color: var(--text-color) !important;
 }
 
+.orderd-list li {
+  display: flex;
+  flex-direction: row;
+}
+
 /* Chat Header */
 .buttons {
   display: flex;
@@ -2120,7 +2125,6 @@ p span {
   border-radius: 100%;
   width: 40px;
   height: 40px;
-  position: absolute;
   padding: 0;
   display: flex;
   align-items: center;

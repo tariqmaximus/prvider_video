@@ -71,5 +71,10 @@ flex-direction: column;
 
 
 }
-
+.orderd-list {
+    li {
+        display: flex;
+        flex-direction: row;
+    }
+}
 /* Chat Header */

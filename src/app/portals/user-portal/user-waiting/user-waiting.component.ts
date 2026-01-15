@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
-import { DoctorsListComponent } from '../../../common/doctors-list/doctors-list.component';
+
 import { HeaderComponent } from '../../../components/header/header.component';
 import { UserRoomComponent } from "../../../rooms/user-room/user-room.component";
 
@@ -17,7 +17,6 @@ interface Message {
   standalone: true,
   imports: [
     CommonModule,
-    DoctorsListComponent,
     HeaderComponent,
     UserRoomComponent
 ],
