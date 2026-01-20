@@ -1,96 +1,131 @@
-  
-  <div class="waiting-room">  
-  
-    <h6 class="waiting-header" *ngIf="showWaitingRoom">Waiting Room <span class="badge">5</span></h6>
+<div class="waiting-room">  
 
-  <div class="waiting-header " *ngIf="showcallerTimer">
+  <!-- Waiting Room Header -->
+  <h6 class="waiting-header" *ngIf="showWaitingRoom">
+    Waiting Room <span class="badge">{{ waitingRoom.length }}</span>
+  </h6>
+
+  <!-- Caller Timer -->
+  <div class="waiting-header" *ngIf="showcallerTimer">
     <div class="call-ticker">
-      
-          <div class="d-flex justify-content-between w-100">
-            <h6 class="name mb-0">Jason Steeve</h6>
-            <p class="waiting-time sub-text d-flex gap-2 align-items-center " >
-             <i class="icon-history"></i>time: 5 mins 42 secs / Remining: 10 mins
-            </p>
-          </div>
-        </div>
-  </div>
-
-<ul class="accordion list" id="waitingRoomAccordion">
-  <li *ngFor="let msg of waitingRoom; let i = index">
-    <h2 class="accordion-header" [id]="'heading' + i">
-      <button 
-        class="accordion-button d-flex justify-content-between align-items-center px-3 py-2" 
-        [class.collapsed]="expandedIndex !== i"
-        [attr.aria-expanded]="expandedIndex === i"
-        [attr.aria-controls]="'collapse' + i"
-        (click)="toggleChat(i)">
-        
-        <div class="d-flex align-items-center gap-3 readed">
-          <div class="avatar-circle" [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }">
-            {{ getInitials(msg.name) }}
-          </div>
-          <div>
-            <h6 class="name mb-0">{{ msg.name }}</h6>
-            <p class="waiting-time mb-0" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
-              {{ msg.time }}
-            </p>
-          </div>
-        </div>
-      </button>
-    </h2>
-
-    <div 
-      [id]="'collapse' + i"
-      class="accordion-collapse collapse" 
-      [class.show]="expandedIndex === i"
-      [attr.aria-labelledby]="'heading' + i"
-      data-bs-parent="#waitingRoomAccordion">
-      <div class="accordion-body p-2 mt-2">
-        <div class="buttons mb-3 d-flex gap-2 flex-wrap">
-          <a href="/video-call" class="btn icon-success">
-            <i class="icon-video-fill me-1"></i> Start Video Call
-          </a>
-          <a href="/audio-call" class="btn icon-danger">
-            <i class="icon-audio-fill me-1"></i> Start Audio Call
-          </a>
-        </div>
-
-        <ul class="buttons d-flex gap-2 flex-wrap">
-         
-          <button  type="button" title="more info" class="btn dark" [class.active]="activeTab === 'info'" (click)="setActiveTab('info')">
-            <i class="icon-info"></i>
-          </button>
-          <button  type="button" title="Transfer Patient" class="btn dark" [class.active]="activeTab === 'transfer'" (click)="setActiveTab('transfer')">
-            <i class="icon-transfer"></i>
-          </button>
-          <button  type="button" title="Delete" class="btn dark" [class.active]="activeTab === 'delete'" (click)="setActiveTab('delete')">
-            <i class="icon-delete"></i>
-          </button>
-          <button 
-  class="btn dark"  title="add 10 minuts"
-  (click)="increaseWaitingTime(i)">
- <i class="icon-history"></i><span>5.0 mint</span>
-</button>
-        </ul>
-
-        <!-- Tab Content -->
-        <div class="tab-content main-container">
-        
-          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'info' }" id="info">
-            <app-user-info></app-user-info>
-          </div>
-          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'transfer' }" id="transfer">
-           <app-user-transfer></app-user-transfer>
-          </div>
-          <div class="tab-panel fade" [ngClass]="{ 'active': activeTab === 'delete' }" id="delete">
-            <p>Delete confirmation or related content.</p>
-          </div>
-          
-        </div>
+      <div class="d-flex justify-content-between w-100">
+        <h6 class="name mb-0">Jason Steeve</h6>
+        <p class="waiting-time sub-text d-flex gap-2 align-items-center">
+          <i class="icon-history"></i>
+          Time: 5 mins 42 secs / Remaining: 10 mins
+        </p>
       </div>
     </div>
-  </li>
-</ul>
+  </div>
+
+  <!-- Accordion List -->
+  <ul class="accordion list" id="waitingRoomAccordion">
+    <li *ngFor="let msg of waitingRoom; let i = index">
+
+      <!-- Accordion Header -->
+      <h2 class="accordion-header" [id]="'heading' + i">
+        <button 
+          class="accordion-button d-flex justify-content-between align-items-center px-3 py-2" 
+          [class.collapsed]="expandedIndex !== i"
+          [attr.aria-expanded]="expandedIndex === i"
+          [attr.aria-controls]="'collapse' + i"
+          (click)="toggleChat(i)">
+          
+          <div class="d-flex align-items-center gap-3 readed">
+            <div class="avatar-circle" [ngStyle]="{ backgroundColor: getStageColor(msg.stage) }">
+              {{ getInitials(msg.name) }}
+            </div>
+            <div>
+              <h6 class="name mb-0">{{ msg.name }}</h6>
+              <p class="waiting-time mb-0" [ngStyle]="{ color: getStageTextColor(msg.stage) }">
+                {{ msg.time }}
+              </p>
+            </div>
+          </div>
+
+        </button>
+      </h2>
+
+      <!-- Accordion Body -->
+      <div 
+        [id]="'collapse' + i"
+        class="accordion-collapse collapse" 
+        [class.show]="expandedIndex === i"
+        [attr.aria-labelledby]="'heading' + i"
+        data-bs-parent="#waitingRoomAccordion">
+        
+        <div class="accordion-body p-2 mt-2">
+
+          <!-- Start Call Button -->
+          <div class="buttons mb-3 d-flex gap-2 flex-wrap">
+            <a href="/video-call" class="btn icon-success">
+              <i class="icon-video-fill me-1"></i> Start Call
+            </a>
+          </div>
+
+          <!-- Inner Tabs Buttons -->
+          <ul class="buttons d-flex gap-2 flex-wrap">
+            <button type="button" title="User Chat" class="btn dark"
+                    [class.active]="activeTabs[i] === 'user-chat'"
+                    (click)="setActiveTab('user-chat', i)">
+              <i class="icon-chat"></i>
+            </button>
+
+            <button type="button" title="Info" class="btn dark"
+                    [class.active]="activeTabs[i] === 'info'"
+                    (click)="setActiveTab('info', i)">
+              <i class="icon-info"></i>
+            </button>
+
+            <button type="button" title="Transfer Patient" class="btn dark"
+                    [class.active]="activeTabs[i] === 'transfer'"
+                    (click)="setActiveTab('transfer', i)">
+              <i class="icon-transfer"></i>
+            </button>
+
+            <button type="button" title="Delete" class="btn dark"
+                    [class.active]="activeTabs[i] === 'delete'"
+                    (click)="setActiveTab('delete', i)">
+              <i class="icon-delete"></i>
+            </button>
+
+            <button class="btn dark" title="Add 5 mins"
+                    (click)="increaseWaitingTime(i)">
+              <i class="icon-history"></i><span>5 mins</span>
+            </button>
+          </ul>
+
+          <!-- Inner Tabs Content -->
+          <div class="tab-content main-container mt-3">
+            <div class="tab-panel " 
+                 [class.active]="activeTabs[i] === 'user-chat'" 
+                 [class.show]="activeTabs[i] === 'user-chat'">
+              <app-chat></app-chat>
+            </div>
+
+            <div class="tab-panel " 
+                 [class.active]="activeTabs[i] === 'info'" 
+                 [class.show]="activeTabs[i] === 'info'">
+              <app-user-info></app-user-info>
+            </div>
+
+            <div class="tab-panel " 
+                 [class.active]="activeTabs[i] === 'transfer'" 
+                 [class.show]="activeTabs[i] === 'transfer'">
+              <app-user-transfer></app-user-transfer>
+            </div>
+
+            <div class="tab-panel " 
+                 [class.active]="activeTabs[i] === 'delete'" 
+                 [class.show]="activeTabs[i] === 'delete'">
+              <p>Delete confirmation or related content.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </li>
+  </ul>
+
 </div>
-
-

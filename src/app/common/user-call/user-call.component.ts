@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';  // Import CommonModule
 
 import { VideoThumnailComponent } from "../video-thumnail/video-thumnail.component";
-import { WaitingRoomComponent } from "../../rooms/waiting-room/waitingRoom.component";
 import { ChatComponent } from "../../shared/chat/chat.component";
 
 @Component({
@@ -11,7 +10,7 @@ import { ChatComponent } from "../../shared/chat/chat.component";
   standalone: true,
   imports: [
     VideoThumnailComponent,
-    WaitingRoomComponent,
+
     ChatComponent,
     CommonModule  // Add CommonModule here
   ],
@@ -25,7 +24,7 @@ export class UserCallComponent implements OnInit {
   constructor(private router: Router, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    console.log('✅ VideoCallComponent loaded successfully');
+    console.log('UserCallComponent loaded successfully');
   }
 
   // Toggle chat visibility with change detection

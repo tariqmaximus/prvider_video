@@ -2,14 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {  WaitingRoomComponent } from "../../rooms/waiting-room/waitingRoom.component";
 import { DoctorRoomComponent } from "../../rooms/docter-room/doctorRoom.component";
-import { HeaderComponent } from "../../components/header/header.component";
-import { ChatComponent } from "../../shared/chat/chat.component";
-
 
 @Component({
   selector: 'app-ProviderPortal',
   standalone: true,
-  imports: [CommonModule, DoctorRoomComponent, WaitingRoomComponent, HeaderComponent, ChatComponent],
+  imports: [CommonModule, DoctorRoomComponent, WaitingRoomComponent],
   templateUrl: './provider-portal.component.html',
 })
 export class ProviderPortalComponent {

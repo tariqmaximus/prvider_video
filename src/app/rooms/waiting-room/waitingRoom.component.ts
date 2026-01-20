@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import { UserInfoComponent } from '../../shared/user-info/user-info.component';
 import { UserTransferComponent } from '../../shared/user-transfer/user-transfer.component';
+import { ChatComponent } from '../../shared/chat/chat.component';
 
 interface Message {
   name: string;
@@ -13,13 +13,15 @@ interface Message {
 @Component({
   selector: 'app-waiting-room',
   standalone: true,
-  imports: [CommonModule, UserInfoComponent, UserTransferComponent],
+  imports: [CommonModule, UserInfoComponent, UserTransferComponent, ChatComponent],
   templateUrl: './waitingRoom.component.html',
   styleUrls: ['./waitingRoom.component.css'],
 })
 export class WaitingRoomComponent {
-@Input() showWaitingRoom: boolean = false;
-@Input() showcallerTimer: boolean = false;
+  @Input() showWaitingRoom: boolean = false;
+  @Input() showcallerTimer: boolean = false;
+
+  @Output() titleChange = new EventEmitter<string>();
 
   waitingRoom: Message[] = [
     { name: 'Josaf Mareen', time: 'Waiting for 36 mins', stage: 'unread' },
@@ -30,32 +32,38 @@ export class WaitingRoomComponent {
   ];
 
   expandedIndex: number | null = null;
-
   showCallerId = false;
   activeCaller: Message | null = null;
 
-  activeTab = 'info';
+  // Each accordion item will have its own active tab
+  activeTabs: { [key: number]: string } = {};
 
-  @Output() titleChange = new EventEmitter<string>();
-
+  // Toggle accordion item
   toggleChat(index: number): void {
     if (this.expandedIndex === index) {
-      // CLOSE
+      // Close the accordion
       this.expandedIndex = null;
       this.showCallerId = false;
       this.activeCaller = null;
     } else {
-      // OPEN
+      // Open the accordion
       this.expandedIndex = index;
       this.activeCaller = this.waitingRoom[index];
       this.showCallerId = true;
+
+      // Set default active tab for this item if not already set
+      if (!this.activeTabs[index]) {
+        this.activeTabs[index] = 'info';
+      }
     }
   }
 
+  // Get initials for avatar
   getInitials(name: string): string {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();
   }
 
+  // Get background color based on stage
   getStageColor(stage: string): string {
     return {
       unread: '#f9a1ab',
@@ -65,15 +73,18 @@ export class WaitingRoomComponent {
     }[stage] || '#ccc';
   }
 
+  // Get text color for stage
   getStageTextColor(stage: string): string {
     return this.getStageColor(stage);
   }
 
-  setActiveTab(tab: string): void {
-    this.activeTab = tab;
+  // Set active tab for a specific accordion item
+  setActiveTab(tab: string, index: number): void {
+    this.activeTabs[index] = tab;
     this.titleChange.emit(tab);
   }
 
+  // Increase waiting time by 5 minutes
   increaseWaitingTime(index: number): void {
     const msg = this.waitingRoom[index];
     const match = msg.time.match(/(\d+)/);

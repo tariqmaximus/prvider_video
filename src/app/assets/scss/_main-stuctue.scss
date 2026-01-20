@@ -1,5 +1,8 @@
 .main-container {
-    display: flex;
+.tab-panel {
+    height: 100vh;
+    display: none;
+    overflow-y: auto;
 }
 .left-panel {
     flex: 0 0 25%;
