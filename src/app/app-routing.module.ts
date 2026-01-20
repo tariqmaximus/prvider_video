@@ -3,11 +3,13 @@ import { ProviderPortalComponent } from './portals/provider-portal/provider-port
 import { UserCheckinComponent } from './portals/user-portal/user-checkin/user-checkin.component';
 import { UserAccessComponent } from './portals/user-portal/user-access/user-access.component';
 import { UserWaitingComponent } from './portals/user-portal/user-waiting/user-waiting.component';
-import { VideoCallComponent } from './common/video-call/video-call.component';
+import { ProviderCallComponent } from './common/provider-call/provider-call.component';
+import { UserCallComponent } from './common/user-call/user-call.component';
 
 export const routes: Routes = [
   { path: '', component: ProviderPortalComponent },
-  { path: 'video-call', component: VideoCallComponent },
+  { path: 'provider-call', component: ProviderCallComponent },
+  { path: 'user-call', component: UserCallComponent },
   { path: 'user-checkin', component: UserCheckinComponent },
   { path: 'user-access', component: UserAccessComponent },
   { path: 'user-waiting', component: UserWaitingComponent },

@@ -1,4 +1,6 @@
-<div class="chat-container">
+
+
+<div class="chat-container chat-panel" >
   <!-- Profile Details -->
   <div class="profile-tile" *ngIf="message">
     <h5>{{ message.name }}</h5>
@@ -7,11 +9,11 @@
 
   <!-- Chat Header -->
   <div class="chat-header">
-    <h6 class="chat-title">Chat</h6>
+    <h6 class="chat-title">Chat  </h6>
   </div>
 
   <!-- Messages Area -->
-  <div class="chat-messages" #messagesContainer>
+  <div class="chat-messages" #messagesContainer >
     <div class="message-group" *ngFor="let group of groupedMessages; trackBy: trackByGroup">
       <div class="message-wrapper"
            *ngFor="let msg of group.messages; trackBy: trackByMessage"
@@ -25,7 +27,7 @@
   </div>
 
   <!-- Input Area -->
-  <div class="chat-input">
+  <div class="chat-input" >
     <div class="input-group">
       <textarea [(ngModel)]="newMessage"
              type="text"
@@ -37,4 +39,7 @@
       </button>
     </div>
   </div>
+
 </div>
+<!-- Add a button to toggle chat visibility -->
+

@@ -27,6 +27,7 @@ export class ChatComponent implements OnChanges {
   messages: Message[] = [];
   newMessage: string = '';
 
+
   get groupedMessages(): MessageGroup[] {
     const groups: MessageGroup[] = [];
     let currentGroup: MessageGroup | null = null;
@@ -120,4 +121,6 @@ export class ChatComponent implements OnChanges {
   trackByMessage(index: number, message: Message): string {
     return message.timestamp.toISOString();
   }
+
+
 }

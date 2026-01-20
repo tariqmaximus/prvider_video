@@ -109,7 +109,12 @@ $variants: (
     }
   }
 }
+.badge.sm {
+  width: 20px;
+  height: 20px;
 
+
+}
 // Buttons
 .btn {
   position: relative;

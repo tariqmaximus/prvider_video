@@ -1,5 +1,5 @@
 @import 'reset';
-
+@import 'components/call.scss';
 @import 'variables';
 @import 'global';
 @import 'icons';
@@ -16,7 +16,8 @@
 
 @import '_main-stuctue';
 .call-container {
-  min-height: 400px;
+  max-height: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -154,7 +155,7 @@ html {
        border-radius: $round-lg;
          
           position: relative;
-          margin-bottom: 20px;
+          margin-bottom: 0;
           display: flex;
           align-items: center;
           justify-content: center;

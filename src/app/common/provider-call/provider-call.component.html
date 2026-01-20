@@ -1,0 +1,55 @@
+<div class="container-fluid h-100">
+  <div class="main-container h-100">
+    <div class="col-12 card dr-room d-flex flex-row p-0 h-100">
+
+      <!-- Waiting List Column -->
+      <app-waiting-room [showcallerTimer]="true" class="left-panel" [showWaitingRoom]="false"></app-waiting-room>
+
+      <div class="mid-panel">
+        <app-video-thumnail class="camra-thumnail"></app-video-thumnail>
+        <div class="call-container">
+          <div class="avatar">
+            <span class="name">AT</span>
+            <button _ngcontent-ng-c1258966675="" class="badge icon-danger">
+              <i class="icon-video-off-fill"></i>
+            </button>
+          </div>
+
+          <div class="card">
+            <div class="buttons">
+              <button type="button" class="btn btn-lg icon-danger">
+                <i class="icon-video-off-fill"></i>
+              </button>
+              <button type="button" class="btn btn-lg icon-danger">
+                <i class="icon-mute-fill"></i>
+              </button>
+
+              <!-- Chat toggle button -->
+              <button class="btn btn-lg no-bg" (click)="toggleChatVisibility()">
+                <i class="icon-chat"></i><span class="badge sm position-absolute left-0 danger">3</span>
+              </button>
+
+              <div class="btn-group dropup">
+                <button type="button" class="btn btn-lg no-bg" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="icon-more"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#"><i class="icon-maximize"></i>Full screen</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#"><i class="icon-setting"></i> Troubleshooting</a></li>
+                  <li><a class="dropdown-item text-danger" href="#"><i class="icon-setting"></i>Settings</a></li>
+                </ul>
+              </div>
+              <button type="button" class="btn btn-lg danger"><i class="icon-call"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Column -->
+  
+        <app-chat *ngIf="isChatVisible" class="right-panel"></app-chat>
+    
+    </div>
+  </div>
+</div>

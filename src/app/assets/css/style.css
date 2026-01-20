@@ -11,6 +11,15 @@ p, h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
 }
 
+.camra-thumnail {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
 :root {
   /* Dark mode variables */
   --prim-color: #243247;
@@ -2756,6 +2765,11 @@ p span {
   color: var(--bg-color);
 }
 
+.badge.sm {
+  width: 20px;
+  height: 20px;
+}
+
 .btn {
   position: relative;
   height: auto;
@@ -3720,52 +3734,52 @@ p span {
   }
 }
 
-.tab-panel {
-  display: none;
-  opacity: 0;
-}
-
-.tab-panel.active {
-  display: block;
-  opacity: 9;
-}
-
-.tab-content {
-  padding: 0;
-}
-
 .main-container {
-  padding: 16px;
-  box-sizing: border-box;
-  max-height: 100%;
-  height: 100%;
-  overflow-y: auto;
-}
-@media (max-width: 768px) {
-  .main-container {
-    max-height: inherit;
-  }
+  display: flex;
 }
 
-.dr-room {
-  height: 100%;
-  position: relative;
-  box-sizing: border-box;
+.left-panel {
+  flex: 0 0 25%;
+  max-width: 25%;
 }
 
-.content-panel {
-  padding: 0 !important;
-}
-
-main {
-  position: relative;
-  padding: 0;
-  padding-right: 0;
+.mid-panel {
   width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-panel {
+  flex: 0 0 25%;
+  border: var(--bs-border-color);
+  max-width: 25%;
+}
+
+.footer {
+  display: flex;
+  position: absolute;
+  z-index: 99;
+  bottom: 0;
+  right: 25%;
+}
+.footer .badge {
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+.footer .btn {
+  border: none !important;
+}
+.footer .btn i {
+  color: white;
+  font-size: 20px;
 }
 
 .call-container {
-  min-height: 400px;
+  max-height: 400px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -3901,7 +3915,7 @@ html {
   border: 1px solid var(--input-group-border);
   border-radius: 15px;
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
